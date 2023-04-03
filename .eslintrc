@@ -33,6 +33,12 @@
 		"react/require-default-props": 0, // DefaultProps => object default values
 		"import/prefer-default-export": 0,
 		"no-param-reassign": 0, // Redux toolkit - linting state mutations
+		"import/extensions": [
+			0,
+			{
+				"ts": "never"
+			}
+		],
 		// =====================================
 		// --> turn the rule on as a warning <--
 		// =====================================
