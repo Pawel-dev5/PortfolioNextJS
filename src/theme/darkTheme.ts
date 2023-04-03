@@ -6,6 +6,8 @@ const darkTheme = () => {
 		textSecond: '#8892AF',
 		body: '#0B192E',
 		secondaryColor: '#64ffda',
+		navBackground: '#112240',
+		navText: ' #a8b2d1',
 
 		...globalTheme(),
 	};

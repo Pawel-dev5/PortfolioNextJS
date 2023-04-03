@@ -6,6 +6,8 @@ const lightTheme = () => {
 		textSecond: '#8892AF',
 		body: '#CCD6F6',
 		secondaryColor: '#64ffda',
+		navBackground: ' #a8b2d1',
+		navText: '#112240',
 
 		...globalTheme(),
 	};

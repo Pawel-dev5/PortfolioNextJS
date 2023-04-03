@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { transparentize, darken } from 'polished';
+import { TransitionStyles } from './Transitions';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -20,10 +21,11 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       box-sizing: border-box;    
-      overflow-wrap: break-word;    
-      overflow: hidden;
-      
+      overflow-wrap: break-word;          
     }
+
+	${TransitionStyles};
+	
   }
   
 `;
