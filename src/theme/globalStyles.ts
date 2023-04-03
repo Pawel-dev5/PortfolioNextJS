@@ -1,15 +1,34 @@
 import { createGlobalStyle } from 'styled-components';
 import { transparentize, darken } from 'polished';
 
-export const DefaultGlobalStyles = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
+	margin: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.3;
+
+	* {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;    
+      overflow-wrap: break-word;    
+      overflow: hidden;
+      
+    }
   }
+  
 `;
 
-const globalTheme = () => {
+export const globalTheme = () => {
 	const theme = {
 		white: '#fff',
 		black: 'hsl(0, 0%, 0%)',
@@ -51,12 +70,12 @@ const globalTheme = () => {
 			xl: '1200px',
 			xxl: '1400px',
 		},
+		transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
 	};
 
-	theme.transparentize = ({ amount, color }) => transparentize(amount ?? 0.2, color ?? 'black');
-	theme.darken = ({ amount, color }) => darken(amount ?? 0.2, color ?? 'black');
+	theme.transparentize = ({ amount, color }: { amount: number; color: string }) =>
+		transparentize(amount ?? 0.2, color ?? 'black');
+	theme.darken = ({ amount, color }: { amount: number; color: string }) => darken(amount ?? 0.2, color ?? 'black');
 
 	return theme;
 };
-
-export default globalTheme;

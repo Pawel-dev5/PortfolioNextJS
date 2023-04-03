@@ -1,4 +1,6 @@
-export const newsContent = {
+import { ContentTypes } from 'translations/models/content';
+
+export const newsContent: ContentTypes = {
 	en: {
 		title: 'Your News',
 		content: [

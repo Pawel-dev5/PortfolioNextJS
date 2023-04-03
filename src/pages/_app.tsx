@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import type { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
 import { ThemeProvider } from 'styled-components';
 
 // THEMES
-import { DefaultGlobalStyles } from 'theme/globalStyles';
+import { GlobalStyle } from 'theme/globalStyles';
 import lightTheme from 'theme/lightTheme';
 import darkTheme from 'theme/darkTheme';
 
 const App = ({ Component, pageProps }: AppProps) => {
-	const [theme, setTheme] = useState('light');
+	const { locale, defaultLocale } = useRouter();
+
+	const [theme, setTheme] = useState('dark');
 	const isDarkTheme = theme === 'dark';
 
 	const toggleTheme = () => {
@@ -27,10 +30,17 @@ const App = ({ Component, pageProps }: AppProps) => {
 		}
 	}, []);
 
+	const localeHandler = () => {
+		let currentLocale = defaultLocale || 'en';
+		if (locale) currentLocale = locale;
+
+		return currentLocale;
+	};
+
 	return (
 		<ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-			<DefaultGlobalStyles />
-			<Component {...pageProps} toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+			<GlobalStyle />
+			<Component {...pageProps} toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} locale={localeHandler()} />
 		</ThemeProvider>
 	);
 };
