@@ -21,9 +21,11 @@ export type AboutMeContentType = {
 };
 
 export type JobInnerContentType = {
+	id: number;
 	company: string;
 	jobTitle: string;
-	timeRange: string;
+	url: string;
+	range: string;
 	descriptions: string[];
 };
 

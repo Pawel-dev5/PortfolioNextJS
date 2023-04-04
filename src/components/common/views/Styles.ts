@@ -1,4 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+// MODELS
+import { CompanyLinkTypes } from 'components/common/models/views';
 
 // SECTION TITLE
 export const StyledSectionTitleContainer = styled.div`
@@ -17,7 +20,7 @@ export const StyledSectionTitleLine = styled.div`
 	width: 100%;
 	max-width: 300px;
 	@media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-		min-width: 300px;
+		min-width: 350px;
 	}
 `;
 
@@ -49,4 +52,47 @@ export const StyledTitle = styled.span`
 	justify-content: flex-end;
 	height: 100%;
 	padding-top: 5px;
+`;
+
+// COMPANY
+export const StyledCompany = styled.a<{ variant: CompanyLinkTypes }>`
+	color: ${({ theme }) => theme.secondaryColor};
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	font-size: clamp(14px, 5vw, 20px);
+	text-decoration: none;
+	margin-bottom: -10px;
+
+	:after {
+		content: '';
+		position: absolute;
+		bottom: 4px;
+		left: 0;
+		width: 100%;
+		height: 0.1em;
+		background-color: ${({ theme }) => theme.secondaryColor};
+		transition: opacity 300ms, transform 300ms;
+		opacity: 0;
+		transform: translate3d(-100%, 0, 0);
+	}
+	:hover::after,
+	:focus::after {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+
+	${({ variant }) => {
+		switch (variant) {
+			case 'BIG':
+				return css`
+					font-size: clamp(16px, 5vw, 23px);
+					margin-bottom: -18px;
+					bottom: 6px;
+				`;
+			default:
+				return null;
+		}
+	}}
 `;

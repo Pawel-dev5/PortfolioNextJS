@@ -1,7 +1,17 @@
+import { DefaultTheme } from 'styled-components';
+
+// STYLES
 import { globalTheme } from 'styles/theme/globalTheme';
 
+// MODELS
+import { DefaultThemeInterface } from 'styles/theme/models';
+
+declare module 'styled-components' {
+	export interface DefaultTheme extends DefaultThemeInterface {} // eslint-disable-line no-shadow
+}
+
 const lightTheme = () => {
-	const theme = {
+	const theme: DefaultTheme = {
 		text: '#0B192E',
 		textSecond: '#8892AF',
 		body: '#CCD6F6',

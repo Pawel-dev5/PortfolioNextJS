@@ -16,6 +16,7 @@ import {
 	StyledFotoBackground,
 	StyledStackHeader,
 	StyledParagraph,
+	StyledTextWrapper,
 } from 'components/sections/About/views/Styles';
 
 export const AboutMe = ({ locale }: { locale: string }) => {
@@ -30,7 +31,7 @@ export const AboutMe = ({ locale }: { locale: string }) => {
 			<SectionTitle counter={1} title={sectionTitle} />
 
 			<StyledInnerWrapper>
-				<div>
+				<StyledTextWrapper>
 					<StyledParagraph>{paragraph1}</StyledParagraph>
 					<StyledParagraph>{paragraph2}</StyledParagraph>
 					<StyledParagraph>{paragraph3}</StyledParagraph>
@@ -41,7 +42,7 @@ export const AboutMe = ({ locale }: { locale: string }) => {
 							<li key={item}>{item}</li>
 						))}
 					</StyledStackList>
-				</div>
+				</StyledTextWrapper>
 
 				<StyledFotoWrapper>
 					<StyledAboutMeFoto

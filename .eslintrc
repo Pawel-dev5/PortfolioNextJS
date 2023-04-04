@@ -39,6 +39,7 @@
 				"ts": "never"
 			}
 		],
+		"react-hooks/exhaustive-deps": 0, // <--- THIS IS THE NEW RULE
 		// =====================================
 		// --> turn the rule on as a warning <--
 		// =====================================

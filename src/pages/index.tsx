@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { Loader } from 'components/Loader';
 import { Navigation } from 'components/Navigation';
 import { IconGitHub, IconLinkedin, IconFacebook } from 'components/Icons';
-import { Home, AboutMe } from 'components/sections';
+import { Home, AboutMe, Jobs } from 'components/sections';
 
 // MODELS
 import { HomeInterface } from 'pages/models/home';
@@ -67,6 +67,7 @@ const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 						<StyledBodyContainer menuIsOpen={menuIsOpen}>
 							<Home locale={locale} />
 							<AboutMe locale={locale} />
+							<Jobs locale={locale} />
 						</StyledBodyContainer>
 					</>
 				)}

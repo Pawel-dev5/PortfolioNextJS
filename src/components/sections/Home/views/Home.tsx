@@ -11,8 +11,8 @@ import {
 	StyledHomeHeadline,
 	StyledHomeDescription,
 	StyledButton,
-	StyledCompany,
 } from 'components/sections/Home/views/Styles';
+import { CompanyLink } from 'components/common';
 
 export const Home = ({ locale }: { locale: string }) => {
 	const { title, name, headline, description, company, button } = homeContent[locale];
@@ -32,9 +32,7 @@ export const Home = ({ locale }: { locale: string }) => {
 
 			<StyledHomeDescription duration={isVisible ? `${startDuration * 4}ms` : null}>
 				<span>{description}</span>
-				<StyledCompany href="https://10a.io/" target="_blank">
-					{company}
-				</StyledCompany>
+				<CompanyLink company={company} url="https://10a.io/" />
 			</StyledHomeDescription>
 
 			<StyledButton duration={isVisible ? `${startDuration * 5}ms` : null}>{button}</StyledButton>

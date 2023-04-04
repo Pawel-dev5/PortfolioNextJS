@@ -59,35 +59,6 @@ export const StyledHomeHeadline = styled.h3<{ duration: string | null }>`
 		`}
 `;
 
-export const StyledCompany = styled.a`
-	color: ${({ theme }) => theme.secondaryColor};
-	display: inline-block;
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-	font-size: clamp(14px, 5vw, 20px);
-	text-decoration: none;
-	margin-bottom: -10px;
-
-	:after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 0.1em;
-		background-color: ${({ theme }) => theme.secondaryColor};
-		transition: opacity 300ms, transform 300ms;
-		opacity: 0;
-		transform: translate3d(-100%, 0, 0);
-	}
-	:hover::after,
-	:focus::after {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
-`;
-
 export const StyledHomeDescription = styled.p<{ duration: string | null }>`
 	max-width: 550px;
 	margin-top: 2rem;

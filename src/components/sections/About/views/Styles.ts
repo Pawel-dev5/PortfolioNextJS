@@ -5,6 +5,10 @@ export const StyledAboutMeContainer = styled.div`
 	margin-top: 300px;
 `;
 
+export const StyledTextWrapper = styled.div`
+	max-width: 525px;
+`;
+
 export const StyledFotoWrapper = styled.div`
 	position: relative;
 
