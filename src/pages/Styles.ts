@@ -1,23 +1,26 @@
 import styled, { css } from 'styled-components';
-import { fadeIn } from 'theme/animations';
+import { fadeIn } from 'styles/animations';
 
-export const StyleFloatBase = styled.div<{ animated: boolean }>`
+export const StyleFloatBase = styled.div<{ floatedIsVisible: boolean }>`
 	position: fixed;
 	bottom: 0;
-	height: 300px;
+	height: 270px;
 	width: 40px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	opacity: 0;
-	animation-name: ${fadeIn};
-	animation-duration: 5s;
-	animation-delay: 1s;
 
-	${({ animated }) =>
-		animated &&
+	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+		display: none;
+	}
+
+	opacity: 0;
+	${({ floatedIsVisible }) =>
+		floatedIsVisible &&
 		css`
 			opacity: 1;
+			animation-name: ${fadeIn};
+			animation-duration: 10s;
 		`}
 `;
 
@@ -70,7 +73,7 @@ export const StyledLeftFloatWrapper = styled(StyleFloatBase)`
 
 export const StyledRightFloatWrapper = styled(StyleFloatBase)`
 	right: 40px;
-	height: 330px;
+	height: 350px;
 
 	a {
 		display: flex;
@@ -83,6 +86,7 @@ export const StyledRightFloatWrapper = styled(StyleFloatBase)`
 		letter-spacing: 0.15em;
 		writing-mode: vertical-rl;
 		color: ${({ theme }) => theme.text};
+		font-family: ${({ theme }) => theme.fontMono};
 
 		:hover {
 			color: ${({ theme }) => theme.secondaryColor};
@@ -108,15 +112,22 @@ export const StyledLayout = styled.div`
 
 export const StyledBodyContainer = styled.div<{ menuIsOpen: boolean }>`
 	margin: 0px auto;
-	margin-top: 100px;
 	padding: 100px 100px;
-	max-width: 1100px;
+	max-width: 1000px;
 
+	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+		margin-top: 35px;
+		padding: 100px 25px;
+	}
 	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-		max-width: 1300px;
+		margin-top: 80px;
+	}
+	@media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+		margin-top: 80px;
+		max-width: 1215px;
 	}
 	@media (min-width: ${({ theme }) => theme.breakpoints.xxl}) {
-		max-width: 1600px;
+		max-width: 1500px;
 	}
 
 	${({ menuIsOpen }) =>

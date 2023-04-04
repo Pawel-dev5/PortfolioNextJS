@@ -24,24 +24,13 @@ export const Navigation = (props: NavigationInterface) => {
 	const { toggleTheme, isDarkTheme } = props;
 
 	const [scrolledToTop, setScrolledToTop] = useState(true);
-	const [isAnimatedMainNav, setIsAnimatedMainNav] = useState(false);
-	const [isAnimated, setIsAnimated] = useState(false);
 
 	const handleScroll = () => setScrolledToTop(window.pageYOffset < 50);
 
 	useEffect(() => {
-		const timeoutMainNav = setTimeout(() => {
-			setIsAnimatedMainNav(true);
-		}, 800);
-		const timeoutRest = setTimeout(() => {
-			setIsAnimated(true);
-		}, 1100);
-
 		window.addEventListener('scroll', handleScroll);
 
 		return () => {
-			clearTimeout(timeoutMainNav);
-			clearTimeout(timeoutRest);
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
@@ -62,26 +51,30 @@ export const Navigation = (props: NavigationInterface) => {
 				<StyledLinks>
 					<ol>
 						{navLinks?.map(({ url, name }, i) => (
-							<StyledLink key={i} animated={isAnimatedMainNav} delay={`${i * 100}ms`}>
+							<StyledLink key={i} duration={`${(i + 1) * 500}ms`}>
 								<Link href={url}>{name}</Link>
 							</StyledLink>
 						))}
 
-						<StyledLink withoutCounter animated={isAnimated} delay={`${navLinks.length * 100}ms`}>
+						<StyledLink withoutCounter duration={`${navLinks.length * 500}ms`}>
 							<Link href={asPath} locale={locale === 'pl' ? 'en' : 'pl'}>
-								{locale === 'pl' ? 'en' : 'pl'}
+								{locale === 'pl' ? 'EN' : 'PL'}
 							</Link>
 						</StyledLink>
 
-						<StyledLink withoutCounter animated={isAnimated} delay={`${navLinks.length * 110}ms`}>
-							<button onClick={toggleTheme} type="button">
-								<span aria-label={isDarkTheme ? 'Light mode' : 'Dark mode'} role="img">
-									{isDarkTheme ? <>🌞</> : <>🌜</>}
-								</span>
-							</button>
+						<StyledLink
+							as="button"
+							type="button"
+							onClick={toggleTheme}
+							withoutCounter
+							duration={`${navLinks.length * 510}ms`}
+						>
+							<span aria-label={isDarkTheme ? 'Light mode' : 'Dark mode'} role="img">
+								{isDarkTheme ? <>🌞</> : <>🌜</>}
+							</span>
 						</StyledLink>
 
-						<StyledLink withoutCounter animated={isAnimated} delay={`${navLinks.length * 130}ms`}>
+						<StyledLink withoutCounter resume duration={`${navLinks.length * 530}ms`}>
 							{ResumeLink}
 						</StyledLink>
 					</ol>

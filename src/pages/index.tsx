@@ -4,34 +4,26 @@ import Head from 'next/head';
 // COMPONENTS
 import { Loader } from 'components/Loader';
 import { Navigation } from 'components/Navigation';
-import { IconGitHub } from 'components/Icons/Github';
-import { IconLinkedin } from 'components/Icons/LinkedIn';
-import { IconFacebook } from 'components/Icons/Facebook';
+import { IconGitHub, IconLinkedin, IconFacebook } from 'components/Icons';
+import { Home, AboutMe } from 'components/sections';
 
 // MODELS
 import { HomeInterface } from 'pages/models/home';
 
 // STYLES
 import { StyledLayout, StyledBodyContainer, StyledRightFloatWrapper, StyledLeftFloatWrapper } from 'pages/Styles';
-import { Home } from 'components/Home';
 
 const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 	const [loadingStatus, setLoadingStatus] = useState('PENDING');
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
-	const [isAnimated, setIsAnimated] = useState(false);
+	const [floatedIsVisible, setFloatedIsVisible] = useState(false);
 
 	useEffect(() => {
 		// setLoadingStatus('LOADING');
 		// TMP
 		setLoadingStatus('DONE');
-
-		const timeoutRest = setTimeout(() => {
-			setIsAnimated(true);
-		}, 1100);
-
-		return () => {
-			clearTimeout(timeoutRest);
-		};
+		const timeout = setTimeout(() => setFloatedIsVisible(true), 700);
+		return () => clearTimeout(timeout);
 	}, []);
 
 	return (
@@ -54,11 +46,11 @@ const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 							setMenuIsOpen={setMenuIsOpen}
 						/>
 
-						<StyledRightFloatWrapper animated={isAnimated}>
+						<StyledRightFloatWrapper floatedIsVisible={floatedIsVisible}>
 							<a href="mailto:p.nowecki@gmail.com">p.nowecki@gmail.com</a>
 						</StyledRightFloatWrapper>
 
-						<StyledLeftFloatWrapper animated={isAnimated}>
+						<StyledLeftFloatWrapper floatedIsVisible={floatedIsVisible}>
 							<div>
 								<a href="https://github.com/Pawel-dev5" target="_blank">
 									<IconGitHub />
@@ -74,6 +66,7 @@ const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 
 						<StyledBodyContainer menuIsOpen={menuIsOpen}>
 							<Home locale={locale} />
+							<AboutMe locale={locale} />
 						</StyledBodyContainer>
 					</>
 				)}

@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 import { ThemeProvider } from 'styled-components';
 
 // THEMES
-import { GlobalStyle } from 'theme/globalStyles';
-import lightTheme from 'theme/lightTheme';
-import darkTheme from 'theme/darkTheme';
+import { GlobalStyle } from 'styles/theme/globalTheme';
+import lightTheme from 'styles/theme/lightTheme';
+import darkTheme from 'styles/theme/darkTheme';
 
 const App = ({ Component, pageProps }: AppProps) => {
 	const { locale, defaultLocale } = useRouter();
