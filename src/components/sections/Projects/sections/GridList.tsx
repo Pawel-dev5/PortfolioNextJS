@@ -4,18 +4,11 @@ import { useState } from 'react';
 import { projectsContent } from 'locales/projects';
 
 // COMPONENTS
-import { Icon } from 'components/Icons';
+import { GridItem } from 'components/sections/Projects/items';
 
 // STYLES
 import {
-	StyledProject,
 	StyledProjectsSection,
-	StyledGridLinks,
-	StyledGridTop,
-	StyledTitle,
-	StyledGridDescription,
-	StyledProjectInner,
-	StyledGridStackList,
 	StyledGridMoreButton,
 	StyledGridWrapper,
 } from 'components/sections/Projects/sections/StylesGrid';
@@ -29,39 +22,8 @@ export const GridList = ({ locale }: { locale: string }) => {
 	return (
 		<StyledProjectsSection>
 			<StyledGridWrapper>
-				{projectsToShow?.map(({ title, stack, links, description }, projectIndex) => (
-					<StyledProject key={projectIndex} duration={`${(projectIndex + 1) * 500}ms`}>
-						<StyledProjectInner>
-							<header>
-								<StyledGridTop>
-									<Icon name="Folder" />
-
-									{links && links?.length > 0 && (
-										<StyledGridLinks>
-											{links?.map(({ id: linkId, url, type }) => (
-												<a key={linkId} href={url} aria-label={`${type} Link`}>
-													<Icon name={type} />
-												</a>
-											))}
-										</StyledGridLinks>
-									)}
-								</StyledGridTop>
-
-								<StyledTitle>{title}</StyledTitle>
-								<StyledGridDescription>{description}</StyledGridDescription>
-							</header>
-
-							<footer>
-								{stack && stack?.length > 0 && (
-									<StyledGridStackList>
-										{stack?.map((tech, index) => (
-											<li key={index}>{tech}</li>
-										))}
-									</StyledGridStackList>
-								)}
-							</footer>
-						</StyledProjectInner>
-					</StyledProject>
+				{projectsToShow?.map((item, projectIndex) => (
+					<GridItem key={projectIndex} projectIndex={projectIndex} projectsToShow={projectsToShow} {...item} />
 				))}
 			</StyledGridWrapper>
 

@@ -153,7 +153,7 @@ export const StyledProjectInner = styled.div`
 	overflow: auto;
 `;
 
-export const StyledProject = styled.li<{ duration: string }>`
+export const StyledProject = styled.li<{ duration?: string }>`
 	position: relative;
 	cursor: default;
 	transition: ${({ theme }) => theme.transition};

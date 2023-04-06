@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import anime from 'animejs';
 
 // COMPONENTS
-import { IconLoader } from 'components/Icons';
+import { Icon } from 'components/Icons';
 
 // STYLES
 import { StyledLogoWrapper, StyledLoader } from 'components/Loader/Styles';
@@ -55,7 +55,7 @@ export const Loader = ({ finishLoading }: { finishLoading: () => void }) => {
 	return (
 		<StyledLoader className="loader">
 			<StyledLogoWrapper isMounted={isMounted}>
-				<IconLoader />
+				<Icon name="Loader" />
 			</StyledLogoWrapper>
 		</StyledLoader>
 	);
