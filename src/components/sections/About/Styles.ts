@@ -33,7 +33,7 @@ export const StyledFotoBackground = styled.div<{ isHovered: boolean }>`
 	position: absolute;
 	width: 300px;
 	height: 300px;
-	border-radius: 4px;
+	border-radius: ${({ theme }) => theme.radius};
 	transition: ${({ theme }) => theme.transition};
 
 	${({ isHovered }) =>
@@ -51,7 +51,7 @@ export const StyledFotoBackground = styled.div<{ isHovered: boolean }>`
 `;
 
 export const StyledAboutMeFoto = styled(Image)`
-	border-radius: 4px;
+	border-radius: ${({ theme }) => theme.radius};
 `;
 
 export const StyledParagraph = styled.p`

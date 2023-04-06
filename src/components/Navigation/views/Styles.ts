@@ -105,7 +105,7 @@ export const StyledLink = styled.li<{ duration: string; withoutCounter?: boolean
 			color: ${({ theme }) => theme.secondaryColor};
 			background-color: transparent;
 			border: 1px solid ${({ theme }) => theme.secondaryColor};
-			border-radius: 4px;
+			border-radius: ${({ theme }) => theme.radius};
 			padding: 0.75rem 1rem;
 			line-height: 1;
 			text-decoration: none;

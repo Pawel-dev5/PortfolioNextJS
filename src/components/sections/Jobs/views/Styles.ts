@@ -80,7 +80,7 @@ export const StyledHighlight = styled.div<{ activeTabId: number }>`
 	z-index: 10;
 	width: 2px;
 	height: 42px;
-	border-radius: 4px;
+	border-radius: ${({ theme }) => theme.radius};
 	background: ${({ theme }) => theme.secondaryColor};
 	transform: translateY(calc(${({ activeTabId }) => activeTabId} * 42px));
 	transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);

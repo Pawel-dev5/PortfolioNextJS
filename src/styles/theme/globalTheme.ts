@@ -52,6 +52,8 @@ export const globalTheme = () => {
 		semiBold: 500,
 		bold: 600,
 
+		radius: '4px',
+
 		breakpoints: {
 			xs: '0',
 			sm: '576px',

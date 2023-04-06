@@ -41,7 +41,7 @@ export const StyledHamburgerButton = styled.button<{ menuOpen: boolean }>`
 		right: 0;
 		width: 30px;
 		height: 2px;
-		border-radius: 4px;
+		border-radius: ${({ theme }) => theme.radius};
 		background-color: ${({ theme }) => theme.secondaryColor};
 		transition-duration: 0.22s;
 		transition-property: transform;
@@ -59,7 +59,7 @@ export const StyledHamburgerButton = styled.button<{ menuOpen: boolean }>`
 			right: 0;
 			width: 30px;
 			height: 2px;
-			border-radius: 4px;
+			border-radius: ${({ theme }) => theme.radius};
 			background-color: ${({ theme }) => theme.secondaryColor};
 			transition-timing-function: ease;
 			transition-duration: 0.15s;

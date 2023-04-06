@@ -86,7 +86,7 @@ export const StyledButton = styled.a<{ duration: string | null }>`
 	color: ${({ theme }) => theme.secondaryColor};
 	background-color: transparent;
 	border: 1px solid ${({ theme }) => theme.secondaryColor};
-	border-radius: 4px;
+	border-radius: ${({ theme }) => theme.radius};
 	padding: 1.25rem 1.75rem;
 	font-size: 1rem;
 	font-family: ${({ theme }) => theme.fontMono};

@@ -5,6 +5,7 @@ export type DefaultThemeInterface = {
 	light: number;
 	semiBold: number;
 	bold: number;
+	radius: string;
 	breakpoints: {
 		xs: string;
 		sm: string;

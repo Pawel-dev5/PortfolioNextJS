@@ -16,7 +16,7 @@ export const Projects = ({ locale }: { locale: string }) => {
 			<SectionTitle counter={3} title={sectionTitle} id="projects" />
 			<Featured locale={locale} />
 			<StyledSubTitle>{subTitle}</StyledSubTitle>
-			<GridList />
+			<GridList locale={locale} />
 		</section>
 	);
 };

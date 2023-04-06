@@ -4,7 +4,7 @@ import Image from 'next/image';
 // ------- START FEATURES ----------
 
 export const StyledImage = styled(Image)`
-	border-radius: 4px;
+	border-radius: ${({ theme }) => theme.radius};
 `;
 
 export const StyledProjectsGrid = styled.ul`
@@ -243,7 +243,7 @@ export const StyledDescription = styled.p`
 	position: relative;
 	z-index: 2;
 	padding: 25px;
-	border-radius: 4px;
+	border-radius: ${({ theme }) => theme.radius};
 	background-color: ${({ theme }) => theme.lightNavy};
 	color: ${({ theme }) => theme.textSecond};
 	font-size: 18px;

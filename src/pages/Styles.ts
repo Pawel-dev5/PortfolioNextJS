@@ -27,7 +27,7 @@ export const StyleFloatBase = styled.div<{ floatedIsVisible: boolean }>`
 export const StyledLeftFloatWrapper = styled(StyleFloatBase)`
 	left: 40px;
 
-	div {
+	> div {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -61,12 +61,6 @@ export const StyledLeftFloatWrapper = styled(StyleFloatBase)`
 			letter-spacing: 0.1em;
 			writing-mode: vertical-rl;
 			color: ${({ theme }) => theme.text};
-
-			:hover {
-				color: ${({ theme }) => theme.secondaryColor};
-				transform: translateY(-3px);
-				transition: ${({ theme }) => theme.transition};
-			}
 		}
 	}
 `;
