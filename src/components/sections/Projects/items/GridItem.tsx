@@ -30,7 +30,7 @@ export const GridItem = ({ projectIndex, links, title, description, stack, proje
 	return (
 		<StyledProject key={projectIndex} duration={isVisible ? '500ms' : undefined}>
 			<StyledProjectInner>
-				<header>
+				<div>
 					<StyledGridTop>
 						<Icon name="Folder" />
 
@@ -47,17 +47,15 @@ export const GridItem = ({ projectIndex, links, title, description, stack, proje
 
 					<StyledTitle>{title}</StyledTitle>
 					<StyledGridDescription>{description}</StyledGridDescription>
-				</header>
+				</div>
 
-				<footer>
-					{stack && stack?.length > 0 && (
-						<StyledGridStackList>
-							{stack?.map((tech, index) => (
-								<li key={index}>{tech}</li>
-							))}
-						</StyledGridStackList>
-					)}
-				</footer>
+				{stack && stack?.length > 0 && (
+					<StyledGridStackList>
+						{stack?.map((tech, index) => (
+							<li key={index}>{tech}</li>
+						))}
+					</StyledGridStackList>
+				)}
 			</StyledProjectInner>
 		</StyledProject>
 	);

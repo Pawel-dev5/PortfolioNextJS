@@ -61,3 +61,12 @@ export type ProjectsContentType = {
 		projects: ProjectsInnerContentType[];
 	};
 };
+
+export type ContactContentType = {
+	[key: string]: {
+		sectionTitle: string;
+		title: string;
+		description: string;
+		cta: string;
+	};
+};

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
-export const StyledAboutMeContainer = styled.div`
+export const StyledAboutMeContainer = styled.section`
 	margin-top: 300px;
 `;
 

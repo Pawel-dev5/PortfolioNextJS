@@ -106,12 +106,14 @@ export const StyledLayout = styled.div`
 
 export const StyledBodyContainer = styled.div<{ menuIsOpen: boolean }>`
 	margin: 0px auto;
-	padding: 100px 100px;
+	padding: 100px;
+	padding-bottom: 0;
 	max-width: 1000px;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
 		margin-top: 35px;
 		padding: 100px 25px;
+		padding-bottom: 0;
 	}
 	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
 		margin-top: 80px;

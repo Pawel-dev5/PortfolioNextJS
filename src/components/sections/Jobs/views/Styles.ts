@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledJobsConteiner = styled.div`
+export const StyledJobsConteiner = styled.section`
 	min-height: 300px;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
