@@ -30,7 +30,7 @@ export const GridList = ({ locale }: { locale: string }) => {
 		<StyledProjectsSection>
 			<StyledGridWrapper>
 				{projectsToShow?.map(({ title, stack, links, description }, projectIndex) => (
-					<StyledProject key={projectIndex}>
+					<StyledProject key={projectIndex} duration={`${(projectIndex + 1) * 500}ms`}>
 						<StyledProjectInner>
 							<header>
 								<StyledGridTop>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled, { css } from 'styled-components';
 import { fadeDown, fadeIn } from 'styles/animations';
 
@@ -60,38 +61,34 @@ export const StyledIconWrapper = styled.div`
 	}
 `;
 
-export const StyledLink = styled.li<{ duration: string; withoutCounter?: boolean; resume?: boolean }>`
+export const StyledLink = styled(Link)<{ duration: string; withoutCounter?: boolean; resume?: boolean }>`
 	animation-name: ${fadeDown};
 	margin: 0 5px;
 	counter-increment: item 1;
 	background-color: transparent;
 	border: none;
+	text-decoration: none;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	padding: 10px;
+	color: ${({ theme }) => theme.text};
 
-	button,
-	a {
-		cursor: pointer;
-		background: transparent;
-		border: none;
-		padding: 10px;
-		text-decoration: none;
-		color: ${({ theme }) => theme.text};
-
-		&:hover,
-		&:active {
-			color: ${({ theme }) => theme.secondaryColor};
-		}
-
-		${({ withoutCounter }) =>
-			!withoutCounter &&
-			css`
-				&:before {
-					content: '0' counter(item) '.';
-					margin-right: 5px;
-					color: ${({ theme }) => theme.secondaryColor};
-					text-align: right;
-				}
-			`}
+	&:hover,
+	&:active {
+		color: ${({ theme }) => theme.secondaryColor};
 	}
+
+	${({ withoutCounter }) =>
+		!withoutCounter &&
+		css`
+			&:before {
+				content: '0' counter(item) '.';
+				margin-right: 5px;
+				color: ${({ theme }) => theme.secondaryColor};
+				text-align: right;
+			}
+		`}
 
 	${({ duration }) =>
 		duration &&

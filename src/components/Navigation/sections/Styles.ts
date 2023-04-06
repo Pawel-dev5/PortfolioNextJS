@@ -140,7 +140,9 @@ export const StyledSidebar = styled.aside<{ menuOpen: boolean }>`
 			}
 		}
 
-		a {
+		button {
+			background: transparent;
+			border: none;
 			display: inline-block;
 			text-decoration: none;
 			text-decoration-skip-ink: auto;

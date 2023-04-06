@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 // CONSTANS
@@ -37,7 +36,7 @@ export const Navigation = (props: NavigationInterface) => {
 	}, []);
 
 	const scrollToId = (id: string) => {
-		const element = document?.getElementById(id);
+		const element = document.getElementById(id);
 		if (element) window.scrollTo(0, element.offsetTop - 50);
 	};
 
@@ -51,17 +50,18 @@ export const Navigation = (props: NavigationInterface) => {
 				<StyledLinks>
 					<ol>
 						{navLinks?.map(({ url, name }, i) => (
-							<StyledLink key={i} duration={`${(i + 1) * 500}ms`}>
-								<button onClick={() => scrollToId(url)} type="button">
-									{name}
-								</button>
+							<StyledLink key={i} duration={`${(i + 1) * 500}ms`} as="button" type="button" onClick={() => scrollToId(url)}>
+								{name}
 							</StyledLink>
 						))}
 
-						<StyledLink withoutCounter duration={`${navLinks.length * 500}ms`}>
-							<Link href={asPath} locale={locale === 'pl' ? 'en' : 'pl'}>
-								{locale === 'pl' ? 'EN' : 'PL'}
-							</Link>
+						<StyledLink
+							href={asPath}
+							locale={locale === 'pl' ? 'en' : 'pl'}
+							withoutCounter
+							duration={`${navLinks.length * 500}ms`}
+						>
+							{locale === 'pl' ? 'EN' : 'PL'}
 						</StyledLink>
 
 						<StyledLink
@@ -70,16 +70,21 @@ export const Navigation = (props: NavigationInterface) => {
 							onClick={toggleTheme}
 							withoutCounter
 							duration={`${navLinks.length * 510}ms`}
+							aria-label={isDarkTheme ? 'Light mode' : 'Dark mode'}
+							role="img"
 						>
-							<span aria-label={isDarkTheme ? 'Light mode' : 'Dark mode'} role="img">
-								{isDarkTheme ? <>🌞</> : <>🌜</>}
-							</span>
+							{isDarkTheme ? <>🌞</> : <>🌜</>}
 						</StyledLink>
 
-						<StyledLink withoutCounter resume duration={`${navLinks.length * 530}ms`}>
-							<a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-								Resume
-							</a>
+						<StyledLink
+							href="https://drive.google.com/file/d/1lxdlStYPmAqSzIvYhrrF1oxdPFWg7S0C/view?usp=sharing"
+							target="_blank"
+							rel="noopener noreferrer"
+							withoutCounter
+							resume
+							duration={`${navLinks.length * 530}ms`}
+						>
+							Resume
 						</StyledLink>
 					</ol>
 				</StyledLinks>

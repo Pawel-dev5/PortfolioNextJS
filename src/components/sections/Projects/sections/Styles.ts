@@ -49,8 +49,10 @@ export const StyledContent = styled.div<{ odd: boolean }>`
 		odd &&
 		css`
 			grid-column: 7 / -1;
-			> * {
-				text-align: right;
+			@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+				> * {
+					text-align: right;
+				}
 			}
 			@media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
 				grid-column: 5 / -1;
@@ -229,7 +231,7 @@ export const StyledOverline = styled.p`
 	color: ${({ theme }) => theme.secondaryColor};
 	font-family: ${({ theme }) => theme.fontMono};
 	font-size: 13px;
-	font-weight: 400;
+	font-weight: ${({ theme }) => theme.light};
 `;
 
 export const StyledDescription = styled.p`

@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { fadeIn } from 'styles/animations';
 
 export const StyledGridDescription = styled.div`
 	color: ${({ theme }) => theme.navText};
@@ -68,6 +69,7 @@ export const StyledTitle = styled.h3`
 	margin: 0 0 10px;
 	color: ${({ theme }) => theme.navText};
 	font-size: 22px;
+	font-weight: ${({ theme }) => theme.bold};
 
 	a {
 		position: static;
@@ -124,6 +126,12 @@ export const StyledProjectInner = styled.div`
 		}
 	}
 
+	:hover {
+		h3 {
+			color: ${({ theme }) => theme.secondaryColor};
+		}
+	}
+
 	box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
 	transition: ${({ theme }) => theme.transition};
 
@@ -145,7 +153,7 @@ export const StyledProjectInner = styled.div`
 	overflow: auto;
 `;
 
-export const StyledProject = styled.li`
+export const StyledProject = styled.li<{ duration: string }>`
 	position: relative;
 	cursor: default;
 	transition: ${({ theme }) => theme.transition};
@@ -154,6 +162,14 @@ export const StyledProject = styled.li`
 		position: relative;
 		z-index: 1;
 	}
+
+	animation-name: ${fadeIn};
+
+	${({ duration }) =>
+		duration &&
+		css`
+			animation-duration: ${duration};
+		`}
 `;
 
 export const StyledGridStackList = styled.ul`
@@ -212,7 +228,7 @@ export const StyledGridWrapper = styled.ul`
 	position: relative;
 	margin-top: 50px;
 
-	@media (max-width: 1080px) {
+	@media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
 		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	}
 `;
