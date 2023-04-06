@@ -1,3 +1,5 @@
+import { IconTypes } from 'components/Icons';
+
 export type HomeContentType = {
 	[key: string]: {
 		title: string;
@@ -33,5 +35,29 @@ export type JobsContentType = {
 	[key: string]: {
 		sectionTitle: string;
 		jobs: JobInnerContentType[];
+	};
+};
+
+export type ProjectsLinksTypes = {
+	id: number;
+	type: IconTypes;
+	url: string;
+};
+
+export type ProjectsInnerContentType = {
+	id: number;
+	title: string;
+	description: string;
+	stack: string[];
+	links: ProjectsLinksTypes[];
+	imageUrl?: string;
+};
+
+export type ProjectsContentType = {
+	[key: string]: {
+		sectionTitle: string;
+		subTitle: string;
+		featured: ProjectsInnerContentType[];
+		projects: ProjectsInnerContentType[];
 	};
 };

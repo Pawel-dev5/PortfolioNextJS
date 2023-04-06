@@ -16,7 +16,6 @@ export const SectionTitle = ({ counter, title, id }: SectionTitleInterface) => (
 
 		<StyledSectionTitleWrapper>
 			<StyledTitle>{title}</StyledTitle>
-
 			<StyledSectionTitleLine />
 		</StyledSectionTitleWrapper>
 	</StyledSectionTitleContainer>

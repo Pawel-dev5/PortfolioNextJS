@@ -4,8 +4,8 @@ import Head from 'next/head';
 // COMPONENTS
 import { Loader } from 'components/Loader';
 import { Navigation } from 'components/Navigation';
-import { IconGitHub, IconLinkedin, IconFacebook } from 'components/Icons';
-import { Home, AboutMe, Jobs } from 'components/sections';
+import { Home, AboutMe, Jobs, Projects } from 'components/sections';
+import { Icon } from 'components/Icons';
 
 // MODELS
 import { HomeInterface } from 'pages/models/home';
@@ -53,13 +53,13 @@ const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 						<StyledLeftFloatWrapper floatedIsVisible={floatedIsVisible}>
 							<div>
 								<a href="https://github.com/Pawel-dev5" target="_blank">
-									<IconGitHub />
+									<Icon name="GitHub" />
 								</a>
 								<a href="https://www.linkedin.com/in/pawe%C5%82-nowecki/" target="_blank">
-									<IconLinkedin />
+									<Icon name="LinkedIn" />
 								</a>
 								<a href="https://www.facebook.com/p.nowecki" target="_blank">
-									<IconFacebook />
+									<Icon name="Facebook" />
 								</a>
 							</div>
 						</StyledLeftFloatWrapper>
@@ -68,6 +68,7 @@ const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 							<Home locale={locale} />
 							<AboutMe locale={locale} />
 							<Jobs locale={locale} />
+							<Projects locale={locale} />
 						</StyledBodyContainer>
 					</>
 				)}

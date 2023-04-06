@@ -23,4 +23,5 @@ export type DefaultThemeInterface = {
 	navBackground?: string;
 	navText?: string;
 	lightNavy?: string;
+	lightestNavy?: string;
 };

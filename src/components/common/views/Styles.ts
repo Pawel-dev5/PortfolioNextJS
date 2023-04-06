@@ -6,16 +6,20 @@ import { CompanyLinkTypes } from 'components/common/models/views';
 // SECTION TITLE
 export const StyledSectionTitleContainer = styled.div`
 	width: 100%;
-	margin: 100px 0px 40px;
+	margin: 250px 0px 40px;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+
+	@media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+		margin: 200px 0px 40px;
+	}
 `;
 
 export const StyledSectionTitleLine = styled.div`
 	height: 1px;
 	margin-left: 20px;
-	background-color: ${({ theme }) => theme.lightNavy};
+	background-color: ${({ theme }) => theme.lightestNavy};
 
 	width: 100%;
 	max-width: 300px;

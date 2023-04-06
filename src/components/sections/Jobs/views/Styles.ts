@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledJobsConteiner = styled.div`
-	margin-top: 250px;
 	min-height: 300px;
 
-	@media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-		margin-top: 150px;
+	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+		margin-top: 300px;
 	}
 `;
+
 export const StyledTabsWrapper = styled.div`
 	@media (min-width: ${({ theme }) => theme.breakpoints.md}) {
 		display: flex;
@@ -43,8 +43,8 @@ export const StyledTabButton = styled.button<{ isActive: boolean }>`
 	min-width: 170px;
 	height: 42px;
 	padding: 0 20px 2px;
-	border-left: 2px solid ${({ theme }) => theme.lightNavy};
-	background-color: ${({ isActive, theme }) => (isActive ? theme.lightNavy : 'transparent')};
+	border-left: 2px solid ${({ theme }) => theme.lightestNavy};
+	background-color: ${({ isActive, theme }) => (isActive ? theme.lightestNavy : 'transparent')};
 	color: ${({ isActive, theme }) => (isActive ? theme.secondaryColor : theme.textSecond)};
 
 	font-family: ${({ theme }) => theme.fontMono};
@@ -62,12 +62,12 @@ export const StyledTabButton = styled.button<{ isActive: boolean }>`
 		min-width: 120px;
 		padding: 0 15px;
 		border-left: 0;
-		border-bottom: 2px solid ${({ theme }) => theme.lightNavy};
+		border-bottom: 2px solid ${({ theme }) => theme.lightestNavy};
 		text-align: center;
 	}
 
 	&:hover {
-		background-color: ${({ theme }) => theme.lightNavy};
+		background-color: ${({ theme }) => theme.lightestNavy};
 		color: ${({ theme }) => theme.secondaryColor};
 		outline: 0;
 	}
