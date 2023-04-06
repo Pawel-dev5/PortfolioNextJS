@@ -26,12 +26,13 @@ export const StyledTitle = styled.h2`
 	color: ${({ theme }) => theme.secondaryColor};
 	font-family: ${({ theme }) => theme.fontMono};
 	font-weight: 400;
-	font-size: clamp(40px, 5vw, 60px);
+	font-size: clamp(40px, 5vw, 54px);
+	white-space: nowrap;
 `;
 
 export const StyledDescription = styled.p`
 	color: ${({ theme }) => theme.textSecond};
-	font-size: 20px;
+	font-size: 22px;
 	line-height: 1.3;
 `;
 
@@ -39,10 +40,6 @@ export const StyledContactSection = styled.div`
 	display: flex;
 	flex-direction: column;
 	max-width: 600px;
-	margin: 50px auto 120px;
+	margin: 120px auto;
 	text-align: center;
-
-	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-		margin: 0 auto 50px;
-	}
 `;
