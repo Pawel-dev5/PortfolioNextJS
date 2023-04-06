@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+// COMPONENTS
+import { CompanyLink } from 'components/common';
+
 // I18N
 import { homeContent } from 'locales/home';
 
@@ -11,8 +14,7 @@ import {
 	StyledHomeHeadline,
 	StyledHomeDescription,
 	StyledButton,
-} from 'components/sections/Home/views/Styles';
-import { CompanyLink } from 'components/common';
+} from 'components/sections/Home/Styles';
 
 export const Home = ({ locale }: { locale: string }) => {
 	const { title, name, headline, description, company, button } = homeContent[locale];

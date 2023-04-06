@@ -1,1 +1,1 @@
-export * from 'components/Loader/views/Loader';
+export * from 'components/Loader/Loader';

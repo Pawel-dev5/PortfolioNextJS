@@ -5,7 +5,7 @@ import anime from 'animejs';
 import { IconLoader } from 'components/Icons';
 
 // STYLES
-import { StyledLogoWrapper, StyledLoader } from 'components/Loader/views/Styles';
+import { StyledLogoWrapper, StyledLoader } from 'components/Loader/Styles';
 
 export const Loader = ({ finishLoading }: { finishLoading: () => void }) => {
 	const [isMounted, setIsMounted] = useState(false);

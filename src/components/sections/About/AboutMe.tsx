@@ -17,7 +17,7 @@ import {
 	StyledStackHeader,
 	StyledParagraph,
 	StyledTextWrapper,
-} from 'components/sections/About/views/Styles';
+} from 'components/sections/About/Styles';
 
 export const AboutMe = ({ locale }: { locale: string }) => {
 	const { sectionTitle, paragraph1, paragraph2, paragraph3, paragraph4, stackList } = aboutMeContent[locale];
