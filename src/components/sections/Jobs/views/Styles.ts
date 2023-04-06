@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledJobsConteiner = styled.div`
 	margin-top: 250px;
+	min-height: 300px;
 
 	@media (min-width: ${({ theme }) => theme.breakpoints.md}) {
 		margin-top: 150px;

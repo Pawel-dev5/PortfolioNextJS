@@ -1,4 +1,4 @@
-import { AboutMeContentType } from 'translations/models/content';
+import { AboutMeContentType } from 'locales/models/content';
 
 const stackList: string[] = [
 	'JavaScript (ES6+)',

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { StyledMenu, StyledHamburgerButton, StyledSidebar } from 'components/Navigation/sections/Styles';
 
 // UTILS
-import { navLinks } from 'config';
+import { navLinks } from 'components/Navigation/constans';
 import { KEY_CODES } from 'utils';
 import { useOnClickOutside } from 'helpers/useOnClickOutside';
 

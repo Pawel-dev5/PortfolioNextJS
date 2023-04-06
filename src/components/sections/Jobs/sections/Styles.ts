@@ -13,7 +13,7 @@ export const StyledTabPanels = styled.div`
 export const StyledTabPanel = styled.div`
 	width: 100%;
 	height: auto;
-	padding: 10px 5px;
+	padding: 0 5px;
 
 	ul {
 		padding: 0;

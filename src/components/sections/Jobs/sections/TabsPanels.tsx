@@ -2,7 +2,7 @@
 import { CompanyLink } from 'components/common';
 
 // I18N
-import { JobInnerContentType } from 'translations/models/content';
+import { JobInnerContentType } from 'locales/models/content';
 
 // STYLES
 import { StyledTabPanel, StyledTabPanels } from 'components/sections/Jobs/sections/Styles';

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // I18N
-import { homeContent } from 'translations/home';
+import { homeContent } from 'locales/home';
 
 // STYLES
 import {

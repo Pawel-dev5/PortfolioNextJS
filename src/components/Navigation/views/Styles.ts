@@ -66,9 +66,12 @@ export const StyledLink = styled.li<{ duration: string; withoutCounter?: boolean
 	counter-increment: item 1;
 	background-color: transparent;
 	border: none;
-	cursor: pointer;
 
+	button,
 	a {
+		cursor: pointer;
+		background: transparent;
+		border: none;
 		padding: 10px;
 		text-decoration: none;
 		color: ${({ theme }) => theme.text};

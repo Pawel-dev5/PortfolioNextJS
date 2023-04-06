@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+// CONSTANS
+import { navLinks } from 'components/Navigation/constans';
+
 // COMPONENTS
 import { IconLogo } from 'components/Icons/IconLogo';
 import Menu from 'components/Navigation/sections/Menu';
-import { navLinks } from 'config';
 
 // STYLES
 import {
@@ -29,17 +31,15 @@ export const Navigation = (props: NavigationInterface) => {
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
-
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
 
-	const ResumeLink = (
-		<a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-			Resume
-		</a>
-	);
+	const scrollToId = (id: string) => {
+		const element = document?.getElementById(id);
+		if (element) window.scrollTo(0, element.offsetTop - 50);
+	};
 
 	return (
 		<StyledNavigationContainer scrolledToTop={scrolledToTop}>
@@ -52,7 +52,9 @@ export const Navigation = (props: NavigationInterface) => {
 					<ol>
 						{navLinks?.map(({ url, name }, i) => (
 							<StyledLink key={i} duration={`${(i + 1) * 500}ms`}>
-								<Link href={url}>{name}</Link>
+								<button onClick={() => scrollToId(url)} type="button">
+									{name}
+								</button>
 							</StyledLink>
 						))}
 
@@ -75,7 +77,9 @@ export const Navigation = (props: NavigationInterface) => {
 						</StyledLink>
 
 						<StyledLink withoutCounter resume duration={`${navLinks.length * 530}ms`}>
-							{ResumeLink}
+							<a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+								Resume
+							</a>
 						</StyledLink>
 					</ol>
 				</StyledLinks>

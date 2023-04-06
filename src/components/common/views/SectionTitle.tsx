@@ -10,8 +10,8 @@ import {
 // MODELS
 import { SectionTitleInterface } from 'components/common/models/views';
 
-export const SectionTitle = ({ counter, title }: SectionTitleInterface) => (
-	<StyledSectionTitleContainer>
+export const SectionTitle = ({ counter, title, id }: SectionTitleInterface) => (
+	<StyledSectionTitleContainer id={id}>
 		<StyledCounter>0{counter}.</StyledCounter>
 
 		<StyledSectionTitleWrapper>

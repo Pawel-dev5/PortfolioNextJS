@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // I18N
-import { jobsContent } from 'translations/jobs';
+import { jobsContent } from 'locales/jobs';
 
 // COMPONENTS
 import { SectionTitle } from 'components/common';
@@ -20,7 +20,7 @@ import {
 import { findObjectInArray } from 'helpers/arrayHelpers';
 
 // MODELS
-import { JobInnerContentType } from 'translations/models/content';
+import { JobInnerContentType } from 'locales/models/content';
 
 export const Jobs = ({ locale }: { locale: string }) => {
 	const { sectionTitle, jobs } = jobsContent[locale];
@@ -35,7 +35,7 @@ export const Jobs = ({ locale }: { locale: string }) => {
 
 	return (
 		<StyledJobsConteiner>
-			<SectionTitle counter={2} title={sectionTitle} />
+			<SectionTitle counter={2} title={sectionTitle} id="jobs" />
 
 			<StyledTabsWrapper>
 				<StyledTabList role="tablist" aria-label="Job tabs">

@@ -1,6 +1,7 @@
 export interface SectionTitleInterface {
 	counter: number;
 	title: string;
+	id: string;
 }
 
 export type CompanyLinkTypes = 'BIG' | 'DEFAULT';

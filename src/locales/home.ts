@@ -1,4 +1,4 @@
-import { HomeContentType } from 'translations/models/content';
+import { HomeContentType } from 'locales/models/content';
 
 export const homeContent: HomeContentType = {
 	en: {

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { SectionTitle } from 'components/common';
 
 // I18N
-import { aboutMeContent } from 'translations/aboutMe';
+import { aboutMeContent } from 'locales/aboutMe';
 
 // STYLES
 import {
@@ -28,7 +28,7 @@ export const AboutMe = ({ locale }: { locale: string }) => {
 
 	return (
 		<StyledAboutMeContainer>
-			<SectionTitle counter={1} title={sectionTitle} />
+			<SectionTitle counter={1} title={sectionTitle} id="about" />
 
 			<StyledInnerWrapper>
 				<StyledTextWrapper>

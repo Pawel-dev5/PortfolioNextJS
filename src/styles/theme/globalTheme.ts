@@ -14,7 +14,10 @@ declare module 'styled-components' {
 
 export const GlobalStyle = createGlobalStyle`
   ${CustomFonts};
-
+	html{
+		scroll-behavior: smooth;
+	}
+	
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
