@@ -195,7 +195,7 @@ export const projectsContent: ProjectsContentType = {
 		],
 	},
 	pl: {
-		sectionTitle: 'Niektóre rzeczy, które zbudowałem',
+		sectionTitle: 'Projekty',
 		subTitle: 'Inne warte uwagi projekty',
 		moreButton: 'Pokaż więcej',
 		lessButton: 'Pokaż mniej',
