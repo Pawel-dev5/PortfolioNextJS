@@ -8,10 +8,10 @@ import { Home, AboutMe, Jobs, Projects, Footer, Contact } from 'components/secti
 import { Icon } from 'components/Icons';
 
 // MODELS
-import { HomeInterface } from 'pages/models/home';
+import { HomeInterface } from 'components/models/home';
 
 // STYLES
-import { StyledLayout, StyledBodyContainer, StyledRightFloatWrapper, StyledLeftFloatWrapper } from 'pages/Styles';
+import { StyledLayout, StyledBodyContainer, StyledRightFloatWrapper, StyledLeftFloatWrapper } from 'styles/Styles';
 
 const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 	const [loadingStatus, setLoadingStatus] = useState('PENDING');
