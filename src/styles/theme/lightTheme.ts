@@ -12,13 +12,14 @@ declare module 'styled-components' {
 
 const lightTheme = () => {
 	const theme: DefaultTheme = {
+		navBackground: ' #a8b2d1',
+		navText: ' #a8b2d1',
 		text: '#0B192E',
 		textSecond: '#233554',
 		body: '#a8b2d1',
 		secondaryColor: '#64ffda',
 		greenHover: 'rgba(100, 255, 218, 0.1)',
-		navBackground: ' #a8b2d1',
-		navText: '#112240',
+		grey: '#112240',
 		lightNavy: '#a8b2d1',
 		lightestNavy: '#233554',
 

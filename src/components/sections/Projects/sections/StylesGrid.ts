@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { fadeIn } from 'styles/animations';
 
 export const StyledGridDescription = styled.div`
-	color: ${({ theme }) => theme.navText};
+	color: ${({ theme }) => theme.grey};
 	font-size: 17px;
 
 	a {
@@ -43,7 +43,7 @@ export const StyledGridLinks = styled.div`
 	display: flex;
 	align-items: center;
 	margin-right: -10px;
-	color: ${({ theme }) => theme.navText};
+	color: ${({ theme }) => theme.grey};
 
 	a {
 		display: flex;
@@ -67,7 +67,7 @@ export const StyledGridLinks = styled.div`
 
 export const StyledTitle = styled.h3`
 	margin: 0 0 10px;
-	color: ${({ theme }) => theme.navText};
+	color: ${({ theme }) => theme.grey};
 	font-size: 22px;
 	font-weight: ${({ theme }) => theme.bold};
 

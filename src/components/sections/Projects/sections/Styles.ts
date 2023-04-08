@@ -84,7 +84,7 @@ export const StyledStackList = styled.div<{ odd: boolean }>`
 
 	li {
 		margin: 0 20px 5px 0;
-		color: ${({ theme }) => theme.navText};
+		color: ${({ theme }) => theme.grey};
 		font-family: ${({ theme }) => theme.fontMono};
 		font-size: 13px;
 		white-space: nowrap;

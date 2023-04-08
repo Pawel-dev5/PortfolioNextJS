@@ -61,7 +61,12 @@ export const StyledIconWrapper = styled.div`
 	}
 `;
 
-export const StyledLink = styled(Link)<{ duration: string; withoutCounter?: boolean; resume?: boolean }>`
+export const StyledLink = styled(Link)<{
+	duration?: string;
+	withoutCounter?: boolean;
+	resume?: boolean;
+	customMargin?: string;
+}>`
 	animation-name: ${fadeDown};
 	margin: 0 5px;
 	counter-increment: item 1;
@@ -72,7 +77,7 @@ export const StyledLink = styled(Link)<{ duration: string; withoutCounter?: bool
 	background: transparent;
 	border: none;
 	padding: 10px;
-	color: ${({ theme }) => theme.text};
+	color: ${({ theme }) => theme.navText};
 
 	&:hover,
 	&:active {
@@ -94,6 +99,12 @@ export const StyledLink = styled(Link)<{ duration: string; withoutCounter?: bool
 		duration &&
 		css`
 			animation-duration: ${duration};
+		`}
+
+	${({ customMargin }) =>
+		customMargin &&
+		css`
+			margin: ${customMargin};
 		`}
 
 	${({ resume }) =>
@@ -122,13 +133,17 @@ export const StyledLink = styled(Link)<{ duration: string; withoutCounter?: bool
 				color: ${({ theme }) => theme.secondaryColor};
 			}
 		`}
+
+	@media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+		margin-left: 0;
+	}
 `;
 
 export const StyledLinks = styled.div`
 	display: flex;
 	align-items: center;
 
-	@media (max-width: 768px) {
+	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
 		display: none;
 	}
 

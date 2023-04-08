@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+
+// COMPONENTS
+import { ResumeButton } from 'components/common';
 
 // STYLES
 import { StyledMenu, StyledHamburgerButton, StyledSidebar } from 'components/Navigation/sections/Styles';
@@ -12,6 +14,7 @@ import { scrollToId } from 'utils';
 
 // MODELS
 import { NavigationInterface } from 'components/Navigation/models/views';
+import { StyledLink } from '../views/Styles';
 
 const Menu = ({ toggleTheme, isDarkTheme, menuIsOpen, setMenuIsOpen }: NavigationInterface) => {
 	const { asPath, locale } = useRouter();
@@ -42,17 +45,22 @@ const Menu = ({ toggleTheme, isDarkTheme, menuIsOpen, setMenuIsOpen }: Navigatio
 							))}
 						</ol>
 
-						<Link href={asPath} locale={locale === 'pl' ? 'en' : 'pl'}>
-							{locale === 'pl' ? 'en' : 'pl'}
-						</Link>
+						<StyledLink href={asPath} locale={locale === 'pl' ? 'en' : 'pl'} withoutCounter>
+							{locale === 'pl' ? 'EN' : 'PL'}
+						</StyledLink>
 
-						<button onClick={toggleTheme} type="button" aria-label={isDarkTheme ? 'Light mode' : 'Dark mode'}>
+						<StyledLink
+							as="button"
+							type="button"
+							onClick={toggleTheme}
+							withoutCounter
+							aria-label={isDarkTheme ? 'Light mode' : 'Dark mode'}
+							role="img"
+						>
 							{isDarkTheme ? <>🌞</> : <>🌜</>}
-						</button>
+						</StyledLink>
 
-						<a href="/resume.pdf" className="resume-link">
-							Resume
-						</a>
+						<ResumeButton customMargin="30px 0 0" />
 					</nav>
 				</StyledSidebar>
 			</div>

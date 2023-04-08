@@ -12,7 +12,7 @@ export const StyledFooter = styled.footer`
 	> a {
 		text-align: center;
 		text-decoration: none;
-		color: ${({ theme }) => theme.navText};
+		color: ${({ theme }) => theme.grey};
 		font-family: ${({ theme }) => theme.fontMono};
 		font-size: 12px;
 		line-height: 1;

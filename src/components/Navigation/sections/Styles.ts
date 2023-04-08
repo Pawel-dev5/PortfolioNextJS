@@ -113,7 +113,7 @@ export const StyledSidebar = styled.aside<{ menuOpen: boolean }>`
 		align-items: center;
 		width: 100%;
 		flex-direction: column;
-		color: ${({ theme }) => theme.navText};
+		color: ${({ theme }) => theme.grey};
 		text-align: center;
 	}
 

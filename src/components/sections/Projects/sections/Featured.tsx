@@ -43,7 +43,7 @@ export const Featured = ({ locale }: { locale: string }) => {
 								{links?.map(({ id: linkId, url, type }) => (
 									<>
 										{url && (
-											<a key={linkId} href={url} aria-label={`${type} Link`}>
+											<a key={linkId} href={url} target="_blank" aria-label={`${type} Link`}>
 												<Icon name={type} />
 											</a>
 										)}

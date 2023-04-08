@@ -22,6 +22,7 @@ export type DefaultThemeInterface = {
 	secondaryColor?: string;
 	greenHover?: string;
 	navBackground?: string;
+	grey?: string;
 	navText?: string;
 	lightNavy?: string;
 	lightestNavy?: string;

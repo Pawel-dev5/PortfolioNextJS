@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { navLinks } from 'components/Navigation/constans';
 
 // COMPONENTS
+import { ResumeButton } from 'components/common';
 import { IconLogo } from 'components/Icons/IconLogo';
 import Menu from 'components/Navigation/sections/Menu';
 
@@ -74,16 +75,7 @@ export const Navigation = (props: NavigationInterface) => {
 							{isDarkTheme ? <>🌞</> : <>🌜</>}
 						</StyledLink>
 
-						<StyledLink
-							href="https://drive.google.com/file/d/1lxdlStYPmAqSzIvYhrrF1oxdPFWg7S0C/view?usp=sharing"
-							target="_blank"
-							rel="noopener noreferrer"
-							withoutCounter
-							resume
-							duration={`${navLinks.length * 530}ms`}
-						>
-							Resume
-						</StyledLink>
+						<ResumeButton />
 					</ol>
 				</StyledLinks>
 			</StyledElementsWrapper>

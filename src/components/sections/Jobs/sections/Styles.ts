@@ -48,7 +48,7 @@ export const StyledTabPanel = styled.div`
 
 	.range {
 		margin-bottom: 25px;
-		color: ${({ theme }) => theme.navText};
+		color: ${({ theme }) => theme.grey};
 		font-family: ${({ theme }) => theme.fontMono};
 		font-size: 13px;
 	}
