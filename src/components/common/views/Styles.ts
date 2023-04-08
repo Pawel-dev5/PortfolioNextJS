@@ -23,7 +23,7 @@ export const StyledSectionTitleLine = styled.div`
 	background-color: ${({ theme }) => theme.lightestNavy};
 
 	width: 100%;
-	max-width: 300px;
+	max-width: 270px;
 	@media (min-width: ${({ theme }) => theme.breakpoints.md}) {
 		min-width: 350px;
 	}

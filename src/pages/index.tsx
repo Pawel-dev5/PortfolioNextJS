@@ -19,9 +19,9 @@ const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 	const [floatedIsVisible, setFloatedIsVisible] = useState(false);
 
 	useEffect(() => {
-		// setLoadingStatus('LOADING');
-		// TMP
-		setLoadingStatus('DONE');
+		setLoadingStatus('LOADING');
+		// TMP OFF INITIAL LOADER
+		// setLoadingStatus('DONE');
 		const timeout = setTimeout(() => setFloatedIsVisible(true), 700);
 		return () => clearTimeout(timeout);
 	}, []);

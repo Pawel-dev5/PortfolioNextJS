@@ -55,7 +55,7 @@ export const Featured = ({ locale }: { locale: string }) => {
 
 					{imageUrl && (
 						<StyledImageWrapper odd={featureIndex % 2 === 0} jpg={imageUrl?.includes('.jpg') || imageUrl?.includes('.jpeg')}>
-							<StyledImage src={`/assets/${imageUrl}`} alt="Paweł Nowecki" layout="fill" />
+							<StyledImage src={`/assets/${imageUrl}`} alt={`Featured-project-${imageUrl}`} layout="fill" />
 						</StyledImageWrapper>
 					)}
 				</StyledProject>

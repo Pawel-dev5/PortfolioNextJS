@@ -61,7 +61,7 @@ export const StyledTabButton = styled.button<{ isActive: boolean }>`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		min-width: 120px;
+		min-width: 150px;
 		padding: 0 15px;
 		border-left: 0;
 		border-bottom: 2px solid ${({ theme }) => theme.lightestNavy};
@@ -92,9 +92,9 @@ export const StyledHighlight = styled.div<{ activeTabId: number }>`
 		top: 48px;
 		bottom: 0;
 		width: 100%;
-		max-width: 120px;
+		max-width: 150px;
 		height: 2px;
 		margin-left: 25px;
-		transform: translateX(calc(${({ activeTabId }) => activeTabId} * 120px));
+		transform: translateX(calc(${({ activeTabId }) => activeTabId} * 150px));
 	}
 `;
