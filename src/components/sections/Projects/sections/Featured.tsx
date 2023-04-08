@@ -23,7 +23,7 @@ export const Featured = ({ locale }: { locale: string }) => {
 
 	return (
 		<StyledProjectsGrid>
-			{featured?.map(({ id, title, description, stack, links }, featureIndex) => (
+			{featured?.map(({ id, title, description, stack, links, imageUrl }, featureIndex) => (
 				<StyledProject key={id}>
 					<StyledContent odd={featureIndex % 2 === 0}>
 						<StyledOverline>Featured Project</StyledOverline>
@@ -41,17 +41,23 @@ export const Featured = ({ locale }: { locale: string }) => {
 						{links && links?.length > 0 && (
 							<StyledLinks odd={featureIndex % 2 === 0}>
 								{links?.map(({ id: linkId, url, type }) => (
-									<a key={linkId} href={url} aria-label={`${type} Link`}>
-										<Icon name={type} />
-									</a>
+									<>
+										{url && (
+											<a key={linkId} href={url} aria-label={`${type} Link`}>
+												<Icon name={type} />
+											</a>
+										)}
+									</>
 								))}
 							</StyledLinks>
 						)}
 					</StyledContent>
 
-					<StyledImageWrapper odd={featureIndex % 2 === 0}>
-						<StyledImage src="/assets/halcyon.jpg" alt="Paweł Nowecki" layout="fill" objectFit="cover" />
-					</StyledImageWrapper>
+					{imageUrl && (
+						<StyledImageWrapper odd={featureIndex % 2 === 0} jpg={imageUrl?.includes('.jpg') || imageUrl?.includes('.jpeg')}>
+							<StyledImage src={`/assets/${imageUrl}`} alt="Paweł Nowecki" layout="fill" />
+						</StyledImageWrapper>
+					)}
 				</StyledProject>
 			))}
 		</StyledProjectsGrid>

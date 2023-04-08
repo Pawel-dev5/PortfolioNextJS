@@ -52,6 +52,7 @@ export const StyledFotoBackground = styled.div<{ isHovered: boolean }>`
 
 export const StyledAboutMeFoto = styled(Image)`
 	border-radius: ${({ theme }) => theme.radius};
+	object-fit: cover;
 `;
 
 export const StyledParagraph = styled.p`

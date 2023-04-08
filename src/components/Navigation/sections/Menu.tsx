@@ -8,6 +8,7 @@ import { StyledMenu, StyledHamburgerButton, StyledSidebar } from 'components/Nav
 // UTILS
 import { navLinks } from 'components/Navigation/constans';
 import { useOnClickOutside } from 'helpers/useOnClickOutside';
+import { scrollToId } from 'utils';
 
 // MODELS
 import { NavigationInterface } from 'components/Navigation/models/views';
@@ -19,14 +20,6 @@ const Menu = ({ toggleTheme, isDarkTheme, menuIsOpen, setMenuIsOpen }: Navigatio
 
 	const wrapperRef = useRef();
 	useOnClickOutside(wrapperRef, () => setMenuIsOpen(false));
-
-	const scrollToId = (id: string) => {
-		const element = document.getElementById(id);
-		if (element) {
-			window.scrollTo(0, element.offsetTop - 50);
-			setMenuIsOpen(false);
-		}
-	};
 
 	return (
 		<StyledMenu>

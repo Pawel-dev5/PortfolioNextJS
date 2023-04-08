@@ -14,7 +14,7 @@ import {
 } from 'components/sections/Projects/sections/StylesGrid';
 
 export const GridList = ({ locale }: { locale: string }) => {
-	const { projects } = projectsContent[locale];
+	const { projects, moreButton, lessButton } = projectsContent[locale];
 	const [showMore, setShowMore] = useState(false);
 	const firstSix = projects.slice(0, 6);
 	const projectsToShow = showMore ? projects : firstSix;
@@ -28,7 +28,7 @@ export const GridList = ({ locale }: { locale: string }) => {
 			</StyledGridWrapper>
 
 			<StyledGridMoreButton onClick={() => setShowMore(!showMore)} type="button">
-				Show {showMore ? 'Less' : 'More'}
+				{showMore ? lessButton : moreButton}
 			</StyledGridMoreButton>
 		</StyledProjectsSection>
 	);

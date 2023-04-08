@@ -37,9 +37,13 @@ export const GridItem = ({ projectIndex, links, title, description, stack, proje
 						{links && links?.length > 0 && (
 							<StyledGridLinks>
 								{links?.map(({ id: linkId, url, type }) => (
-									<a key={linkId} href={url} aria-label={`${type} Link`}>
-										<Icon name={type} />
-									</a>
+									<>
+										{url && (
+											<a key={linkId} href={url} aria-label={`${type} Link`}>
+												<Icon name={type} />
+											</a>
+										)}
+									</>
 								))}
 							</StyledGridLinks>
 						)}

@@ -175,7 +175,7 @@ export const StyledProject = styled.li<{ duration?: string }>`
 export const StyledGridStackList = styled.ul`
 	display: flex;
 	align-items: flex-end;
-	flex-grow: 1;
+	row-gap: 8px;
 	flex-wrap: wrap;
 	padding: 0;
 	margin: 20px 0 0 0;

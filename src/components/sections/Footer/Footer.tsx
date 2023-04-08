@@ -6,7 +6,7 @@ export const Footer = () => (
 			Built by Paweł&nbsp;Nowecki
 		</a>
 		|
-		<a href="https://github.com/bchiang7/v4" target="_blank">
+		<a href="https://github.com/bchiang7" target="_blank">
 			Designed by Brittany&nbsp;Chiang
 		</a>
 	</StyledFooter>

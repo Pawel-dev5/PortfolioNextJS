@@ -13,7 +13,7 @@ export const jobsContent: JobsContentType = {
 				descriptions: [
 					'Development of new functionalities in the Moje Suzuki mobile application.',
 					'Development and bug fixes in the CMS to support the Moje Suzuki mobile application.',
-					'Development of new functionalities in the c-how mobile application.',
+					'Development of new functionalities in the cHow mobile application.',
 					'Development of new functionalities in the My Shop (Eurocash) mobile application.',
 				],
 			},
@@ -68,7 +68,7 @@ export const jobsContent: JobsContentType = {
 				descriptions: [
 					'Rozwój nowych funkcjonalności w aplikacji mobilnej Moje Suzuki.',
 					'Rozwój oraz naprawa błędów w CMS do obsługi aplikacji mobilnej Moje Suzuki.',
-					'Rozwój nowych funkcjonalności w aplikacji mobilnej c-how.',
+					'Rozwój nowych funkcjonalności w aplikacji mobilnej cHow.',
 					'Rozwój nowych funkcjonalności w aplikacji mobilnej Mój Sklep(Eurocash).',
 				],
 			},

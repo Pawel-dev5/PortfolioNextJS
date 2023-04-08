@@ -41,7 +41,7 @@ export type JobsContentType = {
 export type ProjectsLinksTypes = {
 	id: number;
 	type: IconTypes;
-	url: string;
+	url: string | null;
 };
 
 export type ProjectsInnerContentType = {
@@ -57,6 +57,8 @@ export type ProjectsContentType = {
 	[key: string]: {
 		sectionTitle: string;
 		subTitle: string;
+		moreButton: string;
+		lessButton: string;
 		featured: ProjectsInnerContentType[];
 		projects: ProjectsInnerContentType[];
 	};

@@ -5,6 +5,11 @@ import Image from 'next/image';
 
 export const StyledImage = styled(Image)`
 	border-radius: ${({ theme }) => theme.radius};
+	object-fit: cover;
+
+	@media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+		object-fit: contain;
+	}
 `;
 
 export const StyledProjectsGrid = styled.ul`
@@ -105,7 +110,6 @@ export const StyledStackList = styled.div<{ odd: boolean }>`
 
 			li {
 				margin: 0 0 5px 20px;
-
 				@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
 					margin: 0 10px 5px 0;
 				}
@@ -175,19 +179,14 @@ export const StyledProject = styled.li`
 		}
 
 		@media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-			margin-bottom: 30px;
+			margin-bottom: 50px;
 		}
 	}
 `;
 
-export const StyledImageWrapper = styled.div<{ odd: boolean }>`
-	box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+export const StyledImageWrapper = styled.div<{ odd: boolean; jpg?: boolean }>`
 	transition: ${({ theme }) => theme.transition};
 
-	&:hover,
-	&:focus {
-		box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
-	}
 	grid-column: 6 / -1;
 	grid-row: 1 / -1;
 	position: relative;
@@ -196,11 +195,23 @@ export const StyledImageWrapper = styled.div<{ odd: boolean }>`
 	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
 		grid-column: 1 / -1;
 		height: 100%;
-		opacity: 0.25;
+		opacity: 0.15;
 	}
 	width: 100%;
 	height: 100%;
-	min-height: 300px;
+	min-height: 400px;
+
+	${({ jpg }) =>
+		jpg &&
+		css`
+			min-height: 350px;
+			box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+
+			&:hover,
+			&:focus {
+				box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+			}
+		`}
 
 	${({ odd }) =>
 		odd &&

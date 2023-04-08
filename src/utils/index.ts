@@ -14,3 +14,13 @@ export const KEY_CODES = {
 	SPACE_IE11: 'Spacebar',
 	ENTER: 'Enter',
 };
+
+export const scrollToId = (id: string) => {
+	const element = document.getElementById(id);
+	if (element) {
+		element.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+		});
+	}
+};

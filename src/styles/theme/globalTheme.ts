@@ -16,7 +16,9 @@ export const GlobalStyle = createGlobalStyle`
   ${CustomFonts};
 	html{
 		scroll-behavior: smooth;
+		scroll-padding-top: 150px;
 	}
+	
 	
   body {
     background: ${({ theme }) => theme.body};

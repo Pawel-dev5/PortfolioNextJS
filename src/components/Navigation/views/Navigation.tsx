@@ -20,6 +20,9 @@ import {
 // MODELS
 import { NavigationInterface } from 'components/Navigation/models/views';
 
+// UTILS
+import { scrollToId } from 'utils';
+
 export const Navigation = (props: NavigationInterface) => {
 	const { asPath, locale } = useRouter();
 	const { toggleTheme, isDarkTheme } = props;
@@ -34,11 +37,6 @@ export const Navigation = (props: NavigationInterface) => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
-
-	const scrollToId = (id: string) => {
-		const element = document.getElementById(id);
-		if (element) window.scrollTo(0, element.offsetTop - 50);
-	};
 
 	return (
 		<StyledNavigationContainer scrolledToTop={scrolledToTop}>
