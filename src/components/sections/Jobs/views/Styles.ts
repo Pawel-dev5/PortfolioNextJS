@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledJobsConteiner = styled.section`
-	min-height: 300px;
+	min-height: 350px;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
 		margin-top: 300px;
@@ -11,6 +11,7 @@ export const StyledJobsConteiner = styled.section`
 export const StyledTabsWrapper = styled.div`
 	@media (min-width: ${({ theme }) => theme.breakpoints.md}) {
 		display: flex;
+		gap: 16px;
 	}
 `;
 
@@ -40,15 +41,16 @@ export const StyledTabButton = styled.button<{ isActive: boolean }>`
 	display: flex;
 	align-items: center;
 	width: 100%;
-	min-width: 170px;
-	height: 42px;
-	padding: 0 20px 2px;
+	min-width: 180px;
+	height: 50px;
+	padding: 0 30px 2px;
 	border-left: 2px solid ${({ theme }) => theme.lightestNavy};
 	background-color: ${({ isActive, theme }) => (isActive ? theme.lightestNavy : 'transparent')};
 	color: ${({ isActive, theme }) => (isActive ? theme.secondaryColor : theme.textSecond)};
 
 	font-family: ${({ theme }) => theme.fontMono};
-	font-size: 13px;
+	font-weight: ${({ theme }) => theme.bold};
+	font-size: 16px;
 	text-align: left;
 	white-space: nowrap;
 
@@ -79,15 +81,15 @@ export const StyledHighlight = styled.div<{ activeTabId: number }>`
 	left: 0;
 	z-index: 10;
 	width: 2px;
-	height: 42px;
+	height: 50px;
 	border-radius: ${({ theme }) => theme.radius};
 	background: ${({ theme }) => theme.secondaryColor};
-	transform: translateY(calc(${({ activeTabId }) => activeTabId} * 42px));
+	transform: translateY(calc(${({ activeTabId }) => activeTabId} * 50px));
 	transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 	transition-delay: 0.1s;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-		top: 40px;
+		top: 48px;
 		bottom: 0;
 		width: 100%;
 		max-width: 120px;

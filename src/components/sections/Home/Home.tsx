@@ -37,7 +37,9 @@ export const Home = ({ locale }: { locale: string }) => {
 				<CompanyLink company={company} url="https://10a.io/" />
 			</StyledHomeDescription>
 
-			<StyledButton duration={isVisible ? `${startDuration * 5}ms` : null}>{button}</StyledButton>
+			<StyledButton href="#jobs" duration={isVisible ? `${startDuration * 5}ms` : null}>
+				{button}
+			</StyledButton>
 		</StyledHomeContainer>
 	);
 };

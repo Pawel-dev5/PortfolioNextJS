@@ -6,6 +6,7 @@ import { CompanyLinkTypes } from 'components/common/models/views';
 // SECTION TITLE
 export const StyledSectionTitleContainer = styled.div`
 	width: 100%;
+	max-width: 100%;
 	margin: 250px 0px 40px;
 	display: flex;
 	align-items: center;
@@ -48,8 +49,8 @@ export const StyledCounter = styled.span`
 `;
 
 export const StyledTitle = styled.span`
-	font-weight: ${({ theme }) => theme.semiBold};
-	font-size: clamp(26px, 5vw, 32px);
+	font-weight: ${({ theme }) => theme.bold};
+	font-size: clamp(24px, 5vw, 32px);
 	white-space: nowrap;
 	display: flex;
 	align-items: flex-end;
