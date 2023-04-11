@@ -30,9 +30,12 @@ const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 		<>
 			<Head>
 				<title>Paweł Nowecki</title>
-				<meta name="description" content="Frontend Developer Portfolio" />
+				<meta
+					name="description"
+					content="Frontend Developer Portfolio. Programowanie stron i sklepów internetowych oraz aplikacji mobilnych"
+				/>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="preconnect" href="/favicon.ico" />
 			</Head>
 
 			<StyledLayout>

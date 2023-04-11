@@ -184,7 +184,7 @@ export const projectsContent: ProjectsContentType = {
 			},
 			{
 				id: 12,
-				title: 'Morse Translator ',
+				title: 'Morse Translator',
 				description: 'Morse code translator',
 				stack: ['Typescript', 'React'],
 				links: [
