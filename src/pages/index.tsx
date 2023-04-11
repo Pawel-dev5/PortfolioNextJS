@@ -50,18 +50,24 @@ const App = ({ toggleTheme, isDarkTheme, locale }: HomeInterface) => {
 						/>
 
 						<StyledRightFloatWrapper floatedIsVisible={floatedIsVisible}>
-							<a href="mailto:p.nowecki@gmail.com">p.nowecki@gmail.com</a>
+							<a href="mailto:p.nowecki@gmail.com" title="p.nowecki@gmail.com">
+								p.nowecki@gmail.com
+							</a>
 						</StyledRightFloatWrapper>
 
 						<StyledLeftFloatWrapper floatedIsVisible={floatedIsVisible}>
 							<div>
-								<a href="https://github.com/Pawel-dev5" target="_blank">
+								<a href="https://github.com/Pawel-dev5" target="_blank" title="https://github.com/Pawel-dev5">
 									<Icon name="GitHub" />
 								</a>
-								<a href="https://www.linkedin.com/in/pawe%C5%82-nowecki/" target="_blank">
+								<a
+									href="https://www.linkedin.com/in/pawe%C5%82-nowecki/"
+									target="_blank"
+									title="https://www.linkedin.com/in/pawe%C5%82-nowecki/"
+								>
 									<Icon name="LinkedIn" />
 								</a>
-								<a href="https://www.facebook.com/p.nowecki" target="_blank">
+								<a href="https://www.facebook.com/p.nowecki" target="_blank" title="https://www.facebook.com/p.nowecki">
 									<Icon name="Facebook" />
 								</a>
 							</div>
