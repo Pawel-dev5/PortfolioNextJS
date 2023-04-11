@@ -47,7 +47,7 @@ export const Navigation = (props: NavigationInterface) => {
 
 			<StyledElementsWrapper>
 				<StyledLinks>
-					<ol>
+					<div>
 						{navLinks?.map(({ url, name }, i) => (
 							<StyledLink key={i} duration={`${(i + 1) * 500}ms`} as="button" type="button" onClick={() => scrollToId(url)}>
 								{name}
@@ -76,7 +76,7 @@ export const Navigation = (props: NavigationInterface) => {
 						</StyledLink>
 
 						<ResumeButton />
-					</ol>
+					</div>
 				</StyledLinks>
 			</StyledElementsWrapper>
 

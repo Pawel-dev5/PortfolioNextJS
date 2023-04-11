@@ -65,7 +65,7 @@ export const StyledGridLinks = styled.div`
 	}
 `;
 
-export const StyledTitle = styled.h3`
+export const StyledTitle = styled.h4`
 	margin: 0 0 10px;
 	color: ${({ theme }) => theme.grey};
 	font-size: 22px;

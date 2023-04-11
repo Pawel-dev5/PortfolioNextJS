@@ -147,7 +147,7 @@ export const StyledLinks = styled.div`
 		display: none;
 	}
 
-	ol {
+	div {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

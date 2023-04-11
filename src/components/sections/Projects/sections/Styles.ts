@@ -73,7 +73,7 @@ export const StyledContent = styled.div<{ odd: boolean }>`
 		`}
 `;
 
-export const StyledStackList = styled.div<{ odd: boolean }>`
+export const StyledStackList = styled.ul<{ odd: boolean }>`
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
