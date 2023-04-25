@@ -8,6 +8,9 @@ import { GlobalStyle } from 'styles/theme/globalTheme';
 import lightTheme from 'styles/theme/lightTheme';
 import darkTheme from 'styles/theme/darkTheme';
 
+// VERCEL ANALYTICS
+import { Analytics } from '@vercel/analytics/react';
+
 const App = ({ Component, pageProps }: AppProps) => {
 	const { locale, defaultLocale } = useRouter();
 
@@ -41,6 +44,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 		<ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
 			<GlobalStyle />
 			<Component {...pageProps} toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} locale={localeHandler()} />
+			<Analytics />
 		</ThemeProvider>
 	);
 };
