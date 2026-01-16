@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useInView, useMotionValue, useTransform, anima
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { TECHNOLOGIES } from '@/lib/technologies';
 
 const projects = [
 	{
@@ -15,19 +16,19 @@ const projects = [
 			'Zaawansowana platforma do automatyzacji procesów biznesowych z wykorzystaniem sztucznej inteligencji. System umożliwia tworzenie inteligentnych agentów AI, automatyzację workflow oraz integrację z popularnymi narzędziami.',
 		imageUrl: 'irrify.png',
 		technologies: [
-			'Next JS',
-			'Typescript',
-			'Vertex AI',
-			'React',
-			'Konva',
-			'Keycloak',
-			'Prisma',
-			'Zustand',
-			'Supabase',
-			'Stripe',
-			'React Query',
-			'Nodemailer',
-			'Husky',
+			TECHNOLOGIES.NEXT_JS,
+			TECHNOLOGIES.TYPESCRIPT,
+			TECHNOLOGIES.VERTEX_AI,
+			TECHNOLOGIES.REACT,
+			TECHNOLOGIES.KONVA,
+			TECHNOLOGIES.KEYCLOAK,
+			TECHNOLOGIES.PRISMA,
+			TECHNOLOGIES.ZUSTAND,
+			TECHNOLOGIES.SUPABASE,
+			TECHNOLOGIES.STRIPE,
+			TECHNOLOGIES.REACT_QUERY,
+			TECHNOLOGIES.NODEMAILER,
+			TECHNOLOGIES.HUSKY,
 		],
 		link: 'https://irrify.ai',
 		imageFit: 'cover',
@@ -38,7 +39,17 @@ const projects = [
 		category: 'Mobile App',
 		description:
 			'The cHow system is used to quickly and conveniently collect and analyze information from field employees about your own sales network, competitive networks and the environment. The system consists of a web application available in a browser and a mobile application with which it is currently working on implementing new functionalities or fixing current errors.',
-		technologies: ['Typescript', 'React Native', 'Expo', 'Keycloak', 'Redux', 'Firebase', 'I18n', 'Axios', 'Jest'],
+		technologies: [
+			TECHNOLOGIES.TYPESCRIPT,
+			TECHNOLOGIES.REACT_NATIVE,
+			TECHNOLOGIES.EXPO,
+			TECHNOLOGIES.KEYCLOAK,
+			TECHNOLOGIES.REDUX,
+			TECHNOLOGIES.FIREBASE,
+			TECHNOLOGIES.I18N,
+			TECHNOLOGIES.AXIOS,
+			TECHNOLOGIES.JEST,
+		],
 		links: 'https://play.google.com/store/apps/details?id=pl.chow.app&hl=pl&gl=US',
 		imageUrl: 'chow.png',
 		imageFit: 'contain',
@@ -49,7 +60,15 @@ const projects = [
 		category: 'Mobile App',
 		description:
 			'Development of new functionalities in the My Suzuki application, thanks to which you can conveniently review the service history of your Suzuki, receive notifications about inspections and service and recall actions. And you can also contact your dealer, conveniently send an Assistance request or use your card in the Suzuki Service Program. Recently added functionality is sailing weather and watermark database for users of Suzuki Marine products.',
-		technologies: ['Javascript', 'React Native', 'Redux', 'Firebase', 'Formik', 'I18n', 'Axios'],
+		technologies: [
+			TECHNOLOGIES.JAVASCRIPT,
+			TECHNOLOGIES.REACT_NATIVE,
+			TECHNOLOGIES.REDUX,
+			TECHNOLOGIES.FIREBASE,
+			TECHNOLOGIES.FORMIK,
+			TECHNOLOGIES.I18N,
+			TECHNOLOGIES.AXIOS,
+		],
 		links: 'https://play.google.com/store/apps/details?id=com.mojesuzukiapp&hl=pl&gl=US',
 		imageUrl: 'suzuki.png',
 		imageFit: 'contain',
@@ -60,7 +79,14 @@ const projects = [
 		category: 'Website',
 		description:
 			'Wordpress used as a headless CMS and using Advanced Custom Fields and GraphQL connected to the frontend created using NextJS. Thanks to the combination of these technologies and maintaining all possible standards, the website achieved the maximum possible result in Google tests.',
-		technologies: ['Javascript', 'Next', 'Styled-components', 'Wordpress', 'ACF', 'GraphQL'],
+		technologies: [
+			TECHNOLOGIES.JAVASCRIPT,
+			TECHNOLOGIES.NEXT_JS,
+			TECHNOLOGIES.STYLED_COMPONENTS,
+			TECHNOLOGIES.WORDPRESS,
+			TECHNOLOGIES.ACF,
+			TECHNOLOGIES.GRAPHQL,
+		],
 		links: 'https://www.restauracja-nadzalewem.pl/',
 		imageUrl: 'restauracja-nad-zalewem.jpeg',
 		imageFit: 'cover',
@@ -187,8 +213,13 @@ const Portfolio = () => {
 									{/* Tech Stack */}
 									<div className="flex flex-wrap gap-2 mb-6">
 										{activeProject.technologies.map((tech) => (
-											<span key={tech} className="px-3 py-1 bg-secondary text-sm font-medium rounded-full">
-												{tech}
+											<span
+												key={tech.name}
+												className="px-3 py-1 bg-secondary text-sm font-medium rounded-full flex items-center gap-2"
+											>
+												{/* Optional: Show icon in chip too if you want */}
+												{/* <div className="relative w-4 h-4"><Image src={tech.icon} alt="" fill /></div> */}
+												{tech.name}
 											</span>
 										))}
 									</div>

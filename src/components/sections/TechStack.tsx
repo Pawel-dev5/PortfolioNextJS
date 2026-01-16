@@ -2,33 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
-const technologies = [
-	{ name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-	{ name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-	{ name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-	{ name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-	{ name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-	{ name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-	{ name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-	{ name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-	{ name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-	{ name: 'GraphQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
-	{ name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-	{
-		name: 'AWS',
-		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
-	},
-	{ name: 'Google Cloud', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
-	{ name: 'Redux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg' },
-	{ name: 'WordPress', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
-	{ name: 'Jest', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg' },
-	{ name: 'Cypress', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg' },
-	{ name: 'ESLint', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg' },
-	{ name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-];
+import { TECHNOLOGIES } from '@/lib/technologies';
 
 const TechStack = () => {
+	const technologies = Object.values(TECHNOLOGIES);
+
 	// Duplicate for infinite scroll effect
 	const duplicatedTech = [...technologies, ...technologies];
 
@@ -62,13 +40,14 @@ const TechStack = () => {
 								key={`row1-${index}`}
 								className="group relative flex flex-col items-center justify-center w-24 h-24 glass-card p-4 shrink-0 hover-lift cursor-pointer"
 							>
-								<Image
-									src={tech.icon}
-									alt={tech.name}
-									width={40}
-									height={40}
-									className="grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:-translate-y-3"
-								/>
+								<div className="relative w-10 h-10">
+									<Image
+										src={tech.icon}
+										alt={tech.name}
+										fill
+										className="object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:-translate-y-3"
+									/>
+								</div>
 								<span className="absolute bottom-2 left-0 right-0 px-1 text-xs text-center text-muted-foreground opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
 									{tech.name}
 								</span>
