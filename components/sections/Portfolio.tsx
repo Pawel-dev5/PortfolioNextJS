@@ -1,114 +1,113 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { TECHNOLOGIES } from '@/lib/technologies';
-
-const projects = [
-	{
-		id: 0,
-		title: 'Irrify.ai',
-		category: 'AI Platform',
-		description:
-			'Zaawansowana platforma do automatyzacji procesów biznesowych z wykorzystaniem sztucznej inteligencji. System umożliwia tworzenie inteligentnych agentów AI, automatyzację workflow oraz integrację z popularnymi narzędziami.',
-		imageUrl: 'irrify.png',
-		technologies: [
-			TECHNOLOGIES.NEXT_JS,
-			TECHNOLOGIES.TYPESCRIPT,
-			TECHNOLOGIES.VERTEX_AI,
-			TECHNOLOGIES.REACT,
-			TECHNOLOGIES.KONVA,
-			TECHNOLOGIES.KEYCLOAK,
-			TECHNOLOGIES.PRISMA,
-			TECHNOLOGIES.ZUSTAND,
-			TECHNOLOGIES.SUPABASE,
-			TECHNOLOGIES.STRIPE,
-			TECHNOLOGIES.REACT_QUERY,
-			TECHNOLOGIES.NODEMAILER,
-			TECHNOLOGIES.HUSKY,
-		],
-		link: 'https://irrify.ai',
-		imageFit: 'cover',
-	},
-	{
-		id: 1,
-		title: 'cHow',
-		category: 'Mobile App',
-		description:
-			'The cHow system is used to quickly and conveniently collect and analyze information from field employees about your own sales network, competitive networks and the environment. The system consists of a web application available in a browser and a mobile application with which it is currently working on implementing new functionalities or fixing current errors.',
-		technologies: [
-			TECHNOLOGIES.TYPESCRIPT,
-			TECHNOLOGIES.REACT_NATIVE,
-			TECHNOLOGIES.EXPO,
-			TECHNOLOGIES.KEYCLOAK,
-			TECHNOLOGIES.REDUX,
-			TECHNOLOGIES.FIREBASE,
-			TECHNOLOGIES.I18N,
-			TECHNOLOGIES.AXIOS,
-			TECHNOLOGIES.JEST,
-		],
-		links: 'https://play.google.com/store/apps/details?id=pl.chow.app&hl=pl&gl=US',
-		imageUrl: 'chow.png',
-		imageFit: 'contain',
-	},
-	{
-		id: 2,
-		title: 'Moje Suzuki',
-		category: 'Mobile App',
-		description:
-			'Development of new functionalities in the My Suzuki application, thanks to which you can conveniently review the service history of your Suzuki, receive notifications about inspections and service and recall actions. And you can also contact your dealer, conveniently send an Assistance request or use your card in the Suzuki Service Program. Recently added functionality is sailing weather and watermark database for users of Suzuki Marine products.',
-		technologies: [
-			TECHNOLOGIES.JAVASCRIPT,
-			TECHNOLOGIES.REACT_NATIVE,
-			TECHNOLOGIES.REDUX,
-			TECHNOLOGIES.FIREBASE,
-			TECHNOLOGIES.FORMIK,
-			TECHNOLOGIES.I18N,
-			TECHNOLOGIES.AXIOS,
-		],
-		links: 'https://play.google.com/store/apps/details?id=com.mojesuzukiapp&hl=pl&gl=US',
-		imageUrl: 'suzuki.png',
-		imageFit: 'contain',
-	},
-	{
-		id: 3,
-		title: 'Restauracja nad zalewem',
-		category: 'Website',
-		description:
-			'Wordpress used as a headless CMS and using Advanced Custom Fields and GraphQL connected to the frontend created using NextJS. Thanks to the combination of these technologies and maintaining all possible standards, the website achieved the maximum possible result in Google tests.',
-		technologies: [
-			TECHNOLOGIES.JAVASCRIPT,
-			TECHNOLOGIES.NEXT_JS,
-			TECHNOLOGIES.STYLED_COMPONENTS,
-			TECHNOLOGIES.WORDPRESS,
-			TECHNOLOGIES.ACF,
-			TECHNOLOGIES.GRAPHQL,
-		],
-		links: 'https://www.restauracja-nadzalewem.pl/',
-		imageUrl: 'restauracja-nad-zalewem.jpeg',
-		imageFit: 'cover',
-	},
-];
+import { useTranslations } from 'next-intl';
 
 const Portfolio = () => {
+	const t = useTranslations('Portfolio');
 	const [activeIndex, setActiveIndex] = useState(0);
-	const activeProject = projects[activeIndex];
 	const sectionRef = useRef(null);
 	const isInView = useInView(sectionRef, { amount: 0.2 });
 
 	const progress = useMotionValue(0);
 	const progressWidth = useTransform(progress, (value) => `${value}%`);
 
+	const projectKeys = ['irrify', 'chow', 'suzuki', 'restaurant'];
+
+	const getProjectImage = (key: string) => {
+		switch (key) {
+			case 'irrify':
+				return 'irrify.png';
+			case 'chow':
+				return 'chow.png';
+			case 'suzuki':
+				return 'suzuki.png';
+			default:
+				return 'restauracja-nad-zalewem.jpeg';
+		}
+	};
+
+	const getProjectTechnologies = (key: string) => {
+		switch (key) {
+			case 'irrify':
+				return [
+					TECHNOLOGIES.NEXT_JS,
+					TECHNOLOGIES.TYPESCRIPT,
+					TECHNOLOGIES.VERTEX_AI,
+					TECHNOLOGIES.REACT,
+					TECHNOLOGIES.KONVA,
+					TECHNOLOGIES.KEYCLOAK,
+					TECHNOLOGIES.PRISMA,
+					TECHNOLOGIES.ZUSTAND,
+					TECHNOLOGIES.SUPABASE,
+					TECHNOLOGIES.STRIPE,
+					TECHNOLOGIES.REACT_QUERY,
+					TECHNOLOGIES.NODEMAILER,
+					TECHNOLOGIES.HUSKY,
+				];
+			case 'chow':
+				return [
+					TECHNOLOGIES.TYPESCRIPT,
+					TECHNOLOGIES.REACT_NATIVE,
+					TECHNOLOGIES.EXPO,
+					TECHNOLOGIES.KEYCLOAK,
+					TECHNOLOGIES.REDUX,
+					TECHNOLOGIES.FIREBASE,
+					TECHNOLOGIES.I18N,
+					TECHNOLOGIES.AXIOS,
+					TECHNOLOGIES.JEST,
+				];
+			case 'suzuki':
+				return [
+					TECHNOLOGIES.JAVASCRIPT,
+					TECHNOLOGIES.REACT_NATIVE,
+					TECHNOLOGIES.REDUX,
+					TECHNOLOGIES.FIREBASE,
+					TECHNOLOGIES.FORMIK,
+					TECHNOLOGIES.I18N,
+					TECHNOLOGIES.AXIOS,
+				];
+			default:
+				return [
+					TECHNOLOGIES.JAVASCRIPT,
+					TECHNOLOGIES.NEXT_JS,
+					TECHNOLOGIES.STYLED_COMPONENTS,
+					TECHNOLOGIES.WORDPRESS,
+					TECHNOLOGIES.ACF,
+					TECHNOLOGIES.GRAPHQL,
+				];
+		}
+	};
+
+	const projects = useMemo(
+		() =>
+			projectKeys.map((key, index) => ({
+				id: index,
+				key,
+				title: t(`projects.${key}.title`),
+				category: t(`projects.${key}.category`),
+				description: t(`projects.${key}.description`),
+				imageUrl: getProjectImage(key),
+				imageFit: key === 'chow' || key === 'suzuki' ? 'contain' : 'cover',
+				technologies: getProjectTechnologies(key),
+			})),
+		[t],
+	);
+
+	const activeProject = projects[activeIndex];
+
 	const handleNext = useCallback(() => {
 		setActiveIndex((prev) => (prev + 1) % projects.length);
-	}, []);
+	}, [projects]);
 
 	useEffect(() => {
 		progress.set(0);
-	}, [activeIndex]);
+	}, [activeIndex, progress]);
 
 	useEffect(() => {
 		if (isInView) {
@@ -122,7 +121,7 @@ const Portfolio = () => {
 
 			return () => controls.stop();
 		}
-	}, [isInView, activeIndex, handleNext]);
+	}, [isInView, activeIndex, handleNext, progress]);
 
 	return (
 		<section ref={sectionRef} className="py-24 bg-background">
@@ -133,9 +132,11 @@ const Portfolio = () => {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<span className="text-primary font-semibold text-base uppercase tracking-wider">Portfolio</span>
+					<span className="text-primary font-semibold text-base uppercase tracking-wider">{t('subtitle')}</span>
 					<h2 className="text-3xl sm:text-4xl font-bold mt-2">
-						Wybrane <span className="gradient-text">projekty</span>
+						{t.rich('title', {
+							highlight: (chunks) => <span className="gradient-text">{chunks}</span>,
+						})}
 					</h2>
 				</motion.div>
 
@@ -227,7 +228,7 @@ const Portfolio = () => {
 									{/* CTA */}
 									<Button className="bg-primary hover:bg-primary/90 text-primary-foreground neon-glow">
 										<ExternalLink className="mr-2 w-4 h-4" />
-										Zobacz Case Study
+										{t('cta')}
 									</Button>
 								</div>
 							</motion.div>

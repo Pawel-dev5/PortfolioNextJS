@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { TECHNOLOGIES } from '@/lib/technologies';
+import { useTranslations } from 'next-intl';
 
 const TechStack = () => {
+	const t = useTranslations('TechStack');
 	const technologies = Object.values(TECHNOLOGIES);
 
 	// Duplicate for infinite scroll effect
@@ -19,9 +21,11 @@ const TechStack = () => {
 					viewport={{ once: true }}
 					className="text-center"
 				>
-					<span className="text-primary font-semibold text-base uppercase tracking-wider">Tech Stack</span>
+					<span className="text-primary font-semibold text-base uppercase tracking-wider">{t('subtitle')}</span>
 					<h2 className="text-3xl sm:text-4xl font-bold mt-2">
-						Technologie, którymi <span className="gradient-text">pracuję</span>
+						{t.rich('title', {
+							highlight: (chunks) => <span className="gradient-text">{chunks}</span>,
+						})}
 					</h2>
 				</motion.div>
 			</div>

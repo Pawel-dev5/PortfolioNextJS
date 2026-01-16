@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslations } from 'next-intl';
 
 const socialLinks = [
 	{ icon: Linkedin, href: 'https://linkedin.com/in/pawel-nowecki', label: 'LinkedIn', display: 'Paweł Nowecki' },
@@ -14,6 +15,7 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+	const t = useTranslations('Contact');
 	const { toast } = useToast();
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -25,8 +27,8 @@ const Contact = () => {
 		await new Promise((resolve) => setTimeout(resolve, 1000));
 
 		toast({
-			title: 'Wiadomość wysłana!',
-			description: 'Odpowiem najszybciej jak to możliwe.',
+			title: t('toast.successTitle'),
+			description: t('toast.successDescription'),
 		});
 
 		setIsSubmitting(false);
@@ -42,19 +44,19 @@ const Contact = () => {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<span className="text-primary font-semibold text-base uppercase tracking-wider">Kontakt</span>
+					<span className="text-primary font-semibold text-base uppercase tracking-wider">{t('subtitle')}</span>
 					<h2 className="text-3xl sm:text-4xl font-bold mt-2">
-						Porozmawiajmy o <span className="gradient-text">Twoim projekcie</span>
+						{t.rich('title', {
+							highlight: (chunks) => <span className="gradient-text">{chunks}</span>,
+						})}
 					</h2>
 				</motion.div>
 
 				<div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
 					{/* Contact Info */}
 					<motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-						<h3 className="text-2xl font-bold mb-6">Dane kontaktowe</h3>
-						<p className="text-muted-foreground mb-8 leading-relaxed">
-							Masz pytania? Chcesz omówić swój projekt? Napisz do mnie - odpowiadam zazwyczaj w ciągu 24 godzin.
-						</p>
+						<h3 className="text-2xl font-bold mb-6">{t('infoTitle')}</h3>
+						<p className="text-muted-foreground mb-8 leading-relaxed">{t('infoDescription')}</p>
 
 						<div className="space-y-6">
 							<div className="flex items-center gap-4">
@@ -62,7 +64,7 @@ const Contact = () => {
 									<Mail className="w-5 h-5 text-primary" />
 								</div>
 								<div>
-									<p className="text-sm text-muted-foreground">Email</p>
+									<p className="text-sm text-muted-foreground">{t('email')}</p>
 									<a href="mailto:p.nowecki@gmail.com" className="font-medium hover:text-primary transition-colors">
 										p.nowecki@gmail.com
 									</a>
@@ -74,7 +76,7 @@ const Contact = () => {
 									<Phone className="w-5 h-5 text-primary" />
 								</div>
 								<div>
-									<p className="text-sm text-muted-foreground">Telefon</p>
+									<p className="text-sm text-muted-foreground">{t('phone')}</p>
 									<a href="tel:+48791893867" className="font-medium hover:text-primary transition-colors">
 										+48 791 893 867
 									</a>
@@ -108,19 +110,25 @@ const Contact = () => {
 							<div className="grid sm:grid-cols-2 gap-4 mb-4">
 								<div>
 									<label htmlFor="name" className="block text-sm font-medium mb-2">
-										Imię i nazwisko
+										{t('form.name')}
 									</label>
-									<Input id="name" name="name" placeholder="Jan Kowalski" required className="bg-background" />
+									<Input
+										id="name"
+										name="name"
+										placeholder={t('form.placeholders.name')}
+										required
+										className="bg-background"
+									/>
 								</div>
 								<div>
 									<label htmlFor="email" className="block text-sm font-medium mb-2">
-										Email
+										{t('form.email')}
 									</label>
 									<Input
 										id="email"
 										name="email"
 										type="email"
-										placeholder="jan@example.com"
+										placeholder={t('form.placeholders.email')}
 										required
 										className="bg-background"
 									/>
@@ -129,12 +137,12 @@ const Contact = () => {
 
 							<div className="mb-4">
 								<label htmlFor="subject" className="block text-sm font-medium mb-2">
-									Temat
+									{t('form.subject')}
 								</label>
 								<Input
 									id="subject"
 									name="subject"
-									placeholder="Czego dotyczy Twoja wiadomość?"
+									placeholder={t('form.placeholders.subject')}
 									required
 									className="bg-background"
 								/>
@@ -142,12 +150,12 @@ const Contact = () => {
 
 							<div className="mb-6">
 								<label htmlFor="message" className="block text-sm font-medium mb-2">
-									Wiadomość
+									{t('form.message')}
 								</label>
 								<Textarea
 									id="message"
 									name="message"
-									placeholder="Opisz swój projekt lub zadaj pytanie..."
+									placeholder={t('form.placeholders.message')}
 									rows={5}
 									required
 									className="bg-background resize-none"
@@ -161,11 +169,11 @@ const Contact = () => {
 								disabled={isSubmitting}
 							>
 								{isSubmitting ? (
-									'Wysyłanie...'
+									t('form.submitting')
 								) : (
 									<>
 										<Send className="mr-2 w-4 h-4" />
-										Wyślij wiadomość
+										{t('form.submit')}
 									</>
 								)}
 							</Button>
