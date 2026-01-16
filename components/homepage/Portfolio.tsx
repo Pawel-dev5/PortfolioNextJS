@@ -4,9 +4,10 @@ import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { TECHNOLOGIES } from '@/lib/technologies';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { FEATURED_PROJECTS_BASE } from '@/lib/portfolioProjects';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 const Portfolio = () => {
 	const t = useTranslations('Portfolio');
@@ -17,79 +18,17 @@ const Portfolio = () => {
 	const progress = useMotionValue(0);
 	const progressWidth = useTransform(progress, (value) => `${value}%`);
 
-	const projectKeys = ['irrify', 'chow', 'suzuki', 'hagen'];
-
-	const getProjectImage = (key: string) => {
-		switch (key) {
-			case 'irrify':
-				return 'irrify.png';
-			case 'chow':
-				return 'chow.png';
-			case 'suzuki':
-				return 'suzuki.png';
-			case 'hagen':
-				return 'hagen.png';
-			default:
-				return '';
-		}
-	};
-
-	const getProjectTechnologies = (key: string) => {
-		switch (key) {
-			case 'irrify':
-				return [
-					TECHNOLOGIES.NEXT_JS,
-					TECHNOLOGIES.TYPESCRIPT,
-					TECHNOLOGIES.VERTEX_AI,
-					TECHNOLOGIES.REACT,
-					TECHNOLOGIES.KONVA,
-					TECHNOLOGIES.KEYCLOAK,
-					TECHNOLOGIES.PRISMA,
-					TECHNOLOGIES.ZUSTAND,
-					TECHNOLOGIES.SUPABASE,
-					TECHNOLOGIES.STRIPE,
-					TECHNOLOGIES.REACT_QUERY,
-					TECHNOLOGIES.NODEMAILER,
-					TECHNOLOGIES.HUSKY,
-				];
-			case 'chow':
-				return [
-					TECHNOLOGIES.TYPESCRIPT,
-					TECHNOLOGIES.REACT_NATIVE,
-					TECHNOLOGIES.EXPO,
-					TECHNOLOGIES.KEYCLOAK,
-					TECHNOLOGIES.REDUX,
-					TECHNOLOGIES.FIREBASE,
-					TECHNOLOGIES.I18N,
-					TECHNOLOGIES.AXIOS,
-					TECHNOLOGIES.JEST,
-				];
-			case 'suzuki':
-				return [
-					TECHNOLOGIES.JAVASCRIPT,
-					TECHNOLOGIES.REACT_NATIVE,
-					TECHNOLOGIES.REDUX,
-					TECHNOLOGIES.FIREBASE,
-					TECHNOLOGIES.FORMIK,
-					TECHNOLOGIES.I18N,
-					TECHNOLOGIES.AXIOS,
-				];
-			default:
-				return [TECHNOLOGIES.TYPESCRIPT, TECHNOLOGIES.NEXT_JS, TECHNOLOGIES.STYLED_COMPONENTS, TECHNOLOGIES.SANITY];
-		}
-	};
-
 	const projects = useMemo(
 		() =>
-			projectKeys.map((key, index) => ({
+			FEATURED_PROJECTS_BASE.map((project, index) => ({
 				id: index,
-				key,
-				title: t(`projects.${key}.title`),
-				category: t(`projects.${key}.category`),
-				description: t(`projects.${key}.description`),
-				imageUrl: getProjectImage(key),
-				imageFit: key === 'chow' || key === 'suzuki' ? 'contain' : 'cover',
-				technologies: getProjectTechnologies(key),
+				key: project.key,
+				title: t(`projects.${project.key}.title`),
+				category: t(`projects.${project.key}.category`),
+				description: t(`projects.${project.key}.description`),
+				imageUrl: project.imageUrl,
+				imageFit: project.imageFit ?? 'cover',
+				technologies: project.stack.map((name) => ({ name })),
 			})),
 		[t],
 	);
@@ -230,6 +169,11 @@ const Portfolio = () => {
 						</AnimatePresence>
 					</div>
 				</div>
+			</div>
+			<div className="mt-16 flex justify-center">
+				<Link href="/portfolio" className={buttonVariants('outline', 'lg')}>
+					{t('viewAll')}
+				</Link>
 			</div>
 		</section>
 	);

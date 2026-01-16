@@ -118,6 +118,7 @@
 		"subtitle": "Portfolio",
 		"title": "Selected <highlight>projects</highlight>",
 		"cta": "View Case Study",
+		"viewAll": "View full portfolio",
 		"projects": {
 			"irrify": {
 				"title": "Irrify.ai",

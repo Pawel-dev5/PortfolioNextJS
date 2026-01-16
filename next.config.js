@@ -64,6 +64,26 @@ const nextConfig = {
 				protocol: 'https',
 				hostname: 'pexstudio.pl',
 			},
+			{
+				protocol: 'https',
+				hostname: 'react-hook-form.com',
+			},
+			{
+				protocol: 'https',
+				hostname: 'redux-saga.js.org',
+			},
+			{
+				protocol: 'https',
+				hostname: 'redux-toolkit.js.org',
+			},
+			{
+				protocol: 'https',
+				hostname: 'media2.dev.to',
+			},
+			{
+				protocol: 'https',
+				hostname: 'encrypted-tbn0.gstatic.com',
+			},
 		],
 	},
 };

@@ -90,7 +90,7 @@ export const TECHNOLOGIES = {
 	},
 	VERTEX_AI: {
 		name: 'Vertex AI',
-		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+		icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKrTg_Ygs_SNsALOCO1-s6-KYS2CKFd0LvfA&s',
 	},
 	KONVA: {
 		name: 'Konva',
@@ -151,5 +151,49 @@ export const TECHNOLOGIES = {
 	ACF: {
 		name: 'ACF',
 		icon: 'https://pexstudio.pl/wp-content/uploads/2024/05/icon-256x256-1.png',
+	},
+	BOOTSTRAP: {
+		name: 'Bootstrap',
+		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
+	},
+	CSS: {
+		name: 'CSS',
+		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+	},
+	DRAFT_JS: {
+		name: 'Draft.js',
+		icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY32GdIHVWMbuPZgZHqKDLeCGeAP6WQEqyJw&s',
+	},
+	HTML: {
+		name: 'HTML',
+		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+	},
+	REACT_HOOK_FORM: {
+		name: 'React Hook Form',
+		icon: 'https://react-hook-form.com/images/logo/react-hook-form-logo-only.svg',
+	},
+	REDUX_SAGA: {
+		name: 'Redux Saga',
+		icon: 'https://redux-saga.js.org/img/Redux-Saga-Logo.png',
+	},
+	REDUX_TOOLKIT: {
+		name: 'Redux Toolkit',
+		icon: 'https://redux-toolkit.js.org/img/redux.svg',
+	},
+	SASS: {
+		name: 'Sass',
+		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg',
+	},
+	STORYBOOK: {
+		name: 'Storybook',
+		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg',
+	},
+	STRAPI: {
+		name: 'Strapi',
+		icon: 'https://media2.dev.to/dynamic/image/width=320,height=320,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F763%2F988af53b-5d7e-435a-98eb-dd4aff5299d2.png',
+	},
+	WOOCOMMERCE: {
+		name: 'WooCommerce',
+		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg',
 	},
 } as const;
