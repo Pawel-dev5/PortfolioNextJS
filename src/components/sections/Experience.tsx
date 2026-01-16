@@ -71,7 +71,7 @@ const Experience = () => (
 				viewport={{ once: true }}
 				className="text-center mb-16"
 			>
-				<span className="text-primary font-semibold text-sm uppercase tracking-wider">Doświadczenie</span>
+				<span className="text-primary font-semibold text-base uppercase tracking-wider">Doświadczenie</span>
 				<h2 className="text-3xl sm:text-4xl font-bold mt-2">
 					Moja ścieżka <span className="gradient-text">kariery</span>
 				</h2>

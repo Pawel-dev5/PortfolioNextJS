@@ -23,9 +23,7 @@ const Header = () => {
 
 	if (pathname !== prevPathname) {
 		setPrevPathname(pathname);
-		if (isMobileMenuOpen) {
-			setIsMobileMenuOpen(false);
-		}
+		setIsMobileMenuOpen(false);
 	}
 
 	useEffect(() => {

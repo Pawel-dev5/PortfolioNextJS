@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -14,7 +14,21 @@ const projects = [
 		description:
 			'Zaawansowana platforma do automatyzacji procesów biznesowych z wykorzystaniem sztucznej inteligencji. System umożliwia tworzenie inteligentnych agentów AI, automatyzację workflow oraz integrację z popularnymi narzędziami.',
 		imageUrl: 'irrify.png',
-		technologies: ['React', 'Python', 'OpenAI', 'Supabase', 'Docker'],
+		technologies: [
+			'Next JS',
+			'Typescript',
+			'Vertex AI',
+			'React',
+			'Konva',
+			'Keycloak',
+			'Prisma',
+			'Zustand',
+			'Supabase',
+			'Stripe',
+			'React Query',
+			'Nodemailer',
+			'Husky',
+		],
 		link: 'https://irrify.ai',
 		imageFit: 'cover',
 	},
@@ -24,7 +38,7 @@ const projects = [
 		category: 'Mobile App',
 		description:
 			'The cHow system is used to quickly and conveniently collect and analyze information from field employees about your own sales network, competitive networks and the environment. The system consists of a web application available in a browser and a mobile application with which it is currently working on implementing new functionalities or fixing current errors.',
-		technologies: ['Javascript', 'React Native', 'Redux', 'Firebase', 'Formik', 'I18n', 'Axios'],
+		technologies: ['Typescript', 'React Native', 'Expo', 'Keycloak', 'Redux', 'Firebase', 'I18n', 'Axios', 'Jest'],
 		links: 'https://play.google.com/store/apps/details?id=pl.chow.app&hl=pl&gl=US',
 		imageUrl: 'chow.png',
 		imageFit: 'contain',
@@ -56,13 +70,36 @@ const projects = [
 const Portfolio = () => {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const activeProject = projects[activeIndex];
+	const sectionRef = useRef(null);
+	const isInView = useInView(sectionRef, { amount: 0.2 });
 
-	const handleNext = () => {
+	const progress = useMotionValue(0);
+	const progressWidth = useTransform(progress, (value) => `${value}%`);
+
+	const handleNext = useCallback(() => {
 		setActiveIndex((prev) => (prev + 1) % projects.length);
-	};
+	}, []);
+
+	useEffect(() => {
+		progress.set(0);
+	}, [activeIndex]);
+
+	useEffect(() => {
+		if (isInView) {
+			const duration = 10 * (1 - progress.get() / 100);
+
+			const controls = animate(progress, 100, {
+				duration: duration,
+				ease: 'linear',
+				onComplete: handleNext,
+			});
+
+			return () => controls.stop();
+		}
+	}, [isInView, activeIndex, handleNext]);
 
 	return (
-		<section className="py-24 bg-background">
+		<section ref={sectionRef} className="py-24 bg-background">
 			<div className="section-container">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -70,7 +107,7 @@ const Portfolio = () => {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<span className="text-primary font-semibold text-sm uppercase tracking-wider">Portfolio</span>
+					<span className="text-primary font-semibold text-base uppercase tracking-wider">Portfolio</span>
 					<h2 className="text-3xl sm:text-4xl font-bold mt-2">
 						Wybrane <span className="gradient-text">projekty</span>
 					</h2>
@@ -100,13 +137,7 @@ const Portfolio = () => {
 											className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-primary rounded-r-full"
 										/>
 										<div className="absolute bottom-0 left-0 w-full h-1 bg-primary/10">
-											<motion.div
-												initial={{ width: '0%' }}
-												animate={{ width: '100%' }}
-												transition={{ duration: 5, ease: 'linear' }}
-												onAnimationComplete={handleNext}
-												className="h-full bg-primary"
-											/>
+											<motion.div style={{ width: progressWidth }} className="h-full bg-primary" />
 										</div>
 									</>
 								)}

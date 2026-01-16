@@ -42,7 +42,7 @@ const Contact = () => {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<span className="text-primary font-semibold text-sm uppercase tracking-wider">Kontakt</span>
+					<span className="text-primary font-semibold text-base uppercase tracking-wider">Kontakt</span>
 					<h2 className="text-3xl sm:text-4xl font-bold mt-2">
 						Porozmawiajmy o <span className="gradient-text">Twoim projekcie</span>
 					</h2>

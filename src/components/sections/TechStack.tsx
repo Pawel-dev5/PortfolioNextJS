@@ -10,7 +10,6 @@ const technologies = [
 	{ name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
 	{ name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
 	{ name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-	{ name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
 	{ name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
 	{ name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
 	{ name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
@@ -42,7 +41,7 @@ const TechStack = () => {
 					viewport={{ once: true }}
 					className="text-center"
 				>
-					<span className="text-primary font-semibold text-sm uppercase tracking-wider">Tech Stack</span>
+					<span className="text-primary font-semibold text-base uppercase tracking-wider">Tech Stack</span>
 					<h2 className="text-3xl sm:text-4xl font-bold mt-2">
 						Technologie, którymi <span className="gradient-text">pracuję</span>
 					</h2>
@@ -61,16 +60,16 @@ const TechStack = () => {
 						{duplicatedTech.map((tech, index) => (
 							<div
 								key={`row1-${index}`}
-								className="group flex flex-col items-center justify-center w-24 h-24 glass-card p-4 shrink-0 hover-lift cursor-pointer"
+								className="group relative flex flex-col items-center justify-center w-24 h-24 glass-card p-4 shrink-0 hover-lift cursor-pointer"
 							>
 								<Image
 									src={tech.icon}
 									alt={tech.name}
 									width={40}
 									height={40}
-									className="grayscale group-hover:grayscale-0 transition-all duration-300"
+									className="grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:-translate-y-3"
 								/>
-								<span className="text-xs text-center text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+								<span className="absolute bottom-2 left-0 right-0 px-1 text-xs text-center text-muted-foreground opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
 									{tech.name}
 								</span>
 							</div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Brain, Zap, Database, Globe, ArrowRight } from 'lucide-react';
+import { Brain, Zap, Database, Globe, ArrowRight, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 
 const offers = [
@@ -11,6 +11,13 @@ const offers = [
 		description: 'Nowoczesne strony internetowe, sklepy e-commerce, landing pages konwertujące na klientów.',
 		link: '/oferta/strony-internetowe',
 		gradient: 'from-pink-500/20 to-rose-500/20',
+	},
+	{
+		icon: Smartphone,
+		title: 'Aplikacje Mobilne',
+		description: 'Aplikacje mobilne na iOS i Android, panele administracyjne, aplikacje biznesowe na miarę.',
+		link: '/oferta/aplikacje-mobilne',
+		gradient: 'from-green-500/20 to-lime-500/20',
 	},
 	{
 		icon: Database,
@@ -44,7 +51,7 @@ const Offer = () => (
 				viewport={{ once: true }}
 				className="text-center mb-16"
 			>
-				<span className="text-primary font-semibold text-sm uppercase tracking-wider">Oferta</span>
+				<span className="text-primary font-semibold text-base uppercase tracking-wider">Oferta</span>
 				<h2 className="text-3xl sm:text-4xl font-bold mt-2">
 					Jak mogę Ci <span className="gradient-text">pomóc</span>?
 				</h2>
@@ -54,7 +61,6 @@ const Offer = () => (
 				</p>
 			</motion.div>
 
-			{/* Bento Grid */}
 			<div className="grid md:grid-cols-2 gap-6">
 				{offers.map((offer, index) => (
 					<motion.div
@@ -65,22 +71,18 @@ const Offer = () => (
 						transition={{ delay: index * 0.1 }}
 					>
 						<Link href={offer.link} className="group block glass-card p-8 h-full hover-lift relative overflow-hidden">
-							{/* Background gradient */}
 							<div
 								className={`absolute inset-0 bg-gradient-to-br ${offer.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
 							/>
 
 							<div className="relative z-10">
-								{/* Icon */}
 								<div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
 									<offer.icon className="w-7 h-7 text-primary" />
 								</div>
 
-								{/* Content */}
 								<h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{offer.title}</h3>
 								<p className="text-muted-foreground leading-relaxed mb-6">{offer.description}</p>
 
-								{/* Link */}
 								<span className="inline-flex items-center text-primary font-medium">
 									Dowiedz się więcej
 									<ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform" />

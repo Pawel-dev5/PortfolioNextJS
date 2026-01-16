@@ -24,7 +24,7 @@ const About = () => (
 					<div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass-card p-2">
 						<div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl" />
 						<Image
-							src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop&crop=face"
+							src="/assets/pawelnowecki.jpeg"
 							alt="Paweł Nowecki - Fullstack Developer"
 							fill
 							className="object-cover rounded-2xl"
@@ -42,7 +42,7 @@ const About = () => (
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
 				>
-					<span className="text-primary font-semibold text-sm uppercase tracking-wider">O mnie</span>
+					<span className="text-primary font-semibold text-base uppercase tracking-wider">O mnie</span>
 					<h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-6">
 						Programista z pasją do <span className="gradient-text">innowacji</span>
 					</h2>

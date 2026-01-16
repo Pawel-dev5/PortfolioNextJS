@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { ArrowRight, Download, Rocket } from 'lucide-react';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 const Hero = () => (
 	<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20">
@@ -61,17 +63,23 @@ const Hero = () => (
 					transition={{ duration: 0.6, delay: 0.8 }}
 					className="flex flex-col sm:flex-row items-center justify-center gap-4"
 				>
-					<Button
-						size="lg"
-						className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg neon-glow hover-lift"
+					<Link
+						href="#portfolio"
+						className={cn(
+							buttonVariants('default', 'lg'),
+							'bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg neon-glow hover-lift',
+						)}
 					>
 						Zobacz Projekty
 						<ArrowRight className="ml-2 w-5 h-5" />
-					</Button>
-					<Button size="lg" variant="outline" className="font-semibold px-8 py-6 text-lg hover-lift">
+					</Link>
+					<Link
+						href="#contact"
+						className={cn(buttonVariants('outline', 'lg'), 'font-semibold px-8 py-6 text-lg hover-lift')}
+					>
 						<Download className="mr-2 w-5 h-5" />
 						Pobierz CV
-					</Button>
+					</Link>
 				</motion.div>
 			</div>
 		</div>

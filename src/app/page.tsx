@@ -4,32 +4,24 @@ import Experience from '@/components/sections/Experience';
 import TechStack from '@/components/sections/TechStack';
 import Portfolio from '@/components/sections/Portfolio';
 import Offer from '@/components/sections/Offer';
-import Contact from '@/components/sections/Contact';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 
 const Home = () => (
-	<div className="min-h-screen bg-background">
-		<Header />
-		<main className="overflow-x-hidden">
-			<Hero />
-			<div id="about">
-				<About />
-			</div>
-			<div id="experience">
-				<Experience />
-			</div>
-			<TechStack />
-			<div id="portfolio">
-				<Portfolio />
-			</div>
-			<div id="offer">
-				<Offer />
-			</div>
-			<Contact />
-		</main>
-		<Footer />
-	</div>
+	<>
+		<Hero />
+		<div id="about">
+			<About />
+		</div>
+		<div id="experience">
+			<Experience />
+		</div>
+		<TechStack />
+		<div id="portfolio">
+			<Portfolio />
+		</div>
+		<div id="offer">
+			<Offer />
+		</div>
+	</>
 );
 
 export default Home;
