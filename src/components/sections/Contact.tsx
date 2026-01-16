@@ -2,11 +2,16 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone } from 'lucide-react';
+import { Send, Mail, Phone, Linkedin, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+
+const socialLinks = [
+	{ icon: Linkedin, href: 'https://linkedin.com/in/pawel-nowecki', label: 'LinkedIn', display: 'Paweł Nowecki' },
+	{ icon: Github, href: 'https://github.com/Pawel-dev5', label: 'GitHub', display: 'Pawel-dev5' },
+];
 
 const Contact = () => {
 	const { toast } = useToast();
@@ -58,8 +63,8 @@ const Contact = () => {
 								</div>
 								<div>
 									<p className="text-sm text-muted-foreground">Email</p>
-									<a href="mailto:kontakt@pawelnowecki.pl" className="font-medium hover:text-primary transition-colors">
-										kontakt@pawelnowecki.pl
+									<a href="mailto:p.nowecki@gmail.com" className="font-medium hover:text-primary transition-colors">
+										p.nowecki@gmail.com
 									</a>
 								</div>
 							</div>
@@ -70,21 +75,30 @@ const Contact = () => {
 								</div>
 								<div>
 									<p className="text-sm text-muted-foreground">Telefon</p>
-									<a href="tel:+48123456789" className="font-medium hover:text-primary transition-colors">
-										+48 123 456 789
+									<a href="tel:+48791893867" className="font-medium hover:text-primary transition-colors">
+										+48 791 893 867
 									</a>
 								</div>
 							</div>
 
-							<div className="flex items-center gap-4">
-								<div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
-									<MapPin className="w-5 h-5 text-primary" />
+							{socialLinks.map((link) => (
+								<div key={link.label} className="flex items-center gap-4">
+									<div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+										<link.icon className="w-5 h-5 text-primary" />
+									</div>
+									<div>
+										<p className="text-sm text-muted-foreground">{link.label}</p>
+										<a
+											href={link.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="font-medium hover:text-primary transition-colors"
+										>
+											{link.display}
+										</a>
+									</div>
 								</div>
-								<div>
-									<p className="text-sm text-muted-foreground">Lokalizacja</p>
-									<p className="font-medium">Polska / Zdalnie</p>
-								</div>
-							</div>
+							))}
 						</div>
 					</motion.div>
 

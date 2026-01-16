@@ -8,34 +8,48 @@ import { Button } from '@/components/ui/button';
 
 const projects = [
 	{
-		id: 1,
+		id: 0,
 		title: 'Irrify.ai',
 		category: 'AI Platform',
 		description:
 			'Zaawansowana platforma do automatyzacji procesów biznesowych z wykorzystaniem sztucznej inteligencji. System umożliwia tworzenie inteligentnych agentów AI, automatyzację workflow oraz integrację z popularnymi narzędziami.',
-		image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
+		imageUrl: 'irrify.png',
 		technologies: ['React', 'Python', 'OpenAI', 'Supabase', 'Docker'],
 		link: 'https://irrify.ai',
+		imageFit: 'cover',
+	},
+	{
+		id: 1,
+		title: 'cHow',
+		category: 'Mobile App',
+		description:
+			'The cHow system is used to quickly and conveniently collect and analyze information from field employees about your own sales network, competitive networks and the environment. The system consists of a web application available in a browser and a mobile application with which it is currently working on implementing new functionalities or fixing current errors.',
+		technologies: ['Javascript', 'React Native', 'Redux', 'Firebase', 'Formik', 'I18n', 'Axios'],
+		links: 'https://play.google.com/store/apps/details?id=pl.chow.app&hl=pl&gl=US',
+		imageUrl: 'chow.png',
+		imageFit: 'contain',
 	},
 	{
 		id: 2,
-		title: 'System CRM / ERP',
-		category: 'Enterprise Software',
+		title: 'Moje Suzuki',
+		category: 'Mobile App',
 		description:
-			'Kompleksowy system do zarządzania relacjami z klientami i zasobami przedsiębiorstwa. Moduły sprzedaży, magazynu, fakturowania i raportowania zintegrowane w jednej aplikacji.',
-		image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-		technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'GraphQL', 'AWS'],
-		link: '#',
+			'Development of new functionalities in the My Suzuki application, thanks to which you can conveniently review the service history of your Suzuki, receive notifications about inspections and service and recall actions. And you can also contact your dealer, conveniently send an Assistance request or use your card in the Suzuki Service Program. Recently added functionality is sailing weather and watermark database for users of Suzuki Marine products.',
+		technologies: ['Javascript', 'React Native', 'Redux', 'Firebase', 'Formik', 'I18n', 'Axios'],
+		links: 'https://play.google.com/store/apps/details?id=com.mojesuzukiapp&hl=pl&gl=US',
+		imageUrl: 'suzuki.png',
+		imageFit: 'contain',
 	},
 	{
 		id: 3,
-		title: 'E-commerce Platform',
-		category: 'Online Store',
+		title: 'Restauracja nad zalewem',
+		category: 'Website',
 		description:
-			'Nowoczesna platforma e-commerce z zaawansowanym systemem rekomendacji produktów opartym na AI. Obsługa wielu walut, integracja z systemami płatności i automatyzacja marketingu.',
-		image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-		technologies: ['React', 'Node.js', 'Stripe', 'Redis', 'Elasticsearch'],
-		link: '#',
+			'Wordpress used as a headless CMS and using Advanced Custom Fields and GraphQL connected to the frontend created using NextJS. Thanks to the combination of these technologies and maintaining all possible standards, the website achieved the maximum possible result in Google tests.',
+		technologies: ['Javascript', 'Next', 'Styled-components', 'Wordpress', 'ACF', 'GraphQL'],
+		links: 'https://www.restauracja-nadzalewem.pl/',
+		imageUrl: 'restauracja-nad-zalewem.jpeg',
+		imageFit: 'cover',
 	},
 ];
 
@@ -124,10 +138,10 @@ const Portfolio = () => {
 								{/* Project Image */}
 								<div className="relative aspect-video overflow-hidden">
 									<Image
-										src={activeProject.image}
+										src={`/assets/${activeProject.imageUrl}`}
 										alt={activeProject.title}
 										fill
-										className="object-cover"
+										className={activeProject.imageFit === 'contain' ? 'object-contain p-4' : 'object-cover'}
 										sizes="(max-width: 1024px) 100vw, 60vw"
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />

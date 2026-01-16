@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Download, Rocket } from 'lucide-react';
 
 const Hero = () => (
-	<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+	<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20">
 		{/* Subtle grid background */}
 		<div className="absolute inset-0 bg-grid-pattern bg-[size:60px_60px] opacity-30" />
 
@@ -36,11 +36,11 @@ const Hero = () => (
 					initial={{ opacity: 0, y: 30 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.4 }}
-					className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+					className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
 				>
-					Fullstack Developer
+					Paweł
 					<br />
-					<span className="gradient-text">&amp; AI Automation Expert</span>
+					<span className="gradient-text">Nowecki</span>
 				</motion.h1>
 
 				{/* H2 */}
@@ -48,9 +48,10 @@ const Hero = () => (
 					initial={{ opacity: 0, y: 30 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.6 }}
-					className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-balance"
+					className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 text-balance"
 				>
-					Łączę solidny kod z potencjałem sztucznej inteligencji. Tworzę systemy, które zarabiają i oszczędzają czas.
+					Projektuję i wdrażam kompleksowe systemy cyfrowe, platformy e-commerce oraz automatyzacje procesów. Realizuję
+					projekty holistycznie – od architektury i logiki biznesowej, po warstwę wizualną i wdrożenie.{' '}
 				</motion.p>
 
 				{/* CTAs */}

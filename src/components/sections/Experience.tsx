@@ -4,36 +4,61 @@ import { motion } from 'framer-motion';
 
 const experiences = [
 	{
-		date: '2022 - Obecnie',
-		role: 'Senior Fullstack Developer & AI Consultant',
+		date: '2020 - Obecnie',
+		role: 'Fullstack Developer',
 		company: 'Freelance / Własne projekty',
 		achievements: [
-			'Tworzenie systemów AI dla klientów enterprise',
+			'Tworzenie stron i sklepów internetowych',
+			'Tworzenie systemów dedykowanych i AI dla klientów',
 			'Rozwój platformy irrify.ai',
-			'Konsulting w zakresie automatyzacji procesów',
 		],
 	},
 	{
-		date: '2019 - 2022',
-		role: 'Lead Frontend Developer',
-		company: 'Agencja Software',
+		date: '2024 - Obecnie',
+		role: 'React Native Developer',
+		company: 'The Widlarz Group',
 		achievements: [
-			'Prowadzenie zespołu 5 developerów',
-			'Wdrożenie React i TypeScript w projektach',
-			'Optymalizacja wydajności aplikacji o 40%',
+			'Aplikacja Learnnapp: utrzymanie, naprawa błędów produkcyjnych oraz upgrade wersji React Native',
+			"Aplikacja Orca: audyt kodu, przygotowanie do upgrade'u React Native oraz wdrożenia nowej architektury",
+		],
+	},
+	{
+		date: '2022 - Obecnie',
+		role: 'Frontend Developer',
+		company: '10a',
+		achievements: [
+			'Rozwój nowych funkcjonalności w aplikacjach mobilnych Moje Suzuki, cHow oraz Mój Sklep (Eurocash)',
+			'Projektowanie i implementację kluczowych rozwiązań, które poprawiają codzienne procesy biznesowe oraz podniosły jakość doświadczeń użytkowników.',
+		],
+	},
+	{
+		date: '2021 - 2022',
+		role: 'Frontend Developer',
+		company: 'Gridaly',
+		achievements: [
+			'Rozwój nowych funkcjonalności webowej aplikacji do obsługi wydarzeń online i hybrydowych oraz tworzenie kluczowych modułów systemu zarządzania eventami',
+			'Opracowanie i wdrożenie nowej, responsywnej strony internetowej platformy, ze skupieniem na optymalizacji wydajności i jakości kodu',
+			'Programowanie aplikacji mobilnej do skanowania biletów zintegrowanej z platformą webową, zapewniającej stabilną i szybką komunikację między systemami',
+		],
+	},
+	{
+		date: '2019 - 2021',
+		role: 'Senior Account Executive',
+		company: 'Hagen',
+		achievements: [
+			'Opracowanie i wdrożenie kompleksowego systemu szkoleniowego dla House of Skills, usprawniającego organizację i realizację szkoleń',
+			'Zaprojektowanie i wdrożenie aplikacji mobilnej do obsługi oddziałów dla Banku BNP Paribas, usprawniającej operacje, komunikację i obsługę klienta',
 		],
 	},
 	{
 		date: '2017 - 2019',
-		role: 'Fullstack Developer',
-		company: 'Startup Fintech',
-		achievements: ['Budowa platformy płatniczej od zera', 'Integracja z systemami bankowymi', 'Rozwój API REST i GraphQL'],
-	},
-	{
-		date: '2015 - 2017',
-		role: 'Junior Developer',
-		company: 'Software House',
-		achievements: ['Pierwsze komercyjne projekty web', 'Nauka React i Node.js', 'Współpraca w metodologii Scrum'],
+		role: 'Account Executive',
+		company: 'Wisefriends',
+		achievements: [
+			'Zarządzanie i realizacja projektu webowej aplikacji dla Essilor, z dbałością o terminowość i jakość',
+			'Współtworzenie i wdrożenie kampanii digitalowych dla Orange (kampania Love) oraz przygotowanie launchu marki IQOS na polski rynek dla Philip Morris International',
+			'Przygotowanie, realizacja i wdrożenie kampanii digitalowych dla klientów takich jak Eurocash, Adidas, Coty, Opel, Philips, Maspex, Geberit oraz Reprise Digital',
+		],
 	},
 ];
 
@@ -77,10 +102,10 @@ const Experience = () => (
 								</span>
 								<h3 className="text-xl font-bold mb-1">{exp.role}</h3>
 								<p className="text-primary font-medium mb-4">{exp.company}</p>
-								<ul className={`space-y-2 text-muted-foreground text-sm ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+								<ul className="space-y-2 text-muted-foreground text-sm text-left">
 									{exp.achievements.map((achievement, i) => (
 										<li key={i} className="flex items-start gap-2">
-											<span className="text-primary mt-1 shrink-0">•</span>
+											<span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
 											<span>{achievement}</span>
 										</li>
 									))}

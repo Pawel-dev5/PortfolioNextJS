@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
-	<html lang="pl">
-		<body className="antialiased min-h-screen relative">{children}</body>
+	<html lang="pl" className="scroll-smooth">
+		<body className="antialiased min-h-screen relative overflow-x-hidden">{children}</body>
 	</html>
 );
 

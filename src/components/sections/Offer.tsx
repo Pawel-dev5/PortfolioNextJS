@@ -6,6 +6,20 @@ import Link from 'next/link';
 
 const offers = [
 	{
+		icon: Globe,
+		title: 'Strony & Sklepy',
+		description: 'Nowoczesne strony internetowe, sklepy e-commerce, landing pages konwertujące na klientów.',
+		link: '/oferta/strony-internetowe',
+		gradient: 'from-pink-500/20 to-rose-500/20',
+	},
+	{
+		icon: Database,
+		title: 'Systemy Dedykowane',
+		description: 'Customowe systemy CRM/ERP, panele administracyjne, aplikacje biznesowe na miarę.',
+		link: '/oferta/systemy-dedykowane-crm',
+		gradient: 'from-blue-500/20 to-indigo-500/20',
+	},
+	{
 		icon: Brain,
 		title: 'Wdrożenia AI',
 		description: 'Inteligentni agenci AI, automatyzacja procesów, integracja z OpenAI i innymi modelami LLM.',
@@ -18,20 +32,6 @@ const offers = [
 		description: 'Automatyzacja workflow, integracje API, boty i skrypty oszczędzające setki godzin pracy.',
 		link: '/oferta/automatyzacje',
 		gradient: 'from-amber-500/20 to-orange-500/20',
-	},
-	{
-		icon: Database,
-		title: 'Systemy Dedykowane',
-		description: 'Customowe systemy CRM/ERP, panele administracyjne, aplikacje biznesowe na miarę.',
-		link: '/oferta/systemy-dedykowane-crm',
-		gradient: 'from-blue-500/20 to-indigo-500/20',
-	},
-	{
-		icon: Globe,
-		title: 'Strony & Sklepy',
-		description: 'Nowoczesne strony internetowe, sklepy e-commerce, landing pages konwertujące na klientów.',
-		link: '/oferta/strony-internetowe',
-		gradient: 'from-pink-500/20 to-rose-500/20',
 	},
 ];
 

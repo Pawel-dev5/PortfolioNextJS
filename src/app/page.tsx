@@ -6,12 +6,12 @@ import Portfolio from '@/components/sections/Portfolio';
 import Offer from '@/components/sections/Offer';
 import Contact from '@/components/sections/Contact';
 import Header from '@/components/layout/Header';
-// import Footer from "@/components/layout/Footer";
+import Footer from '@/components/layout/Footer';
 
 const Home = () => (
 	<div className="min-h-screen bg-background">
 		<Header />
-		<main>
+		<main className="overflow-x-hidden">
 			<Hero />
 			<div id="about">
 				<About />
@@ -28,7 +28,7 @@ const Home = () => (
 			</div>
 			<Contact />
 		</main>
-		{/* <Footer /> */}
+		<Footer />
 	</div>
 );
 

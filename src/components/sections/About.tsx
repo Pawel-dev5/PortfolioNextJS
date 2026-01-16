@@ -47,9 +47,10 @@ const About = () => (
 						Programista z pasją do <span className="gradient-text">innowacji</span>
 					</h2>
 					<p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-						Jestem programistą z pasją, który łączy świat kodu z celami biznesowymi. Nie tylko piszę soft, ale wdrażam
-						rozwiązania, które realnie usprawniają firmy. Specjalizuję się w tworzeniu systemów wykorzystujących sztuczną
-						inteligencję oraz automatyzacji procesów, które oszczędzają czas i zwiększają efektywność.
+						Jestem programistą z pasją, który łączy świat kodu z celami biznesowymi. Nie tylko piszę kod, ale także wdrażam
+						rozwiązania, które realnie usprawniają działanie firm. Specjalizuję się w tworzeniu stron i sklepów
+						internetowych, systemów dedykowanych oraz AI i automatyzacji procesów, które oszczędzają czas i zwiększają
+						efektywność firmy.
 					</p>
 
 					{/* Stats */}
