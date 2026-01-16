@@ -15,7 +15,6 @@ export const config = {
 	// - _next/image (image optimization files)
 	// - favicon.ico (favicon file)
 	// - sitemap.xml and robots.txt (SEO files)
-	matcher: [
-		'/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|catalog/products|landingPage|Irrify_logo.png|Irrify_logo_small.png|web.png|email.png|phone.png|facebook.png|instagram.png|video).*)',
-	],
+	// - public assets and other files with extensions
+	matcher: ['/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\..*).*)'],
 };

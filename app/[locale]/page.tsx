@@ -1,9 +1,9 @@
-import Hero from '@/components/sections/Hero';
-import About from '@/components/sections/About';
-import Experience from '@/components/sections/Experience';
-import TechStack from '@/components/sections/TechStack';
-import Portfolio from '@/components/sections/Portfolio';
-import Offer from '@/components/sections/Offer';
+import Hero from '@/components/homepage/Hero';
+import About from '@/components/homepage/About';
+import Experience from '@/components/homepage/Experience';
+import TechStack from '@/components/homepage/TechStack';
+import Portfolio from '@/components/homepage/Portfolio';
+import Offer from '@/components/homepage/Offer';
 
 const Home = () => (
 	<>

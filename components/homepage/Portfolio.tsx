@@ -17,7 +17,7 @@ const Portfolio = () => {
 	const progress = useMotionValue(0);
 	const progressWidth = useTransform(progress, (value) => `${value}%`);
 
-	const projectKeys = ['irrify', 'chow', 'suzuki', 'restaurant'];
+	const projectKeys = ['irrify', 'chow', 'suzuki', 'hagen'];
 
 	const getProjectImage = (key: string) => {
 		switch (key) {
@@ -27,8 +27,10 @@ const Portfolio = () => {
 				return 'chow.png';
 			case 'suzuki':
 				return 'suzuki.png';
+			case 'hagen':
+				return 'hagen.png';
 			default:
-				return 'restauracja-nad-zalewem.jpeg';
+				return '';
 		}
 	};
 
@@ -73,14 +75,7 @@ const Portfolio = () => {
 					TECHNOLOGIES.AXIOS,
 				];
 			default:
-				return [
-					TECHNOLOGIES.JAVASCRIPT,
-					TECHNOLOGIES.NEXT_JS,
-					TECHNOLOGIES.STYLED_COMPONENTS,
-					TECHNOLOGIES.WORDPRESS,
-					TECHNOLOGIES.ACF,
-					TECHNOLOGIES.GRAPHQL,
-				];
+				return [TECHNOLOGIES.TYPESCRIPT, TECHNOLOGIES.NEXT_JS, TECHNOLOGIES.STYLED_COMPONENTS, TECHNOLOGIES.SANITY];
 		}
 	};
 

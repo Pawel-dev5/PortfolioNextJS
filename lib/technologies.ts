@@ -104,6 +104,10 @@ export const TECHNOLOGIES = {
 		name: 'Supabase',
 		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg',
 	},
+	SANITY: {
+		name: 'Sanity',
+		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sanity/sanity-original.svg',
+	},
 	STRIPE: {
 		name: 'Stripe',
 		icon: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg',

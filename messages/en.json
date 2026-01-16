@@ -1,181 +1,209 @@
 {
-  "Metadata": {
-    "title": "Paweł Nowecki - Fullstack Developer",
-    "description": "Portfolio of a Senior Fullstack Developer. Websites, e-commerce, mobile apps, custom systems, AI implementations."
-  },
-  "Header": {
-    "about": "About",
-    "experience": "Experience",
-    "portfolio": "Portfolio",
-    "offer": "Offer",
-    "contact": "Contact",
-    "cta": "Let's Talk"
-  },
-  "Hero": {
-    "newProject": "New project:",
-    "role": "Paweł Nowecki",
-    "description": "I design and implement complex digital systems, e-commerce platforms, and process automations. I execute projects holistically – from architecture and business logic to the visual layer and deployment.",
-    "viewProjects": "View Projects",
-    "downloadCv": "Download CV"
-  },
-  "About": {
-    "subtitle": "About Me",
-    "title": "Developer with a passion for <highlight>innovation</highlight>",
-    "description": "I am a passionate developer who bridges the world of code with business goals. I don't just write code; I implement solutions that genuinely improve company operations. I specialize in creating websites and online stores, dedicated systems, as well as AI and process automation that save time and increase company efficiency.",
-    "yearsExperience": "Years of Experience",
-    "projectsCompleted": "Projects"
-  },
-  "Experience": {
-    "subtitle": "Experience",
-    "title": "My career <highlight>path</highlight>",
-    "jobs": {
-      "freelance": {
-        "role": "Fullstack Developer",
-        "company": "Freelance / Own Projects",
-        "achievements": [
-          "Creating websites and online stores",
-          "Developing dedicated systems and AI solutions for clients",
-          "Development of the irrify.ai platform"
-        ]
-      },
-      "widlarz": {
-        "role": "React Native Developer",
-        "company": "The Widlarz Group",
-        "achievements": [
-          "Learnnapp application: maintenance, fixing production bugs, and React Native version upgrade",
-          "Orca application: code audit, preparation for React Native upgrade, and implementation of new architecture"
-        ]
-      },
-      "tenA": {
-        "role": "Frontend Developer",
-        "company": "10a",
-        "achievements": [
-          "Development of new functionalities in mobile apps: Moje Suzuki, cHow, and Mój Sklep (Eurocash)",
-          "Designing and implementing key solutions that improve daily business processes and enhanced user experience quality."
-        ]
-      },
-      "gridaly": {
-        "role": "Frontend Developer",
-        "company": "Gridaly",
-        "achievements": [
-          "Developing new functionalities for a web application handling online and hybrid events, and creating key modules for the event management system",
-          "Designing and implementing a new, responsive website for the platform, focusing on performance optimization and code quality",
-          "Programming a mobile app for ticket scanning integrated with the web platform, ensuring stable and fast communication between systems"
-        ]
-      },
-      "hagen": {
-        "role": "Senior Account Executive",
-        "company": "Hagen",
-        "achievements": [
-          "Developing and implementing a comprehensive training system for House of Skills, streamlining training organization and execution",
-          "Designing and implementing a branch service mobile app for BNP Paribas Bank, streamlining operations, communication, and customer service"
-        ]
-      },
-      "wisefriends": {
-        "role": "Account Executive",
-        "company": "Wisefriends",
-        "achievements": [
-          "Managing and executing a web application project for Essilor, ensuring timeliness and quality",
-          "Co-creating and implementing digital campaigns for Orange (Love campaign) and preparing the IQOS brand launch for the Polish market for Philip Morris International",
-          "Preparing, executing, and implementing digital campaigns for clients such as Eurocash, Adidas, Coty, Opel, Philips, Maspex, Geberit, and Reprise Digital"
-        ]
-      }
-    }
-  },
-  "TechStack": {
-    "subtitle": "Tech Stack",
-    "title": "Technologies I <highlight>work with</highlight>"
-  },
-  "Portfolio": {
-    "subtitle": "Portfolio",
-    "title": "Selected <highlight>projects</highlight>",
-    "cta": "View Case Study",
-    "projects": {
-      "irrify": {
-        "title": "Irrify.ai",
-        "category": "AI Platform",
-        "description": "Advanced platform for business process automation using artificial intelligence. The system enables the creation of intelligent AI agents, workflow automation, and integration with popular tools."
-      },
-      "chow": {
-        "title": "cHow",
-        "category": "Mobile App",
-        "description": "The cHow system is used to quickly and conveniently collect and analyze information from field employees about your own sales network, competitive networks, and the environment."
-      },
-      "suzuki": {
-        "title": "Moje Suzuki",
-        "category": "Mobile App",
-        "description": "Development of new functionalities in the My Suzuki application, allowing convenient service history review, receiving notifications about inspections, and service/recall actions."
-      },
-      "restaurant": {
-        "title": "Restauracja nad zalewem",
-        "category": "Website",
-        "description": "Wordpress used as a headless CMS utilizing Advanced Custom Fields and GraphQL connected to a frontend created using NextJS. Thanks to this technology combination, the website achieved the maximum possible score in Google tests."
-      }
-    }
-  },
-  "Offer": {
-    "subtitle": "Offer",
-    "title": "How can I <highlight>help</highlight> you?",
-    "description": "I offer comprehensive programming services - from simple websites to advanced AI systems and business automations.",
-    "learnMore": "Learn more",
-    "items": {
-      "websites": {
-        "title": "Websites & Stores",
-        "description": "Modern websites, e-commerce stores, landing pages that convert into customers."
-      },
-      "mobile": {
-        "title": "Mobile Apps",
-        "description": "iOS and Android mobile apps, admin panels, custom business applications."
-      },
-      "systems": {
-        "title": "Dedicated Systems",
-        "description": "Custom CRM/ERP systems, admin panels, tailored business applications."
-      },
-      "ai": {
-        "title": "AI Implementations",
-        "description": "Intelligent AI agents, process automation, integration with OpenAI and other LLM models."
-      },
-      "automation": {
-        "title": "Automations",
-        "description": "Workflow automation, API integrations, bots and scripts saving hundreds of hours of work."
-      }
-    }
-  },
-  "Contact": {
-    "subtitle": "Contact",
-    "title": "Let's talk about <highlight>your project</highlight>",
-    "infoTitle": "Contact Info",
-    "infoDescription": "Have questions? Want to discuss your project? Write to me - I usually reply within 24 hours.",
-    "email": "Email",
-    "phone": "Phone",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "subject": "Subject",
-      "message": "Message",
-      "submit": "Send Message",
-      "submitting": "Sending...",
-      "placeholders": {
-        "name": "John Doe",
-        "email": "john@example.com",
-        "subject": "What is your message about?",
-        "message": "Describe your project or ask a question..."
-      }
-    },
-    "toast": {
-      "successTitle": "Message sent!",
-      "successDescription": "I will reply as soon as possible."
-    }
-  },
-  "Footer": {
-    "copyright": "© {year} Paweł Nowecki. All rights reserved."
-  },
-  "Subpages": {
-    "websites": "Websites and Online Stores",
-    "automation": "Automations",
-    "systems": "Dedicated CRM / ERP Systems",
-    "ai": "AI Implementations and Business Process Automation",
-    "inProgress": "Page under construction.",
-    "aiDescription": "Page under construction. A detailed description of the AI implementation offer will appear here."
-  }
+	"Metadata": {
+		"default": {
+			"title": "Paweł Nowecki - Fullstack Developer & AI Expert",
+			"description": "Portfolio of a Senior Fullstack Developer. Websites, e-commerce, mobile apps, custom systems, AI implementations. Boost your business with modern technologies.",
+			"keywords": "fullstack developer, programmer, websites, online stores, mobile apps, custom systems, AI implementations, artificial intelligence, process automation"
+		},
+		"portfolio": {
+			"title": "Portfolio - Projects & Case Studies | Paweł Nowecki",
+			"description": "Check out my projects: mobile apps, custom systems, AI implementations and websites. See how I helped other companies.",
+			"keywords": "developer portfolio, website projects, app projects, IT case studies, AI implementation examples"
+		},
+		"offer_automation": {
+			"title": "Business Process Automation | Paweł Nowecki",
+			"description": "Save time and money with automation. API integrations, bots, workflow optimization. Let technology work for you.",
+			"keywords": "process automation, business automation, API integrations, make.com, zapier, n8n, work optimization, bots"
+		},
+		"offer_websites": {
+			"title": "Websites & E-commerce | Paweł Nowecki",
+			"description": "Modern, fast and responsive websites and online stores that convert. Next.js, React, WordPress, Shopify.",
+			"keywords": "website creation, online stores, e-commerce, responsive websites, next.js, react, wordpress, fast websites"
+		},
+		"offer_systems": {
+			"title": "Custom CRM / ERP Systems | Paweł Nowecki",
+			"description": "Tailor-made software. Business management systems, admin panels, B2B applications, CRM and ERP systems adapted to your needs.",
+			"keywords": "custom systems, custom software, tailored crm, erp, b2b applications, admin panels, software house"
+		},
+		"offer_ai": {
+			"title": "AI Implementations for Business | Paweł Nowecki",
+			"description": "Leverage AI potential in your business. Chatbots, data analysis, intelligent assistants, language models (LLM), OpenAI.",
+			"keywords": "AI implementations, artificial intelligence in business, AI chatbots, language models, LLM, OpenAI, AI automation, chatgpt for business"
+		}
+	},
+	"Header": {
+		"about": "About",
+		"experience": "Experience",
+		"portfolio": "Portfolio",
+		"offer": "Offer",
+		"contact": "Contact",
+		"cta": "Let's Talk"
+	},
+	"Hero": {
+		"newProject": "New project:",
+		"role": "Paweł Nowecki",
+		"description": "I design and implement complex digital systems, e-commerce platforms, and process automations. I execute projects holistically – from architecture and business logic to the visual layer and deployment.",
+		"viewProjects": "View Projects",
+		"downloadCv": "Download CV"
+	},
+	"About": {
+		"subtitle": "About Me",
+		"title": "Developer with a passion for <highlight>innovation</highlight>",
+		"description": "I am a passionate developer who bridges the world of code with business goals. I don't just write code; I implement solutions that genuinely improve company operations. I specialize in creating websites and online stores, dedicated systems, as well as AI and process automation that save time and increase company efficiency.",
+		"yearsExperience": "Years of Experience",
+		"projectsCompleted": "Projects"
+	},
+	"Experience": {
+		"subtitle": "Experience",
+		"title": "My career <highlight>path</highlight>",
+		"jobs": {
+			"freelance": {
+				"role": "Fullstack Developer",
+				"company": "Freelance / Own Projects",
+				"achievements": [
+					"Creating websites and online stores",
+					"Developing dedicated systems and AI solutions for clients",
+					"Development of the irrify.ai platform"
+				]
+			},
+			"widlarz": {
+				"role": "React Native Developer",
+				"company": "The Widlarz Group",
+				"achievements": [
+					"Learnnapp application: maintenance, fixing production bugs, and React Native version upgrade",
+					"Orca application: code audit, preparation for React Native upgrade, and implementation of new architecture"
+				]
+			},
+			"tenA": {
+				"role": "Frontend Developer",
+				"company": "10a",
+				"achievements": [
+					"Development of new functionalities in mobile apps: Moje Suzuki, cHow, and Mój Sklep (Eurocash)",
+					"Designing and implementing key solutions that improve daily business processes and enhanced user experience quality."
+				]
+			},
+			"gridaly": {
+				"role": "Frontend Developer",
+				"company": "Gridaly",
+				"achievements": [
+					"Developing new functionalities for a web application handling online and hybrid events, and creating key modules for the event management system",
+					"Designing and implementing a new, responsive website for the platform, focusing on performance optimization and code quality",
+					"Programming a mobile app for ticket scanning integrated with the web platform, ensuring stable and fast communication between systems"
+				]
+			},
+			"hagen": {
+				"role": "Senior Account Executive",
+				"company": "Hagen",
+				"achievements": [
+					"Developing and implementing a comprehensive training system for House of Skills, streamlining training organization and execution",
+					"Designing and implementing a branch service mobile app for BNP Paribas Bank, streamlining operations, communication, and customer service"
+				]
+			},
+			"wisefriends": {
+				"role": "Account Executive",
+				"company": "Wisefriends",
+				"achievements": [
+					"Managing and executing a web application project for Essilor, ensuring timeliness and quality",
+					"Co-creating and implementing digital campaigns for Orange (Love campaign) and preparing the IQOS brand launch for the Polish market for Philip Morris International",
+					"Preparing, executing, and implementing digital campaigns for clients such as Eurocash, Adidas, Coty, Opel, Philips, Maspex, Geberit, and Reprise Digital"
+				]
+			}
+		}
+	},
+	"TechStack": {
+		"subtitle": "Tech Stack",
+		"title": "Technologies I <highlight>work with</highlight>"
+	},
+	"Portfolio": {
+		"subtitle": "Portfolio",
+		"title": "Selected <highlight>projects</highlight>",
+		"cta": "View Case Study",
+		"projects": {
+			"irrify": {
+				"title": "Irrify.ai",
+				"category": "AI Platform",
+				"description": "Advanced platform for business process automation using artificial intelligence. The system enables the creation of intelligent AI agents, workflow automation, and integration with popular tools."
+			},
+			"chow": {
+				"title": "cHow",
+				"category": "Mobile App",
+				"description": "The cHow system is used to quickly and conveniently collect and analyze information from field employees about your own sales network, competitive networks, and the environment."
+			},
+			"suzuki": {
+				"title": "Moje Suzuki",
+				"category": "Mobile App",
+				"description": "Development of new functionalities in the My Suzuki application, allowing convenient service history review, receiving notifications about inspections, and service/recall actions."
+			},
+			"hagen": {
+				"title": "Hagen",
+				"category": "Website",
+				"description": "Website for Hagen company. Modern design and SEO optimization."
+			}
+		}
+	},
+	"Offer": {
+		"subtitle": "Offer",
+		"title": "How can I <highlight>help</highlight> you?",
+		"description": "I offer comprehensive programming services - from simple websites to advanced AI systems and business automations.",
+		"learnMore": "Learn more",
+		"items": {
+			"websites": {
+				"title": "Websites & Stores",
+				"description": "Modern websites, e-commerce stores, landing pages that convert into customers."
+			},
+			"mobile": {
+				"title": "Mobile Apps",
+				"description": "iOS and Android mobile apps, admin panels, custom business applications."
+			},
+			"systems": {
+				"title": "Dedicated Systems",
+				"description": "Custom CRM/ERP systems, admin panels, tailored business applications."
+			},
+			"ai": {
+				"title": "AI Implementations",
+				"description": "Intelligent AI agents, process automation, integration with OpenAI and other LLM models."
+			},
+			"automation": {
+				"title": "Automations",
+				"description": "Workflow automation, API integrations, bots and scripts saving hundreds of hours of work."
+			}
+		}
+	},
+	"Contact": {
+		"subtitle": "Contact",
+		"title": "Let's talk about <highlight>your project</highlight>",
+		"infoTitle": "Contact Info",
+		"infoDescription": "Have questions? Want to discuss your project? Write to me - I usually reply within 24 hours.",
+		"email": "Email",
+		"phone": "Phone",
+		"form": {
+			"name": "Name",
+			"email": "Email",
+			"subject": "Subject",
+			"message": "Message",
+			"submit": "Send Message",
+			"submitting": "Sending...",
+			"placeholders": {
+				"name": "John Doe",
+				"email": "john@example.com",
+				"subject": "What is your message about?",
+				"message": "Describe your project or ask a question..."
+			}
+		},
+		"toast": {
+			"successTitle": "Message sent!",
+			"successDescription": "I will reply as soon as possible."
+		}
+	},
+	"Footer": {
+		"copyright": "© {year} Paweł Nowecki. All rights reserved."
+	},
+	"Subpages": {
+		"websites": "Websites and Online Stores",
+		"automation": "Automations",
+		"systems": "Dedicated CRM / ERP Systems",
+		"ai": "AI Implementations and Business Process Automation",
+		"inProgress": "Page under construction.",
+		"aiDescription": "Page under construction. A detailed description of the AI implementation offer will appear here."
+	}
 }
