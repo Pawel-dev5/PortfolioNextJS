@@ -11,6 +11,7 @@ import { useTranslations } from 'next-intl';
 import { sendEmail } from '@/app/actions/sendEmail';
 import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
 import { cn } from '@/lib/utils';
+import * as gtag from '@/lib/gtag';
 
 const socialLinks = [
 	{ icon: Linkedin, href: 'https://linkedin.com/in/pawel-nowecki', label: 'LinkedIn', display: 'Paweł Nowecki' },
@@ -55,6 +56,11 @@ const Contact = () => {
 			const result = await sendEmail(null, formData);
 
 			if (result.success) {
+				gtag.event({
+					action: 'submit',
+					category: 'Contact',
+					label: 'Contact Form Success',
+				});
 				toast({
 					title: t('toast.successTitle'),
 					description: t('toast.successDescription'),
@@ -130,7 +136,17 @@ const Contact = () => {
 								</div>
 								<div>
 									<p className="text-sm text-muted-foreground">{t('email')}</p>
-									<a href="mailto:p.nowecki@gmail.com" className="font-medium hover:text-primary transition-colors">
+									<a
+										href="mailto:p.nowecki@gmail.com"
+										className="font-medium hover:text-primary transition-colors"
+										onClick={() =>
+											gtag.event({
+												action: 'click',
+												category: 'Contact',
+												label: 'Email',
+											})
+										}
+									>
 										p.nowecki@gmail.com
 									</a>
 								</div>
@@ -142,7 +158,17 @@ const Contact = () => {
 								</div>
 								<div>
 									<p className="text-sm text-muted-foreground">{t('phone')}</p>
-									<a href="tel:+48791893867" className="font-medium hover:text-primary transition-colors">
+									<a
+										href="tel:+48791893867"
+										className="font-medium hover:text-primary transition-colors"
+										onClick={() =>
+											gtag.event({
+												action: 'click',
+												category: 'Contact',
+												label: 'Phone',
+											})
+										}
+									>
 										+48 791 893 867
 									</a>
 								</div>
@@ -160,6 +186,13 @@ const Contact = () => {
 											target="_blank"
 											rel="noopener noreferrer"
 											className="font-medium hover:text-primary transition-colors"
+											onClick={() =>
+												gtag.event({
+													action: 'click',
+													category: 'Contact',
+													label: `Social - ${link.label}`,
+												})
+											}
 										>
 											{link.display}
 										</a>

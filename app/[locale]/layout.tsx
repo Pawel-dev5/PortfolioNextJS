@@ -1,5 +1,6 @@
 import '../globals.css';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import Header from '@/components/layout/Header';
 import Contact from '@/components/homepage/Contact';
 import Footer from '@/components/layout/Footer';
@@ -42,15 +43,29 @@ const RootLayout = async ({ children, params }: { children: React.ReactNode; par
 
 	return (
 		<html lang={locale} className="scroll-smooth">
-			<body className="antialiased min-h-screen relative overflow-x-hidden">
+			<head></head>
+			<Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-0F4PYQ46H6" />
+			<Script
+				id="gtag-init"
+				strategy="afterInteractive"
+				dangerouslySetInnerHTML={{
+					__html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0F4PYQ46H6', {
+              page_path: window.location.pathname,
+            });
+          `,
+				}}
+			/>
+			<body className="antialiased min-h-screen relative overflow-x-hidden bg-background">
 				<JsonLd />
 				<NextIntlClientProvider messages={messages}>
-					<div className="min-h-screen bg-background">
-						<Header />
-						<main className="overflow-x-hidden">{children}</main>
-						<Contact />
-						<Footer />
-					</div>
+					<Header />
+					<main className="overflow-x-hidden">{children}</main>
+					<Contact />
+					<Footer />
 				</NextIntlClientProvider>
 			</body>
 		</html>

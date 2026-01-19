@@ -8,6 +8,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { getFeaturedProjects } from '@/lib/portfolioProjects';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import * as gtag from '@/lib/gtag';
 
 const Portfolio = () => {
 	const t = useTranslations('Portfolio');
@@ -87,7 +88,14 @@ const Portfolio = () => {
 								whileInView={{ opacity: 1, x: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: index * 0.1 }}
-								onClick={() => setActiveIndex(index)}
+								onClick={() => {
+									setActiveIndex(index);
+									gtag.event({
+										action: 'click',
+										category: 'Portfolio',
+										label: `Select Project - ${project.title}`,
+									});
+								}}
 								className={`group relative text-left p-6 rounded-2xl transition-all duration-300 overflow-hidden ${
 									activeIndex === index ? 'glass-card bg-primary/5 border-primary/30' : 'hover:bg-secondary/50'
 								}`}
@@ -162,7 +170,17 @@ const Portfolio = () => {
 									</div>
 
 									{/* CTA */}
-									<Link href={`/portfolio/${activeProject.slug}`} className={`${buttonVariants('default', 'lg')} neon-glow`}>
+									<Link
+										href={`/portfolio/${activeProject.slug}`}
+										className={`${buttonVariants('default', 'lg')} neon-glow`}
+										onClick={() =>
+											gtag.event({
+												action: 'click',
+												category: 'Portfolio',
+												label: `View Project Details - ${activeProject.title}`,
+											})
+										}
+									>
 										<ExternalLink className="mr-2 w-4 h-4" />
 										{t('cta')}
 									</Link>
@@ -173,7 +191,17 @@ const Portfolio = () => {
 				</div>
 			</div>
 			<div className="mt-16 flex justify-center">
-				<Link href="/portfolio" className={`${buttonVariants('default', 'lg')} neon-glow`}>
+				<Link
+					href="/portfolio"
+					className={`${buttonVariants('default', 'lg')} neon-glow`}
+					onClick={() =>
+						gtag.event({
+							action: 'click',
+							category: 'Portfolio',
+							label: 'View All Projects',
+						})
+					}
+				>
 					<ExternalLink className="mr-2 w-4 h-4" />
 					{t('viewAll')}
 				</Link>

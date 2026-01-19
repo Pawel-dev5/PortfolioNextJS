@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { TECHNOLOGIES } from '@/lib/technologies';
 import { useTranslations } from 'next-intl';
 
+import * as gtag from '@/lib/gtag';
+
 const TechStack = () => {
 	const t = useTranslations('TechStack');
 	const technologies = Object.values(TECHNOLOGIES);
@@ -43,6 +45,13 @@ const TechStack = () => {
 							<div
 								key={`row1-${index}`}
 								className="group relative flex flex-col items-center justify-center w-24 h-24 glass-card p-4 shrink-0 hover-lift cursor-pointer"
+								onClick={() =>
+									gtag.event({
+										action: 'click',
+										category: 'TechStack',
+										label: tech.name,
+									})
+								}
 							>
 								<div className="relative w-10 h-10">
 									<Image

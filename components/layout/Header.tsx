@@ -6,6 +6,7 @@ import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
+import * as gtag from '@/lib/gtag';
 
 const Header = () => {
 	const t = useTranslations('Header');
@@ -63,7 +64,17 @@ const Header = () => {
 		>
 			<div className="section-container flex items-center justify-between">
 				{/* Logo */}
-				<Link href="/" className="flex items-center gap-2">
+				<Link
+					href="/"
+					className="flex items-center gap-2"
+					onClick={() =>
+						gtag.event({
+							action: 'click',
+							category: 'Navigation',
+							label: 'Logo',
+						})
+					}
+				>
 					<span className="text-xl md:text-2xl font-bold">
 						Paweł <span className="text-primary">Nowecki</span>
 					</span>
@@ -74,7 +85,14 @@ const Header = () => {
 					{navLinks.map((link) => (
 						<button
 							key={link.href}
-							onClick={() => scrollToSection(link.href)}
+							onClick={() => {
+								scrollToSection(link.href);
+								gtag.event({
+									action: 'click',
+									category: 'Navigation',
+									label: link.label,
+								});
+							}}
 							className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
 						>
 							{link.label}
@@ -87,6 +105,13 @@ const Header = () => {
 						locale={locale === 'pl' ? 'en' : 'pl'}
 						className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 						aria-label="Change language"
+						onClick={() =>
+							gtag.event({
+								action: 'click',
+								category: 'Navigation',
+								label: `Language Switcher - ${locale === 'pl' ? 'en' : 'pl'}`,
+							})
+						}
 					>
 						<Globe className="w-4 h-4" />
 						<span className="uppercase">{locale === 'pl' ? 'en' : 'pl'}</span>
@@ -96,7 +121,14 @@ const Header = () => {
 				{/* CTA Button */}
 				<div className="hidden md:block">
 					<Button
-						onClick={() => scrollToSection('#contact')}
+						onClick={() => {
+							scrollToSection('#contact');
+							gtag.event({
+								action: 'click',
+								category: 'Navigation',
+								label: 'CTA Header',
+							});
+						}}
 						className="bg-primary hover:bg-primary/90 text-primary-foreground"
 					>
 						{t('cta')}
@@ -110,6 +142,13 @@ const Header = () => {
 						locale={locale === 'pl' ? 'en' : 'pl'}
 						className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
 						aria-label="Change language"
+						onClick={() =>
+							gtag.event({
+								action: 'click',
+								category: 'Navigation',
+								label: `Language Switcher - ${locale === 'pl' ? 'en' : 'pl'}`,
+							})
+						}
 					>
 						<Globe className="w-5 h-5" />
 						<span className="uppercase">{locale === 'pl' ? 'en' : 'pl'}</span>
@@ -134,14 +173,28 @@ const Header = () => {
 							{navLinks.map((link) => (
 								<button
 									key={link.href}
-									onClick={() => scrollToSection(link.href)}
+									onClick={() => {
+										scrollToSection(link.href);
+										gtag.event({
+											action: 'click',
+											category: 'Mobile Navigation',
+											label: link.label,
+										});
+									}}
 									className="text-left text-lg font-medium py-2 hover:text-primary transition-colors"
 								>
 									{link.label}
 								</button>
 							))}
 							<Button
-								onClick={() => scrollToSection('#contact')}
+								onClick={() => {
+									scrollToSection('#contact');
+									gtag.event({
+										action: 'click',
+										category: 'Mobile Navigation',
+										label: 'CTA Mobile',
+									});
+								}}
 								className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground"
 							>
 								{t('cta')}

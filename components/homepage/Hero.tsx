@@ -6,6 +6,7 @@ import { ArrowRight, Download, Rocket } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
+import * as gtag from '@/lib/gtag';
 
 const Hero = () => {
 	const t = useTranslations('Hero');
@@ -26,6 +27,13 @@ const Hero = () => {
 						href="https://irrify.ai"
 						target="_blank"
 						rel="noopener noreferrer"
+						onClick={() =>
+							gtag.event({
+								action: 'click',
+								category: 'Hero',
+								label: 'Irrify Banner',
+							})
+						}
 						initial={{ opacity: 0, y: -20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.2 }}
@@ -68,6 +76,13 @@ const Hero = () => {
 					>
 						<Link
 							href="#portfolio"
+							onClick={() =>
+								gtag.event({
+									action: 'click',
+									category: 'Hero',
+									label: 'View Projects',
+								})
+							}
 							className={cn(
 								buttonVariants('default', 'lg'),
 								'bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg neon-glow hover-lift',
@@ -80,6 +95,13 @@ const Hero = () => {
 							href={t('cvUrl')}
 							target="_blank"
 							rel="noopener noreferrer"
+							onClick={() =>
+								gtag.event({
+									action: 'download',
+									category: 'Hero',
+									label: 'Download CV',
+								})
+							}
 							className={cn(buttonVariants('outline', 'lg'), 'font-semibold px-8 py-6 text-lg hover-lift')}
 						>
 							<Download className="mr-2 w-5 h-5" />

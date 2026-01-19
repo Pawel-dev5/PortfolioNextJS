@@ -44,7 +44,8 @@
 		"role": "Paweł Nowecki",
 		"description": "Projektuję i wdrażam kompleksowe systemy cyfrowe, platformy e-commerce oraz automatyzacje procesów. Realizuję projekty holistycznie – od architektury i logiki biznesowej, po warstwę wizualną i wdrożenie.",
 		"viewProjects": "Zobacz Projekty",
-		"downloadCv": "Pobierz CV"
+		"downloadCv": "Pobierz CV",
+		"cvUrl": "https://drive.google.com/file/d/1mQA6DkCoiogYkgiNd77SUAc_HKIEh45q/view?usp=drive_link"
 	},
 	"About": {
 		"subtitle": "O mnie",

@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Link, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { TECHNOLOGIES } from '@/lib/technologies';
+import * as gtag from '@/lib/gtag';
 import type { ProjectLink, ProjectCategoryKey } from '@/lib/portfolioProjects';
 
 const TECHNOLOGY_ICON_BY_NAME = Object.values(TECHNOLOGIES).reduce<Record<string, string>>((acc, tech) => {
@@ -153,6 +154,13 @@ const ProjectDetailsPage = ({ project, relatedProjects, prevProject, nextProject
 						<Link
 							href="/portfolio"
 							className="inline-flex items-center text-foreground/80 hover:text-primary transition-colors mb-12"
+							onClick={() =>
+								gtag.event({
+									action: 'click',
+									category: 'Project Details',
+									label: 'Back to Portfolio',
+								})
+							}
 						>
 							<ArrowLeft className="w-4 h-4 mr-2" />
 							{labels.backToPortfolio}
@@ -174,7 +182,14 @@ const ProjectDetailsPage = ({ project, relatedProjects, prevProject, nextProject
 								<Button
 									size="lg"
 									className="bg-primary hover:bg-primary/90 text-primary-foreground neon-glow"
-									onClick={() => window.open(primaryLink.url ?? '#', '_blank')}
+									onClick={() => {
+										window.open(primaryLink.url ?? '#', '_blank');
+										gtag.event({
+											action: 'click',
+											category: 'Project Details',
+											label: `Visit Site - ${project.title}`,
+										});
+									}}
 								>
 									<ExternalLink className="w-4 h-4 mr-2" />
 									{labels.visitSite}
@@ -412,6 +427,13 @@ const ProjectDetailsPage = ({ project, relatedProjects, prevProject, nextProject
 											<Link
 												href={`/portfolio/${related.slug}`}
 												className="block glass-card overflow-hidden hover-lift group"
+												onClick={() =>
+													gtag.event({
+														action: 'click',
+														category: 'Project Details',
+														label: `Related Project - ${related.title}`,
+													})
+												}
 											>
 												<div className="aspect-video overflow-hidden bg-secondary/30">
 													{related.image ? (
@@ -450,6 +472,13 @@ const ProjectDetailsPage = ({ project, relatedProjects, prevProject, nextProject
 								<Link
 									href={`/portfolio/${prevProject.slug}`}
 									className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
+									onClick={() =>
+										gtag.event({
+											action: 'click',
+											category: 'Project Details',
+											label: `Previous Project - ${prevProject.title}`,
+										})
+									}
 								>
 									<ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
 									<div>
@@ -465,6 +494,13 @@ const ProjectDetailsPage = ({ project, relatedProjects, prevProject, nextProject
 								<Link
 									href={`/portfolio/${nextProject.slug}`}
 									className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-right group"
+									onClick={() =>
+										gtag.event({
+											action: 'click',
+											category: 'Project Details',
+											label: `Next Project - ${nextProject.title}`,
+										})
+									}
 								>
 									<div>
 										<span className="text-xs uppercase tracking-wider">{labels.navigation.next}</span>

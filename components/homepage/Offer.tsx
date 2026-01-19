@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Brain, Zap, Database, Globe, ArrowRight, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import * as gtag from '@/lib/gtag';
 
 const Offer = () => {
 	const t = useTranslations('Offer');
@@ -68,7 +69,17 @@ const Offer = () => {
 							viewport={{ once: true }}
 							transition={{ delay: index * 0.1 }}
 						>
-							<Link href={offer.link} className="group block glass-card p-8 h-full hover-lift relative overflow-hidden">
+							<Link
+								href={offer.link}
+								className="group block glass-card p-8 h-full hover-lift relative overflow-hidden"
+								onClick={() =>
+									gtag.event({
+										action: 'click',
+										category: 'Offer',
+										label: `Offer - ${offer.id}`,
+									})
+								}
+							>
 								<div
 									className={`absolute inset-0 bg-gradient-to-br ${offer.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
 								/>
