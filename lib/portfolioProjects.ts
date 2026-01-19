@@ -244,7 +244,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
 		key: 'hagen',
 		imageUrl: 'hagen.png',
 		imageFit: 'cover',
-		categories: ['websites'],
+		categories: ['websites', 'cms'],
 		stack: [
 			TECHNOLOGIES.TYPESCRIPT.name,
 			TECHNOLOGIES.NEXT_JS.name,
@@ -307,6 +307,49 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 	{
 		id: 0,
 		stack: [
+			TECHNOLOGIES.REACT_NATIVE.name,
+			TECHNOLOGIES.TYPESCRIPT.name,
+			TECHNOLOGIES.REACT.name,
+			TECHNOLOGIES.REDUX.name,
+			TECHNOLOGIES.AXIOS.name,
+		],
+		categories: ['mobile', 'websites'],
+		links: [
+			{ id: 0, type: 'GitHub', url: null },
+			{ id: 1, type: 'External', url: 'https://learnn.com/v2/' },
+			{
+				id: 2,
+				type: 'External',
+				url: 'https://play.google.com/store/apps/details?id=com.learnn.app',
+			},
+		],
+		imageUrl: 'learnn.png',
+		gallery: ['/assets/learnnGallery1.webp', '/assets/learnnGallery2.webp', '/assets/learnnGallery3.webp'],
+		title: { en: 'Learnn', pl: 'Learnn' },
+		description: {
+			en: 'Educational platform for learning digital skills with video courses and progress tracking.',
+			pl: 'Platforma edukacyjna do nauki kompetencji cyfrowych z kursami wideo i śledzeniem postępów.',
+		},
+		fullDescription: {
+			en: 'A comprehensive mobile and web platform for learning digital skills, featuring video courses, progress tracking, and interactive quizzes.',
+			pl: 'Kompleksowa platforma mobilna i webowa do nauki umiejętności cyfrowych, oferująca kursy wideo, śledzenie postępów i interaktywne quizy.',
+		},
+		challenge: {
+			en: 'Maintaining and stabilizing a production application by fixing critical bugs and upgrading key dependencies like React Native.',
+			pl: 'Utrzymanie i stabilizacja aplikacji produkcyjnej poprzez naprawę błędów krytycznych oraz aktualizację kluczowych zależności, takich jak React Native.',
+		},
+		solution: {
+			en: 'Refactoring legacy code, resolving production issues, and performing a major upgrade of React Native and related libraries.',
+			pl: 'Refaktoryzacja kodu legacy, rozwiązywanie problemów produkcyjnych oraz przeprowadzenie dużej aktualizacji React Native i powiązanych bibliotek.',
+		},
+		results: {
+			en: ['Improved application stability', 'Up-to-date technology stack', 'Reduced technical debt'],
+			pl: ['Poprawa stabilności aplikacji', 'Aktualny stos technologiczny', 'Zredukowany dług technologiczny'],
+		},
+	},
+	{
+		id: 1,
+		stack: [
 			TECHNOLOGIES.JAVASCRIPT.name,
 			TECHNOLOGIES.NEXT_JS.name,
 			TECHNOLOGIES.STYLED_COMPONENTS.name,
@@ -358,7 +401,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 1,
+		id: 2,
 		stack: [
 			TECHNOLOGIES.JAVASCRIPT.name,
 			TECHNOLOGIES.REACT.name,
@@ -397,7 +440,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 2,
+		id: 3,
 		imageUrl: 'gridalyWebapp.webp',
 		stack: [
 			TECHNOLOGIES.JAVASCRIPT.name,
@@ -446,7 +489,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 3,
+		id: 4,
 		stack: [
 			TECHNOLOGIES.TYPESCRIPT.name,
 			TECHNOLOGIES.REACT.name,
@@ -459,7 +502,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 			TECHNOLOGIES.STORYBOOK.name,
 			TECHNOLOGIES.PUSHER.name,
 		],
-		categories: ['systems'],
+		categories: ['systems', 'cms'],
 		links: [
 			{ id: 0, type: 'GitHub', url: null },
 			{ id: 1, type: 'External', url: 'http://gridaly.pl/' },
@@ -495,7 +538,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 4,
+		id: 5,
 		stack: [
 			TECHNOLOGIES.TYPESCRIPT.name,
 			TECHNOLOGIES.REACT.name,
@@ -539,7 +582,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 5,
+		id: 6,
 		stack: [
 			TECHNOLOGIES.TYPESCRIPT.name,
 			TECHNOLOGIES.REACT_NATIVE.name,
@@ -582,7 +625,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 6,
+		id: 7,
 		stack: [
 			TECHNOLOGIES.TYPESCRIPT.name,
 			TECHNOLOGIES.REACT_NATIVE.name,
@@ -619,9 +662,9 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 7,
+		id: 8,
 		stack: [TECHNOLOGIES.WORDPRESS.name],
-		categories: ['websites', 'marketing'],
+		categories: ['websites', 'marketing', 'cms'],
 		links: [
 			{ id: 0, type: 'GitHub', url: null },
 			{ id: 1, type: 'External', url: 'https://finlux.com.pl/' },
@@ -651,9 +694,9 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 8,
+		id: 9,
 		stack: [TECHNOLOGIES.WORDPRESS.name, TECHNOLOGIES.WOOCOMMERCE.name],
-		categories: ['websites', 'ecommerce'],
+		categories: ['websites', 'ecommerce', 'cms'],
 		links: [
 			{ id: 0, type: 'GitHub', url: null },
 			{ id: 1, type: 'External', url: 'https://www.choinkizdowozem.pl/' },
@@ -682,7 +725,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 9,
+		id: 10,
 		stack: [
 			TECHNOLOGIES.JAVASCRIPT.name,
 			TECHNOLOGIES.NEXT_JS.name,
@@ -719,7 +762,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 10,
+		id: 11,
 		stack: [TECHNOLOGIES.HTML.name, TECHNOLOGIES.CSS.name],
 		categories: ['email', 'marketing'],
 		links: [
@@ -751,7 +794,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 11,
+		id: 12,
 		stack: [TECHNOLOGIES.JAVASCRIPT.name, TECHNOLOGIES.REACT.name],
 		categories: ['games'],
 		links: [
@@ -783,7 +826,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 		},
 	},
 	{
-		id: 12,
+		id: 13,
 		stack: [TECHNOLOGIES.TYPESCRIPT.name, TECHNOLOGIES.REACT.name],
 		categories: ['tools'],
 		links: [
