@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink, Filter, Github } from 'lucide-react';
+import { ExternalLink, Filter, Github } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { buttonVariants } from '@/components/ui/button';
@@ -194,12 +194,7 @@ const PortfolioPage = ({ locale }: { locale: string }) => {
 	}, [activeCategory, allProjects]);
 
 	return (
-		<section className="section-container py-20">
-			<Link href="/" className="mb-8 inline-flex items-center text-muted-foreground transition-colors hover:text-primary">
-				<ArrowLeft className="mr-2 h-4 w-4" />
-				{t('back')}
-			</Link>
-
+		<section className="section-container pt-28 pb-20">
 			<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12 text-center">
 				<span className="text-sm font-semibold uppercase tracking-wider text-primary">{t('eyebrow')}</span>
 				<h1 className="mt-2 text-4xl font-bold sm:text-5xl">

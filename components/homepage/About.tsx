@@ -55,7 +55,7 @@ const About = () => {
 						<p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t('description')}</p>
 
 						{/* Stats */}
-						<div className="grid grid-cols-2 gap-6">
+						<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 							{stats.map((stat, index) => (
 								<motion.div
 									key={stat.label}

@@ -75,7 +75,7 @@ const Hero = () => {
 						className="flex flex-col sm:flex-row items-center justify-center gap-4"
 					>
 						<Link
-							href="#portfolio"
+							href="/portfolio"
 							onClick={() =>
 								gtag.event({
 									action: 'click',

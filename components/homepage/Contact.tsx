@@ -107,7 +107,7 @@ const Contact = () => {
 	};
 
 	return (
-		<section id="contact" className="py-24 bg-background">
+		<section id="contact" className="py-24 bg-background overflow-x-hidden">
 			<div className="section-container">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,12 @@ const Contact = () => {
 
 				<div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
 					{/* Contact Info */}
-					<motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+					<motion.div
+						initial={{ opacity: 0, x: -30 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true }}
+						className="min-w-0"
+					>
 						<h3 className="text-2xl font-bold mb-6">{t('infoTitle')}</h3>
 						<p className="text-muted-foreground mb-8 leading-relaxed">{t('infoDescription')}</p>
 
@@ -138,7 +143,7 @@ const Contact = () => {
 									<p className="text-sm text-muted-foreground">{t('email')}</p>
 									<a
 										href="mailto:p.nowecki@gmail.com"
-										className="font-medium hover:text-primary transition-colors"
+										className="font-medium hover:text-primary transition-colors break-words"
 										onClick={() =>
 											gtag.event({
 												action: 'click',
@@ -160,7 +165,7 @@ const Contact = () => {
 									<p className="text-sm text-muted-foreground">{t('phone')}</p>
 									<a
 										href="tel:+48791893867"
-										className="font-medium hover:text-primary transition-colors"
+										className="font-medium hover:text-primary transition-colors break-words"
 										onClick={() =>
 											gtag.event({
 												action: 'click',
@@ -185,7 +190,7 @@ const Contact = () => {
 											href={link.href}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="font-medium hover:text-primary transition-colors"
+											className="font-medium hover:text-primary transition-colors break-words"
 											onClick={() =>
 												gtag.event({
 													action: 'click',
@@ -203,12 +208,17 @@ const Contact = () => {
 					</motion.div>
 
 					{/* Contact Form */}
-					<motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+					<motion.div
+						initial={{ opacity: 0, x: 30 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true }}
+						className="min-w-0"
+					>
 						{isSuccess ? (
 							<motion.div
 								initial={{ opacity: 0, scale: 0.9 }}
 								animate={{ opacity: 1, scale: 1 }}
-								className="glass-card p-8 h-full flex flex-col items-center justify-center text-center space-y-6 min-h-[500px]"
+								className="glass-card px-2 py-6 sm:px-8 sm:py-8 w-full h-full flex flex-col items-center justify-center text-center space-y-6 min-h-[420px] sm:min-h-[500px]"
 							>
 								<motion.div
 									initial={{ scale: 0 }}
@@ -233,7 +243,12 @@ const Contact = () => {
 								</Button>
 							</motion.div>
 						) : (
-							<form ref={formRef} onSubmit={handleSubmit} className="glass-card p-8 relative" autoComplete="off">
+							<form
+								ref={formRef}
+								onSubmit={handleSubmit}
+								className="glass-card px-2 py-6 sm:px-8 sm:py-8 w-full relative"
+								autoComplete="off"
+							>
 								{/* Honeypot Field - Hidden */}
 								<div className="hidden" aria-hidden="true">
 									<label htmlFor="company_fax">Company fax</label>
@@ -289,7 +304,7 @@ const Contact = () => {
 										required
 										aria-invalid={!!fieldErrors.subject}
 										className={cn(
-											'bg-background',
+											'bg-background text-sm sm:text-base h-11',
 											fieldErrors.subject && 'border-destructive focus-visible:ring-destructive',
 										)}
 									/>
@@ -315,16 +330,18 @@ const Contact = () => {
 									{fieldErrors.message && <p className="mt-1 text-sm text-destructive">{fieldErrors.message}</p>}
 								</div>
 
-								<div className="mb-4 w-full">
-									<Turnstile
-										ref={turnstileRef}
-										siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
-										onSuccess={(validatedToken) => setToken(validatedToken)}
-										options={{
-											theme: 'light',
-											size: 'flexible',
-										}}
-									/>
+								<div className="mb-4 w-full overflow-visible">
+									<div className="turnstile-wrapper">
+										<Turnstile
+											ref={turnstileRef}
+											siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
+											onSuccess={(validatedToken) => setToken(validatedToken)}
+											options={{
+												theme: 'light',
+												size: 'flexible',
+											}}
+										/>
+									</div>
 								</div>
 
 								{generalError && <p className="mb-4 text-sm text-destructive">{generalError}</p>}

@@ -148,6 +148,26 @@
 			0 0 20px hsl(var(--neon-green) / 0.3);
 	}
 
+	.turnstile-wrapper {
+		width: 100%;
+		max-width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		transform-origin: left top;
+	}
+
+	@media (max-width: 380px) {
+		.turnstile-wrapper {
+			transform: scale(0.94);
+		}
+	}
+
+	@media (max-width: 340px) {
+		.turnstile-wrapper {
+			transform: scale(0.9);
+		}
+	}
+
 	.gradient-text {
 		@apply bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent;
 	}

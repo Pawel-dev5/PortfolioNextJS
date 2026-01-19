@@ -19,7 +19,7 @@ const Header = () => {
 	const navLinks = [
 		{ label: t('about'), href: '#about' },
 		{ label: t('experience'), href: '#experience' },
-		{ label: t('portfolio'), href: '#portfolio' },
+		{ label: t('portfolio'), href: '/portfolio' },
 		{ label: t('offer'), href: '#offer' },
 		{ label: t('contact'), href: '#contact' },
 	];
@@ -39,18 +39,18 @@ const Header = () => {
 	}, []);
 
 	const scrollToSection = (href: string) => {
-		// Check if we are not on the homepage (approximate check by looking at slashes)
-		// Or simply check if pathname is exactly `/${locale}`
-		const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/` || pathname === '/';
-
-		if (!isHomePage && href.startsWith('#')) {
+		if (href.startsWith('#')) {
+			const element = document.querySelector(href);
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth' });
+			} else {
+				const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/` || pathname === '/';
+				if (!isHomePage) {
+					window.location.assign(`/${locale}${href}`);
+				}
+			}
+		} else {
 			window.location.assign(`/${locale}${href}`);
-			return;
-		}
-
-		const element = document.querySelector(href);
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' });
 		}
 		setIsMobileMenuOpen(false);
 	};
@@ -82,23 +82,41 @@ const Header = () => {
 
 				{/* Desktop Navigation */}
 				<nav className="hidden md:flex items-center gap-8">
-					{navLinks.map((link) => (
-						<button
-							key={link.href}
-							onClick={() => {
-								scrollToSection(link.href);
-								gtag.event({
-									action: 'click',
-									category: 'Navigation',
-									label: link.label,
-								});
-							}}
-							className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
-						>
-							{link.label}
-							<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-						</button>
-					))}
+					{navLinks.map((link) =>
+						link.href.startsWith('#') ? (
+							<button
+								key={link.href}
+								onClick={() => {
+									scrollToSection(link.href);
+									gtag.event({
+										action: 'click',
+										category: 'Navigation',
+										label: link.label,
+									});
+								}}
+								className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+							>
+								{link.label}
+								<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+							</button>
+						) : (
+							<Link
+								key={link.href}
+								href={link.href}
+								className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+								onClick={() =>
+									gtag.event({
+										action: 'click',
+										category: 'Navigation',
+										label: link.label,
+									})
+								}
+							>
+								{link.label}
+								<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+							</Link>
+						),
+					)}
 
 					<Link
 						href={pathname}
@@ -170,22 +188,40 @@ const Header = () => {
 						className="md:hidden glass border-t border-border"
 					>
 						<nav className="section-container py-6 flex flex-col gap-4">
-							{navLinks.map((link) => (
-								<button
-									key={link.href}
-									onClick={() => {
-										scrollToSection(link.href);
-										gtag.event({
-											action: 'click',
-											category: 'Mobile Navigation',
-											label: link.label,
-										});
-									}}
-									className="text-left text-lg font-medium py-2 hover:text-primary transition-colors"
-								>
-									{link.label}
-								</button>
-							))}
+							{navLinks.map((link) =>
+								link.href.startsWith('#') ? (
+									<button
+										key={link.href}
+										onClick={() => {
+											scrollToSection(link.href);
+											gtag.event({
+												action: 'click',
+												category: 'Mobile Navigation',
+												label: link.label,
+											});
+										}}
+										className="text-left text-lg font-medium py-2 hover:text-primary transition-colors"
+									>
+										{link.label}
+									</button>
+								) : (
+									<Link
+										key={link.href}
+										href={link.href}
+										className="text-left text-lg font-medium py-2 hover:text-primary transition-colors"
+										onClick={() => {
+											setIsMobileMenuOpen(false);
+											gtag.event({
+												action: 'click',
+												category: 'Mobile Navigation',
+												label: link.label,
+											});
+										}}
+									>
+										{link.label}
+									</Link>
+								),
+							)}
 							<Button
 								onClick={() => {
 									scrollToSection('#contact');
