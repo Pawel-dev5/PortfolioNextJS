@@ -142,6 +142,58 @@
 			}
 		}
 	},
+	"PortfolioPage": {
+		"eyebrow": "Portfolio",
+		"title": "All <highlight>projects</highlight>",
+		"description": "Browse the full list of my work. Each project is a unique challenge and a solution tailored to the client’s needs.",
+		"back": "Back to homepage",
+		"filters": "Filter:",
+		"empty": "No projects in this category.",
+		"cta": "View details",
+		"categories": {
+			"all": "All",
+			"featured": "Featured",
+			"other": "Other",
+			"ai": "AI",
+			"websites": "Websites",
+			"ecommerce": "E-commerce",
+			"mobile": "Mobile apps",
+			"systems": "Dedicated systems",
+			"automation": "Automations",
+			"data": "Data",
+			"cms": "CMS",
+			"marketing": "Marketing",
+			"email": "Email",
+			"games": "Games",
+			"tools": "Tools"
+		},
+		"stats": {
+			"projects": "Projects",
+			"categories": "Categories",
+			"featured": "Featured"
+		}
+	},
+	"ProjectDetails": {
+		"backToPortfolio": "Back to portfolio",
+		"visitSite": "Visit website",
+		"notFound": {
+			"title": "Project not found",
+			"description": "Sorry, we couldn't find this project.",
+			"cta": "Back to portfolio"
+		},
+		"sections": {
+			"technologies": "Technologies",
+			"challenge": "Challenge",
+			"solution": "Solution",
+			"results": "Results",
+			"gallery": "Gallery",
+			"related": "Related projects"
+		},
+		"navigation": {
+			"previous": "Previous",
+			"next": "Next"
+		}
+	},
 	"Offer": {
 		"subtitle": "Offer",
 		"title": "How can I <highlight>help</highlight> you?",

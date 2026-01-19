@@ -142,6 +142,58 @@
 			}
 		}
 	},
+	"PortfolioPage": {
+		"eyebrow": "Portfolio",
+		"title": "Wszystkie <highlight>projekty</highlight>",
+		"description": "Przeglądaj pełną listę moich realizacji. Każdy projekt to unikalne wyzwanie i rozwiązanie dopasowane do potrzeb klienta.",
+		"back": "Powrót do strony głównej",
+		"filters": "Filtruj:",
+		"empty": "Brak projektów w tej kategorii.",
+		"cta": "Zobacz szczegóły",
+		"categories": {
+			"all": "Wszystkie",
+			"featured": "Wyróżnione",
+			"other": "Pozostałe",
+			"ai": "AI",
+			"websites": "Strony www",
+			"ecommerce": "Sklepy internetowe",
+			"mobile": "Aplikacje mobilne",
+			"systems": "Systemy dedykowane",
+			"automation": "Automatyzacje",
+			"data": "Analiza danych",
+			"cms": "CMS",
+			"marketing": "Marketing",
+			"email": "Emailing",
+			"games": "Gry",
+			"tools": "Narzędzia"
+		},
+		"stats": {
+			"projects": "Projektów",
+			"categories": "Kategorii",
+			"featured": "Featured"
+		}
+	},
+	"ProjectDetails": {
+		"backToPortfolio": "Powrót do portfolio",
+		"visitSite": "Odwiedź stronę",
+		"notFound": {
+			"title": "Projekt nie znaleziony",
+			"description": "Przepraszamy, nie mogliśmy znaleźć tego projektu.",
+			"cta": "Wróć do portfolio"
+		},
+		"sections": {
+			"technologies": "Technologie",
+			"challenge": "Wyzwanie",
+			"solution": "Rozwiązanie",
+			"results": "Rezultaty",
+			"gallery": "Galeria",
+			"related": "Podobne projekty"
+		},
+		"navigation": {
+			"previous": "Poprzedni",
+			"next": "Następny"
+		}
+	},
 	"Offer": {
 		"subtitle": "Oferta",
 		"title": "Jak mogę Ci <highlight>pomóc</highlight>?",

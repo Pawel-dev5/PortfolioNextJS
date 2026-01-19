@@ -1,29 +1,32 @@
+'use client';
+
+import { useMemo, useState } from 'react';
 import Image from 'next/image';
-import { ExternalLink, Github } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowLeft, ExternalLink, Filter, Github } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import {
-	FEATURED_PROJECTS_BASE,
-	getPortfolioPageContent,
+	createProjectSlug,
+	getFeaturedProjects,
 	getPortfolioProjects,
-	type FeaturedProjectBase,
 	type PortfolioProject,
+	type ProjectCategoryKey,
 } from '@/lib/portfolioProjects';
 
-type FeaturedProject = FeaturedProjectBase & {
+type PortfolioListProject = {
+	id: string;
+	slug: string;
 	title: string;
-	category: string;
+	categories: ProjectCategoryKey[];
 	description: string;
-};
-
-const getFeaturedProjects = async (locale: string): Promise<FeaturedProject[]> => {
-	const t = await getTranslations({ locale, namespace: 'Portfolio' });
-
-	return FEATURED_PROJECTS_BASE.map((project) => ({
-		...project,
-		title: t(`projects.${project.key}.title`),
-		category: t(`projects.${project.key}.category`),
-		description: t(`projects.${project.key}.description`),
-	}));
+	technologies: string[];
+	links: PortfolioProject['links'];
+	imageUrl?: string;
+	imageFit?: 'contain' | 'cover';
+	featured?: boolean;
 };
 
 const ProjectLinks = ({ links }: { links: PortfolioProject['links'] }) => {
@@ -58,84 +61,231 @@ const ProjectStack = ({ stack }: { stack: string[] }) => (
 	</div>
 );
 
-const ProjectCard = ({ project }: { project: PortfolioProject }) => (
-	<article className="glass-card flex h-full flex-col gap-6 rounded-3xl border border-transparent p-6 transition hover:border-primary/20">
-		{project.imageUrl ? (
-			<div className="relative aspect-video overflow-hidden rounded-2xl bg-secondary/40">
-				<Image
-					src={`/assets/${project.imageUrl}`}
-					alt={project.title}
-					fill
-					className="object-cover"
-					sizes="(max-width: 1024px) 100vw, 50vw"
-				/>
+const ProjectCard = ({
+	project,
+	categoryLabel,
+	ctaLabel,
+	featuredLabel,
+}: {
+	project: PortfolioListProject;
+	categoryLabel: string;
+	ctaLabel: string;
+	featuredLabel: string;
+}) => (
+	<motion.article
+		layout
+		initial={{ opacity: 0, scale: 0.96 }}
+		animate={{ opacity: 1, scale: 1 }}
+		exit={{ opacity: 0, scale: 0.96 }}
+		transition={{ duration: 0.3 }}
+		className="group"
+	>
+		<div className="glass-card flex h-full flex-col overflow-hidden rounded-3xl border border-transparent transition hover:border-primary/20">
+			<div className="relative aspect-video overflow-hidden bg-secondary/40">
+				{project.imageUrl ? (
+					<Image
+						src={`/assets/${project.imageUrl}`}
+						alt={project.title}
+						fill
+						className={project.imageFit === 'contain' ? 'object-contain p-6' : 'object-cover'}
+						sizes="(max-width: 1024px) 100vw, 50vw"
+					/>
+				) : (
+					<div className="flex h-full w-full items-center justify-center text-xs uppercase tracking-[0.2em] text-muted-foreground">
+						{categoryLabel}
+					</div>
+				)}
+				<div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+
+				{project.featured && (
+					<div className="absolute right-4 top-4">
+						<span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+							{featuredLabel}
+						</span>
+					</div>
+				)}
+
+				<div className="absolute bottom-4 left-4">
+					<span className="rounded-full bg-background/80 px-3 py-1 text-xs font-medium backdrop-blur-sm">
+						{categoryLabel}
+					</span>
+				</div>
 			</div>
-		) : null}
-		<div className="flex flex-1 flex-col gap-4">
-			<div>
-				<h3 className="text-xl font-semibold">{project.title}</h3>
-				<p className="mt-2 text-sm text-muted-foreground">{project.description}</p>
+
+			<div className="flex flex-1 flex-col gap-4 p-6">
+				<div>
+					<h3 className="text-xl font-bold transition-colors group-hover:text-primary">{project.title}</h3>
+					<p className="mt-2 text-sm text-muted-foreground line-clamp-3">{project.description}</p>
+				</div>
+				<ProjectStack stack={project.technologies.slice(0, 6)} />
+				<ProjectLinks links={project.links} />
+
+				<Link
+					href={`/portfolio/${project.slug}`}
+					className={cn(
+						buttonVariants('outline', 'sm'),
+						'w-full group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all',
+					)}
+				>
+					<ExternalLink className="mr-2 h-4 w-4" />
+					{ctaLabel}
+				</Link>
 			</div>
-			<ProjectStack stack={project.stack} />
-			<ProjectLinks links={project.links} />
 		</div>
-	</article>
+	</motion.article>
 );
 
-const FeaturedProjectCard = ({ project }: { project: FeaturedProject }) => (
-	<article className="glass-card flex h-full flex-col gap-6 rounded-3xl border border-transparent p-6 transition hover:border-primary/20">
-		<div className="relative aspect-video overflow-hidden rounded-2xl bg-secondary/40">
-			<Image
-				src={`/assets/${project.imageUrl}`}
-				alt={project.title}
-				fill
-				className={project.imageFit === 'contain' ? 'object-contain p-6' : 'object-cover'}
-				sizes="(max-width: 1024px) 100vw, 60vw"
-			/>
-		</div>
-		<div className="flex flex-1 flex-col gap-4">
-			<div>
-				<span className="text-xs font-semibold uppercase tracking-wider text-primary">{project.category}</span>
-				<h3 className="mt-2 text-2xl font-semibold">{project.title}</h3>
-				<p className="mt-3 text-sm text-muted-foreground">{project.description}</p>
-			</div>
-			<ProjectStack stack={project.stack} />
-			<ProjectLinks links={project.links} />
-		</div>
-	</article>
-);
+const PortfolioPage = ({ locale }: { locale: string }) => {
+	const t = useTranslations('PortfolioPage');
+	const featuredLabel = t('categories.featured');
 
-const PortfolioPage = async ({ locale }: { locale: string }) => {
-	const content = getPortfolioPageContent(locale);
-	const projects = getPortfolioProjects(locale);
-	const featuredProjects = await getFeaturedProjects(locale);
+	const featuredProjects = useMemo(
+		() =>
+			getFeaturedProjects(locale).map((project) => ({
+				id: `featured-${project.key}`,
+				slug: project.key,
+				title: project.title,
+				categories: project.categories,
+				description: project.description,
+				technologies: project.stack,
+				links: project.links,
+				imageUrl: project.imageUrl,
+				imageFit: project.imageFit ?? 'cover',
+				featured: true,
+			})),
+		[locale],
+	);
+
+	const otherProjects = useMemo(
+		() =>
+			getPortfolioProjects(locale).map((project) => ({
+				id: `project-${project.id}`,
+				slug: createProjectSlug(project.title, `project-${project.id}`),
+				title: project.title,
+				categories: project.categories,
+				description: project.description,
+				technologies: project.stack,
+				links: project.links,
+				imageUrl: project.imageUrl,
+			})),
+		[locale],
+	);
+
+	const allProjects = useMemo<PortfolioListProject[]>(
+		() => [...featuredProjects, ...otherProjects],
+		[featuredProjects, otherProjects],
+	);
+	type FilterKey = 'all' | 'featured' | ProjectCategoryKey;
+	const [activeCategory, setActiveCategory] = useState<FilterKey>('all');
+
+	const categories = useMemo(() => {
+		const categoryKeys = Array.from(new Set(allProjects.flatMap((project) => project.categories)));
+		return [
+			{ key: 'all' as const, label: t('categories.all') },
+			{ key: 'featured' as const, label: featuredLabel },
+			...categoryKeys.map((key) => ({ key, label: t(`categories.${key}`) })),
+		];
+	}, [allProjects, featuredLabel, t]);
+
+	const filteredProjects = useMemo(() => {
+		if (activeCategory === 'all') return allProjects;
+		if (activeCategory === 'featured') return allProjects.filter((project) => project.featured);
+		return allProjects.filter((project) => project.categories.includes(activeCategory));
+	}, [activeCategory, allProjects]);
 
 	return (
 		<section className="section-container py-20">
-			<div className="mb-12 text-center">
-				<h1 className="text-4xl font-bold">{content.sectionTitle}</h1>
-				<p className="mt-3 text-base text-muted-foreground">{content.subTitle}</p>
-			</div>
+			<Link href="/" className="mb-8 inline-flex items-center text-muted-foreground transition-colors hover:text-primary">
+				<ArrowLeft className="mr-2 h-4 w-4" />
+				{t('back')}
+			</Link>
 
-			<div className="space-y-16">
-				<section>
-					<h2 className="mb-6 text-2xl font-semibold">{content.featuredTitle}</h2>
-					<div className="grid gap-8 lg:grid-cols-2">
-						{featuredProjects.map((project) => (
-							<FeaturedProjectCard key={project.id} project={project} />
-						))}
-					</div>
-				</section>
+			<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12 text-center">
+				<span className="text-sm font-semibold uppercase tracking-wider text-primary">{t('eyebrow')}</span>
+				<h1 className="mt-2 text-4xl font-bold sm:text-5xl">
+					{t.rich('title', {
+						highlight: (chunks) => <span className="gradient-text">{chunks}</span>,
+					})}
+				</h1>
+				<p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{t('description')}</p>
+			</motion.div>
 
-				<section>
-					<h2 className="mb-6 text-2xl font-semibold">{content.projectsTitle}</h2>
-					<div className="grid gap-6 md:grid-cols-2">
-						{projects.map((project) => (
-							<ProjectCard key={project.id} project={project} />
-						))}
+			<motion.div
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 0.1 }}
+				className="mb-12 flex flex-wrap justify-center gap-3"
+			>
+				<div className="mr-4 flex items-center gap-2 text-muted-foreground">
+					<Filter className="h-4 w-4" />
+					<span className="text-sm font-medium">{t('filters')}</span>
+				</div>
+				{categories.map((category) => (
+					<button
+						key={category.key}
+						onClick={() => setActiveCategory(category.key)}
+						className={cn(
+							'rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300',
+							activeCategory === category.key
+								? 'bg-primary text-primary-foreground neon-glow'
+								: 'bg-secondary text-foreground hover:bg-secondary/80',
+						)}
+					>
+						{category.label}
+						{activeCategory === category.key && <span className="ml-2 text-xs opacity-80">({filteredProjects.length})</span>}
+					</button>
+				))}
+			</motion.div>
+
+			<motion.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				<AnimatePresence mode="popLayout">
+					{filteredProjects.map((project) => {
+						const primaryCategory = project.categories[0];
+						const categoryLabel = primaryCategory ? t(`categories.${primaryCategory}`) : t('categories.other');
+						return (
+							<ProjectCard
+								key={project.id}
+								project={project}
+								categoryLabel={categoryLabel}
+								ctaLabel={t('cta')}
+								featuredLabel={featuredLabel}
+							/>
+						);
+					})}
+				</AnimatePresence>
+			</motion.div>
+
+			{filteredProjects.length === 0 && (
+				<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-16 text-center">
+					<p className="text-lg text-muted-foreground">{t('empty')}</p>
+				</motion.div>
+			)}
+
+			<motion.div
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				className="mt-16 text-center"
+			>
+				<div className="glass-card inline-flex items-center gap-8 px-8 py-4">
+					<div>
+						<span className="gradient-text text-3xl font-bold">{allProjects.length}</span>
+						<p className="text-sm text-muted-foreground">{t('stats.projects')}</p>
 					</div>
-				</section>
-			</div>
+					<div className="h-10 w-px bg-border" />
+					<div>
+						<span className="gradient-text text-3xl font-bold">{Math.max(categories.length - 2, 0)}</span>
+						<p className="text-sm text-muted-foreground">{t('stats.categories')}</p>
+					</div>
+					<div className="h-10 w-px bg-border" />
+					<div>
+						<span className="gradient-text text-3xl font-bold">
+							{allProjects.filter((project) => project.featured).length}
+						</span>
+						<p className="text-sm text-muted-foreground">{t('stats.featured')}</p>
+					</div>
+				</div>
+			</motion.div>
 		</section>
 	);
 };

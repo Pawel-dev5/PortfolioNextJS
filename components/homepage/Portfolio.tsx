@@ -4,13 +4,14 @@ import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import { Button, buttonVariants } from '@/components/ui/button';
-import { FEATURED_PROJECTS_BASE } from '@/lib/portfolioProjects';
-import { useTranslations } from 'next-intl';
+import { buttonVariants } from '@/components/ui/button';
+import { getFeaturedProjects } from '@/lib/portfolioProjects';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
 const Portfolio = () => {
 	const t = useTranslations('Portfolio');
+	const locale = useLocale();
 	const [activeIndex, setActiveIndex] = useState(0);
 	const sectionRef = useRef(null);
 	const isInView = useInView(sectionRef, { amount: 0.2 });
@@ -20,17 +21,18 @@ const Portfolio = () => {
 
 	const projects = useMemo(
 		() =>
-			FEATURED_PROJECTS_BASE.map((project, index) => ({
+			getFeaturedProjects(locale).map((project, index) => ({
 				id: index,
 				key: project.key,
-				title: t(`projects.${project.key}.title`),
-				category: t(`projects.${project.key}.category`),
-				description: t(`projects.${project.key}.description`),
+				slug: project.key,
+				title: project.title,
+				category: project.categoryLabel ?? '',
+				description: project.description,
 				imageUrl: project.imageUrl,
 				imageFit: project.imageFit ?? 'cover',
 				technologies: project.stack.map((name) => ({ name })),
 			})),
-		[t],
+		[locale],
 	);
 
 	const activeProject = projects[activeIndex];
@@ -160,10 +162,10 @@ const Portfolio = () => {
 									</div>
 
 									{/* CTA */}
-									<Button className="bg-primary hover:bg-primary/90 text-primary-foreground neon-glow">
+									<Link href={`/portfolio/${activeProject.slug}`} className={`${buttonVariants('default', 'lg')} neon-glow`}>
 										<ExternalLink className="mr-2 w-4 h-4" />
 										{t('cta')}
-									</Button>
+									</Link>
 								</div>
 							</motion.div>
 						</AnimatePresence>
@@ -171,7 +173,8 @@ const Portfolio = () => {
 				</div>
 			</div>
 			<div className="mt-16 flex justify-center">
-				<Link href="/portfolio" className={buttonVariants('outline', 'lg')}>
+				<Link href="/portfolio" className={`${buttonVariants('default', 'lg')} neon-glow`}>
+					<ExternalLink className="mr-2 w-4 h-4" />
 					{t('viewAll')}
 				</Link>
 			</div>
