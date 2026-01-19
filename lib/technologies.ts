@@ -196,4 +196,12 @@ export const TECHNOLOGIES = {
 		name: 'WooCommerce',
 		icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg',
 	},
+	CLOUDFLARE: {
+		name: 'Cloudflare',
+		icon: 'https://yt3.googleusercontent.com/XLwUPwwj7PAZ4n-hMiM8poQUO9at8jaQf5BjEzdgMw6r_hOI_FZy9oM5f2mTCJWOfP5RM06XCw=s900-c-k-c0x00ffffff-no-rj',
+	},
+	RECAPTCHA: {
+		name: 'reCAPTCHA',
+		icon: 'https://apps.odoo.com/web/image/loempia.module/90381/icon_image/300x300?unique=5b790df',
+	},
 } as const;

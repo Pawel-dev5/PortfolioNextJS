@@ -84,6 +84,14 @@ const nextConfig = {
 				protocol: 'https',
 				hostname: 'encrypted-tbn0.gstatic.com',
 			},
+			{
+				protocol: 'https',
+				hostname: 'yt3.googleusercontent.com',
+			},
+			{
+				protocol: 'https',
+				hostname: 'apps.odoo.com',
+			},
 		],
 	},
 };
