@@ -1,0 +1,277 @@
+{
+	"Metadata": {
+		"default": {
+			"title": "Paweł Nowecki - Fullstack Developer & AI Expert",
+			"description": "Portfolio Senior Fullstack Developera. Strony internetowe, sklepy internetowe, aplikacje mobilne, systemy dedykowane, wdrożenia AI. Zwiększ zyski swojej firmy dzięki nowoczesnym technologiom.",
+			"keywords": "fullstack developer, programista, strony internetowe, sklepy internetowe, aplikacje mobilne, systemy dedykowane, wdrożenia AI, sztuczna inteligencja, automatyzacja procesów"
+		},
+		"portfolio": {
+			"title": "Portfolio - Projekty i Realizacje | Paweł Nowecki",
+			"description": "Zobacz moje realizacje: aplikacje mobilne, systemy dedykowane, wdrożenia AI i strony www. Sprawdź jak pomogłem innym firmom.",
+			"keywords": "portfolio programisty, realizacje stron www, projekty aplikacji, case study IT, wdrożenia AI przykłady"
+		},
+		"offer_automation": {
+			"title": "Automatyzacja Procesów Biznesowych | Paweł Nowecki",
+			"description": "Oszczędzaj czas i pieniądze dzięki automatyzacji. Integracje API, boty, usprawnianie workflow. Pozwól technologii pracować za Ciebie.",
+			"keywords": "automatyzacja procesów, automatyzacja biznesu, integracje API, make.com, zapier, n8n, optymalizacja pracy, boty"
+		},
+		"offer_websites": {
+			"title": "Strony i Sklepy Internetowe | Paweł Nowecki",
+			"description": "Nowoczesne, szybkie i responsywne strony www oraz sklepy internetowe, które sprzedają. Next.js, React, WordPress, Shopify.",
+			"keywords": "tworzenie stron www, sklepy internetowe, e-commerce, strony responsywne, next.js, react, wordpress, szybkie strony"
+		},
+		"offer_systems": {
+			"title": "Systemy Dedykowane CRM / ERP | Paweł Nowecki",
+			"description": "Oprogramowanie szyte na miarę. Systemy zarządzania firmą, panele administracyjne, aplikacje B2B, systemy CRM i ERP dostosowane do Twoich potrzeb.",
+			"keywords": "systemy dedykowane, oprogramowanie na zamówienie, crm na miarę, erp, aplikacje b2b, panele administracyjne, software house"
+		},
+		"offer_ai": {
+			"title": "Wdrożenia Sztucznej Inteligencji (AI) dla Firm | Paweł Nowecki",
+			"description": "Wykorzystaj potencjał AI w swoim biznesie. Chatboty, analiza danych, inteligentni asystenci, modele językowe (LLM), OpenAI.",
+			"keywords": "wdrożenia AI, sztuczna inteligencja w biznesie, chatboty AI, modele językowe, LLM, OpenAI, automatyzacja AI, chatgpt dla firm"
+		}
+	},
+	"Header": {
+		"about": "O mnie",
+		"experience": "Doświadczenie",
+		"portfolio": "Portfolio",
+		"offer": "Oferta",
+		"contact": "Kontakt",
+		"cta": "Porozmawiajmy"
+	},
+	"Hero": {
+		"newProject": "Nowy projekt:",
+		"role": "Paweł Nowecki",
+		"description": "Projektuję i wdrażam kompleksowe systemy cyfrowe, platformy e-commerce oraz automatyzacje procesów. Realizuję projekty holistycznie – od architektury i logiki biznesowej, po warstwę wizualną i wdrożenie.",
+		"viewProjects": "Zobacz Projekty",
+		"downloadCv": "Pobierz CV",
+		"cvUrl": "https://drive.google.com/file/d/1mQA6DkCoiogYkgiNd77SUAc_HKIEh45q/view?usp=drive_link"
+	},
+	"About": {
+		"subtitle": "O mnie",
+		"title": "Programista z pasją do <highlight>innowacji</highlight>",
+		"description": "Jestem programistą z pasją, który łączy świat kodu z celami biznesowymi. Nie tylko piszę kod, ale także wdrażam rozwiązania, które realnie usprawniają działanie firm. Specjalizuję się w tworzeniu stron i sklepów internetowych, systemów dedykowanych oraz AI i automatyzacji procesów, które oszczędzają czas i zwiększają efektywność firmy.",
+		"yearsExperience": "Lat doświadczenia",
+		"projectsCompleted": "Projektów"
+	},
+	"Experience": {
+		"subtitle": "Doświadczenie",
+		"title": "Moja ścieżka <highlight>kariery</highlight>",
+		"jobs": {
+			"freelance": {
+				"role": "Fullstack Developer",
+				"company": "Freelance / Własne projekty",
+				"achievements": [
+					"Tworzenie stron i sklepów internetowych",
+					"Tworzenie systemów dedykowanych i AI dla klientów",
+					"Rozwój platformy irrify.ai"
+				]
+			},
+			"widlarz": {
+				"role": "React Native Developer",
+				"company": "The Widlarz Group",
+				"achievements": [
+					"Aplikacja Learnnapp: utrzymanie, naprawa błędów produkcyjnych oraz upgrade wersji React Native",
+					"Aplikacja Orca: audyt kodu, przygotowanie do upgrade'u React Native oraz wdrożenia nowej architektury"
+				]
+			},
+			"tenA": {
+				"role": "Frontend Developer",
+				"company": "10a",
+				"achievements": [
+					"Rozwój nowych funkcjonalności w aplikacjach mobilnych Moje Suzuki, cHow oraz Mój Sklep (Eurocash)",
+					"Projektowanie i implementację kluczowych rozwiązań, które poprawiają codzienne procesy biznesowe oraz podniosły jakość doświadczeń użytkowników."
+				]
+			},
+			"gridaly": {
+				"role": "Frontend Developer",
+				"company": "Gridaly",
+				"achievements": [
+					"Rozwój nowych funkcjonalności webowej aplikacji do obsługi wydarzeń online i hybrydowych oraz tworzenie kluczowych modułów systemu zarządzania eventami",
+					"Opracowanie i wdrożenie nowej, responsywnej strony internetowej platformy, ze skupieniem na optymalizacji wydajności i jakości kodu",
+					"Programowanie aplikacji mobilnej do skanowania biletów zintegrowanej z platformą webową, zapewniającej stabilną i szybką komunikację między systemami"
+				]
+			},
+			"hagen": {
+				"role": "Senior Account Executive",
+				"company": "Hagen",
+				"achievements": [
+					"Opracowanie i wdrożenie kompleksowego systemu szkoleniowego dla House of Skills, usprawniającego organizację i realizację szkoleń",
+					"Zaprojektowanie i wdrożenie aplikacji mobilnej do obsługi oddziałów dla Banku BNP Paribas, usprawniającej operacje, komunikację i obsługę klienta"
+				]
+			},
+			"wisefriends": {
+				"role": "Account Executive",
+				"company": "Wisefriends",
+				"achievements": [
+					"Zarządzanie i realizacja projektu webowej aplikacji dla Essilor, z dbałością o terminowość i jakość",
+					"Współtworzenie i wdrożenie kampanii digitalowych dla Orange (kampania Love) oraz przygotowanie launchu marki IQOS na polski rynek dla Philip Morris International",
+					"Przygotowanie, realizacja i wdrożenie kampanii digitalowych dla klientów takich jak Eurocash, Adidas, Coty, Opel, Philips, Maspex, Geberit oraz Reprise Digital"
+				]
+			}
+		}
+	},
+	"TechStack": {
+		"subtitle": "Tech Stack",
+		"title": "Technologie, którymi <highlight>pracuję</highlight>"
+	},
+	"Portfolio": {
+		"subtitle": "Portfolio",
+		"title": "Wybrane <highlight>projekty</highlight>",
+		"cta": "Zobacz Case Study",
+		"viewAll": "Zobacz całe portfolio",
+		"projects": {
+			"irrify": {
+				"title": "Irrify.ai",
+				"category": "AI Platform",
+				"description": "Zaawansowana platforma do automatyzacji procesów biznesowych z wykorzystaniem sztucznej inteligencji. System umożliwia tworzenie inteligentnych agentów AI, automatyzację workflow oraz integrację z popularnymi narzędziami."
+			},
+			"chow": {
+				"title": "cHow",
+				"category": "Mobile App",
+				"description": "System cHow służy do szybkiego i wygodnego zbierania oraz analizowania informacji od pracowników terenowych na temat własnej sieci sprzedaży, sieci konkurencyjnych oraz otoczenia."
+			},
+			"suzuki": {
+				"title": "Moje Suzuki",
+				"category": "Mobile App",
+				"description": "Rozwój nowych funkcjonalności w aplikacji Moje Suzuki, dzięki której możesz wygodnie przeglądać historię serwisu swojego Suzuki, otrzymywać powiadomienia o przeglądach oraz akcjach serwisowych i przywoławczych."
+			},
+			"hagen": {
+				"title": "Hagen",
+				"category": "Website",
+				"description": "Strona internetowa dla firmy Hagen. Nowoczesny design i optymalizacja pod kątem SEO."
+			}
+		}
+	},
+	"PortfolioPage": {
+		"eyebrow": "Portfolio",
+		"title": "Wszystkie <highlight>projekty</highlight>",
+		"description": "Przeglądaj pełną listę moich realizacji. Każdy projekt to unikalne wyzwanie i rozwiązanie dopasowane do potrzeb klienta.",
+		"back": "Powrót do strony głównej",
+		"filters": "Filtruj:",
+		"empty": "Brak projektów w tej kategorii.",
+		"cta": "Zobacz szczegóły",
+		"categories": {
+			"all": "Wszystkie",
+			"featured": "Wyróżnione",
+			"other": "Pozostałe",
+			"ai": "AI",
+			"websites": "Strony www",
+			"ecommerce": "Sklepy internetowe",
+			"mobile": "Aplikacje mobilne",
+			"systems": "Systemy dedykowane",
+			"automation": "Automatyzacje",
+			"data": "Analiza danych",
+			"cms": "CMS",
+			"marketing": "Marketing",
+			"email": "Emailing",
+			"games": "Gry",
+			"tools": "Narzędzia"
+		},
+		"stats": {
+			"projects": "Projektów",
+			"categories": "Kategorii",
+			"featured": "Featured"
+		}
+	},
+	"ProjectDetails": {
+		"backToPortfolio": "Powrót do portfolio",
+		"visitSite": "Odwiedź stronę",
+		"notFound": {
+			"title": "Projekt nie znaleziony",
+			"description": "Przepraszamy, nie mogliśmy znaleźć tego projektu.",
+			"cta": "Wróć do portfolio"
+		},
+		"sections": {
+			"technologies": "Technologie",
+			"challenge": "Wyzwanie",
+			"solution": "Rozwiązanie",
+			"results": "Rezultaty",
+			"gallery": "Galeria",
+			"related": "Podobne projekty"
+		},
+		"navigation": {
+			"previous": "Poprzedni",
+			"next": "Następny"
+		}
+	},
+	"Offer": {
+		"subtitle": "Oferta",
+		"title": "Jak mogę Ci <highlight>pomóc</highlight>?",
+		"description": "Oferuję kompleksowe usługi programistyczne - od prostych stron internetowych po zaawansowane systemy AI i automatyzacje biznesowe.",
+		"learnMore": "Dowiedz się więcej",
+		"items": {
+			"websites": {
+				"title": "Strony & Sklepy",
+				"description": "Nowoczesne strony internetowe, sklepy e-commerce, landing pages konwertujące na klientów."
+			},
+			"mobile": {
+				"title": "Aplikacje Mobilne",
+				"description": "Aplikacje mobilne na iOS i Android, panele administracyjne, aplikacje biznesowe na miarę."
+			},
+			"systems": {
+				"title": "Systemy Dedykowane",
+				"description": "Customowe systemy CRM/ERP, panele administracyjne, aplikacje biznesowe na miarę."
+			},
+			"ai": {
+				"title": "Wdrożenia AI",
+				"description": "Inteligentni agenci AI, automatyzacja procesów, integracja z OpenAI i innymi modelami LLM."
+			},
+			"automation": {
+				"title": "Automatyzacje",
+				"description": "Automatyzacja workflow, integracje API, boty i skrypty oszczędzające setki godzin pracy."
+			}
+		}
+	},
+	"Contact": {
+		"subtitle": "Kontakt",
+		"title": "Porozmawiajmy o <highlight>Twoim projekcie</highlight>",
+		"infoTitle": "Dane kontaktowe",
+		"infoDescription": "Masz pytania? Chcesz omówić swój projekt? Napisz do mnie - odpowiadam zazwyczaj w ciągu 24 godzin.",
+		"email": "Email",
+		"phone": "Telefon",
+		"form": {
+			"name": "Imię i nazwisko",
+			"email": "Email",
+			"subject": "Temat",
+			"message": "Wiadomość",
+			"submit": "Wyślij wiadomość",
+			"submitting": "Wysyłanie...",
+			"placeholders": {
+				"name": "Jan Kowalski",
+				"email": "jan@example.com",
+				"subject": "Czego dotyczy Twoja wiadomość?",
+				"message": "Opisz swój projekt lub zadaj pytanie..."
+			},
+			"error": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.",
+			"validation": {
+				"nameMin": "Imię i nazwisko musi mieć co najmniej 2 znaki.",
+				"emailInvalid": "Podaj poprawny adres email.",
+				"subjectMin": "Temat musi mieć co najmniej 3 znaki.",
+				"messageMin": "Wiadomość musi mieć co najmniej 10 znaków.",
+				"tokenMissing": "Weryfikacja nie powiodła się. Spróbuj ponownie.",
+				"checkForm": "Sprawdź poprawność formularza."
+			}
+		},
+		"toast": {
+			"successTitle": "Wiadomość wysłana!",
+			"successDescription": "Odpowiem najszybciej jak to możliwe."
+		},
+		"success": {
+			"title": "Dziękuję za wiadomość!",
+			"description": "Twoja wiadomość została wysłana. Wrócę z odpowiedzią tak szybko, jak to możliwe.",
+			"button": "Wyślij kolejną wiadomość"
+		}
+	},
+	"Footer": {
+		"copyright": "© {year} Paweł Nowecki. Wszelkie prawa zastrzeżone."
+	},
+	"Subpages": {
+		"websites": "Strony i Sklepy Internetowe",
+		"automation": "Automatyzacje",
+		"systems": "Systemy Dedykowane CRM / ERP",
+		"ai": "Wdrożenia AI i Automatyzacja Procesów Biznesowych",
+		"inProgress": "Strona w budowie.",
+		"aiDescription": "Strona w budowie. Tutaj znajdzie się szczegółowy opis oferty wdrożeń AI."
+	}
+}

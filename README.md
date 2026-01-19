@@ -1,38 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio - Paweł Nowecki
 
-## Getting Started
+Nowoczesna, responsywna strona portfolio stworzona w oparciu o najnowsze technologie webowe. Projekt służy jako wizytówka zawodowa, prezentująca moje doświadczenie, zrealizowane projekty oraz szczegółową ofertę usług programistycznych. Aplikacja została zaprojektowana z myślą o wysokiej wydajności, SEO oraz dostępności.
 
-First, run the development server:
+## 🚀 Technologie
+
+Projekt wykorzystuje nowoczesny stack technologiczny zapewniający szybkość działania, skalowalność i łatwość utrzymania kodu:
+
+### Core
+- **Next.js 15** (App Router) - Framework React do budowania aplikacji webowych.
+- **TypeScript** - Statycznie typowany nadzbiór JavaScript.
+- **React** - Biblioteka do budowania interfejsów użytkownika.
+
+### Stylizacja i UI
+- **Tailwind CSS** - Framework CSS utility-first.
+- **Framer Motion** - Biblioteka do tworzenia zaawansowanych animacji.
+- **Lucide React** - Zestaw ikon.
+- **Radix UI** - Dostępne komponenty UI (wykorzystywane m.in. w powiadomieniach Toast).
+- **Tailwind Merge & CLSX** - Narzędzia do warunkowego łączenia klas CSS.
+
+### Funkcjonalności
+- **next-intl** - Pełna obsługa wielojęzyczności (i18n) z routingiem opartym na ścieżkach.
+- **Zod** - Walidacja schematów danych (formularze).
+- **Nodemailer** - Obsługa wysyłki wiadomości e-mail (formularz kontaktowy).
+- **Server Actions** - Obsługa logiki po stronie serwera bezpośrednio w komponentach React.
+
+### Jakość Kodu (DX)
+- **ESLint** & **Prettier** - Linter i formatter kodu.
+- **Husky** & **lint-staged** - Automatyzacja sprawdzania kodu przed commitem (Git Hooks).
+
+## 🌍 Wielojęzyczność (i18n)
+
+Aplikacja wspiera wiele wersji językowych (obecnie PL i EN) dzięki bibliotece `next-intl`.
+- Routing obsługuje prefiksy językowe (np. `/pl`, `/en`).
+- Treści statyczne pobierane są z plików tłumaczeń JSON.
+- Middleware automatycznie wykrywa i przekierowuje użytkownika na odpowiednią wersję językową.
+
+## 🗂 Struktura Stron
+
+Projekt oparty jest na `App Router` z dynamicznym routingiem:
+
+- **Strona Główna (`/`)** - Sekcja Hero, O mnie, Doświadczenie, Wybrane projekty, Kontakt.
+- **Portfolio (`/portfolio`)** - Pełna lista zrealizowanych projektów.
+    - **Szczegóły Projektu (`/portfolio/[slug]`)** - Dynamicznie generowane strony dla każdego projektu.
+- **Oferta (`/oferta`)** - Sekcje dedykowane konkretnym usługom:
+    - **Strony Internetowe** (`/oferta/strony-internetowe`)
+    - **Systemy Dedykowane / CRM** (`/oferta/systemy-dedykowane-crm`)
+    - **Wdrożenia AI** (`/oferta/wdrozenia-ai`)
+    - **Automatyzacje** (`/oferta/automatyzacje`)
+
+## ⚙️ Instrukcja i Instalacja
+
+Aby uruchomić projekt lokalnie, wykonaj następujące kroki:
+
+1. **Sklonuj repozytorium:**
+   ```bash
+   git clone <adres-repozytorium>
+   cd PortfolioNextJS
+   ```
+
+2. **Zainstaluj zależności:**
+   Użyj wybranego menedżera pakietów (npm, yarn lub pnpm).
+   ```bash
+   npm install
+   # lub
+   yarn install
+   ```
+
+3. **Konfiguracja zmiennych środowiskowych:**
+   Upewnij się, że posiadasz plik `.env` skonfigurowany zgodnie z wymaganiami projektu (głównie dla obsługi SMTP formularza kontaktowego).
+
+4. **Uruchom serwer deweloperski:**
+   ```bash
+   npm run dev
+   # lub
+   yarn dev
+   ```
+
+5. **Otwórz aplikację:**
+   Przejdź pod adres [http://localhost:3000](http://localhost:3000) w swojej przeglądarce.
+
+## 🏗️ Budowanie wersji produkcyjnej
+
+Aby zbudować aplikację pod środowisko produkcyjne:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm run build
+npm start
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
