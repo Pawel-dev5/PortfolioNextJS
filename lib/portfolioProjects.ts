@@ -78,7 +78,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
 	{
 		id: 0,
 		key: 'irrify',
-		imageUrl: 'irrify.png',
+		imageUrl: 'irrifyPage.png',
 		imageFit: 'cover',
 		categories: ['ai', 'websites', 'ecommerce'],
 		stack: [
