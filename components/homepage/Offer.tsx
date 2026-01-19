@@ -43,7 +43,7 @@ const Offer = () => {
 	];
 
 	return (
-		<section className="py-24 bg-secondary/30">
+		<section id="offer" className="py-24 bg-secondary/30">
 			<div className="section-container">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

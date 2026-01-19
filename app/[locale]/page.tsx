@@ -8,19 +8,11 @@ import Offer from '@/components/homepage/Offer';
 const Home = () => (
 	<>
 		<Hero />
-		<div id="about">
-			<About />
-		</div>
-		<div id="experience">
-			<Experience />
-		</div>
+		<About />
+		<Experience />
 		<TechStack />
-		<div id="portfolio">
-			<Portfolio />
-		</div>
-		<div id="offer">
-			<Offer />
-		</div>
+		<Portfolio />
+		<Offer />
 	</>
 );
 
