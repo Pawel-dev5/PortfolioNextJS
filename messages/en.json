@@ -241,11 +241,25 @@
 				"email": "john@example.com",
 				"subject": "What is your message about?",
 				"message": "Describe your project or ask a question..."
+			},
+			"error": "An error occurred while sending the message. Please try again.",
+			"validation": {
+				"nameMin": "Name must be at least 2 characters.",
+				"emailInvalid": "Please enter a valid email address.",
+				"subjectMin": "Subject must be at least 3 characters.",
+				"messageMin": "Message must be at least 10 characters.",
+				"tokenMissing": "Verification failed. Please try again.",
+				"checkForm": "Please check the form for errors."
 			}
 		},
 		"toast": {
 			"successTitle": "Message sent!",
 			"successDescription": "I will reply as soon as possible."
+		},
+		"success": {
+			"title": "Thanks for your message!",
+			"description": "Your message has been sent. I will get back to you as soon as possible.",
+			"button": "Send another message"
 		}
 	},
 	"Footer": {

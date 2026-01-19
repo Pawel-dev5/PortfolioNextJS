@@ -241,11 +241,25 @@
 				"email": "jan@example.com",
 				"subject": "Czego dotyczy Twoja wiadomość?",
 				"message": "Opisz swój projekt lub zadaj pytanie..."
+			},
+			"error": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.",
+			"validation": {
+				"nameMin": "Imię i nazwisko musi mieć co najmniej 2 znaki.",
+				"emailInvalid": "Podaj poprawny adres email.",
+				"subjectMin": "Temat musi mieć co najmniej 3 znaki.",
+				"messageMin": "Wiadomość musi mieć co najmniej 10 znaków.",
+				"tokenMissing": "Weryfikacja nie powiodła się. Spróbuj ponownie.",
+				"checkForm": "Sprawdź poprawność formularza."
 			}
 		},
 		"toast": {
 			"successTitle": "Wiadomość wysłana!",
 			"successDescription": "Odpowiem najszybciej jak to możliwe."
+		},
+		"success": {
+			"title": "Dziękuję za wiadomość!",
+			"description": "Twoja wiadomość została wysłana. Wrócę z odpowiedzią tak szybko, jak to możliwe.",
+			"button": "Wyślij kolejną wiadomość"
 		}
 	},
 	"Footer": {
