@@ -152,8 +152,13 @@
 		width: 100%;
 		max-width: 100%;
 		display: flex;
-		justify-content: flex-start;
-		transform-origin: left top;
+		justify-content: center;
+		transform-origin: center top;
+	}
+
+	.turnstile-wrapper > div {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	@media (max-width: 380px) {
