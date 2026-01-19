@@ -76,13 +76,15 @@ const Hero = () => {
 							{t('viewProjects')}
 							<ArrowRight className="ml-2 w-5 h-5" />
 						</Link>
-						<Link
-							href="#contact"
+						<a
+							href={t('cvUrl')}
+							target="_blank"
+							rel="noopener noreferrer"
 							className={cn(buttonVariants('outline', 'lg'), 'font-semibold px-8 py-6 text-lg hover-lift')}
 						>
 							<Download className="mr-2 w-5 h-5" />
 							{t('downloadCv')}
-						</Link>
+						</a>
 					</motion.div>
 				</div>
 			</div>
