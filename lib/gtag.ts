@@ -6,7 +6,7 @@ declare global {
 	}
 }
 
-export const GA_TRACKING_ID = 'G-0F4PYQ46H6';
+export const GA_TRACKING_ID = 'G-YH9V81TG9H';
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {

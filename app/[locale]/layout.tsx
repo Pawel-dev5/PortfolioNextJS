@@ -44,7 +44,7 @@ const RootLayout = async ({ children, params }: { children: React.ReactNode; par
 	return (
 		<html lang={locale} className="scroll-smooth">
 			<head></head>
-			<Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-0F4PYQ46H6" />
+			<Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-YH9V81TG9H" />
 			<Script
 				id="gtag-init"
 				strategy="afterInteractive"
@@ -53,7 +53,7 @@ const RootLayout = async ({ children, params }: { children: React.ReactNode; par
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-0F4PYQ46H6', {
+            gtag('config', 'G-YH9V81TG9H', {
               page_path: window.location.pathname,
             });
           `,
