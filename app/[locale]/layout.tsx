@@ -9,7 +9,7 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: 'Metadata.default' });
 
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 	};
 }
 
-const RootLayout = async ({ children, params }: { children: React.ReactNode; params: { locale: string } }) => {
+const RootLayout = async ({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) => {
 	const { locale } = await params;
 	// Ensure that the incoming `locale` is valid
 	if (!(routing.locales as readonly string[]).includes(locale)) {

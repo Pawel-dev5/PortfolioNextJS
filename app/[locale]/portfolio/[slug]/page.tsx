@@ -102,7 +102,11 @@ const getRelatedProjects = (projects: ProjectDetailsData[], current: ProjectDeta
 			image: project.image,
 		}));
 
-export async function generateMetadata({ params }: { params: { locale: string; slug: string } }): Promise<Metadata> {
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
 	const { locale, slug } = await params;
 	const t = await getTranslations({ locale, namespace: 'Metadata.portfolio' });
 	const projects = await buildProjects(locale);
@@ -130,7 +134,7 @@ export async function generateMetadata({ params }: { params: { locale: string; s
 	};
 }
 
-const PortfolioProjectDetailsPage = async ({ params }: { params: { locale: string; slug: string } }) => {
+const PortfolioProjectDetailsPage = async ({ params }: { params: Promise<{ locale: string; slug: string }> }) => {
 	const { locale, slug } = await params;
 	const projects = await buildProjects(locale);
 	const project = projects.find((item) => item.slug === slug) ?? null;

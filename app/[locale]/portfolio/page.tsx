@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import PortfolioPage from '@/components/Portfolio/PortfolioPage';
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: 'Metadata.portfolio' });
 
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 	};
 }
 
-const PortfolioPageRoute = async ({ params }: { params: { locale: string } }) => {
+const PortfolioPageRoute = async ({ params }: { params: Promise<{ locale: string }> }) => {
 	const { locale } = await params;
 	return <PortfolioPage locale={locale} />;
 };
