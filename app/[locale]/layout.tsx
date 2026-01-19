@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Header from '@/components/layout/Header';
 import Contact from '@/components/homepage/Contact';
 import Footer from '@/components/layout/Footer';
+import CookieModal from '@/components/layout/CookieModal';
 import JsonLd from '@/components/seo/JsonLd';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
@@ -52,6 +53,9 @@ const RootLayout = async ({ children, params }: { children: React.ReactNode; par
 					__html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+            });
             gtag('js', new Date());
             gtag('config', 'G-YH9V81TG9H', {
               page_path: window.location.pathname,
@@ -62,6 +66,7 @@ const RootLayout = async ({ children, params }: { children: React.ReactNode; par
 			<body className="antialiased min-h-screen relative overflow-x-hidden bg-background">
 				<JsonLd />
 				<NextIntlClientProvider messages={messages}>
+					<CookieModal />
 					<Header />
 					<main className="overflow-x-hidden">{children}</main>
 					<Contact />

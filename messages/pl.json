@@ -266,6 +266,11 @@
 	"Footer": {
 		"copyright": "© {year} Paweł Nowecki. Wszelkie prawa zastrzeżone."
 	},
+	"CookieBanner": {
+		"title": "Cookies",
+		"message": "Nasza strona używa plików cookies. Informujemy, że Twoje dane są zbierane przez Google Analytics w celu analizy ruchu na stronie.",
+		"accept": "Akceptuję"
+	},
 	"Subpages": {
 		"websites": "Strony i Sklepy Internetowe",
 		"automation": "Automatyzacje",

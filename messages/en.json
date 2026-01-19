@@ -266,6 +266,11 @@
 	"Footer": {
 		"copyright": "© {year} Paweł Nowecki. All rights reserved."
 	},
+	"CookieBanner": {
+		"title": "Cookies",
+		"message": "Our website uses cookies. We inform you that your data is collected by Google Analytics to analyze traffic on the site.",
+		"accept": "Accept"
+	},
 	"Subpages": {
 		"websites": "Websites and Online Stores",
 		"automation": "Automations",
