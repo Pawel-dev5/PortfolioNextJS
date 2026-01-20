@@ -3,14 +3,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
 	const baseUrl = 'https://pawelnowecki.pl';
 
-	const routes = [
-		'',
-		'/portfolio',
-		'/oferta/automatyzacje',
-		'/oferta/strony-internetowe',
-		'/oferta/systemy-dedykowane-crm',
-		'/oferta/wdrozenia-ai',
-	];
+	const routes = ['', '/portfolio', '/oferta'];
 
 	const locales = ['pl', 'en'];
 

@@ -200,10 +200,15 @@
 		"title": "How can I <highlight>help</highlight> you?",
 		"description": "I offer comprehensive programming services - from simple websites to advanced AI systems and business automations.",
 		"learnMore": "Learn more",
+		"cta": "View full offer",
 		"items": {
 			"websites": {
-				"title": "Websites & Stores",
-				"description": "Modern websites, e-commerce stores, landing pages that convert into customers."
+				"title": "Websites",
+				"description": "Modern websites and landing pages that convert into customers."
+			},
+			"ecommerce": {
+				"title": "E-commerce Stores",
+				"description": "Design and delivery of online stores, payment integrations, conversion optimization."
 			},
 			"mobile": {
 				"title": "Mobile Apps",
@@ -220,6 +225,176 @@
 			"automation": {
 				"title": "Automations",
 				"description": "Workflow automation, API integrations, bots and scripts saving hundreds of hours of work."
+			}
+		}
+	},
+	"OfferPage": {
+		"hero": {
+			"badge": "Comprehensive IT services",
+			"title": "My <highlight>Offer</highlight>",
+			"description": "From simple websites to advanced AI systems - I provide a full range of development services tailored to your needs."
+		},
+		"sections": {
+			"featuresTitle": "What's included",
+			"benefitsTitle": "Benefits",
+			"technologiesTitle": "Technologies"
+		},
+		"cta": {
+			"pricing": "Request a quote",
+			"title": "Not sure what to choose?",
+			"description": "Message me and we'll pick the best solution for your business together.",
+			"contact": "Get in touch"
+		},
+		"items": {
+			"websites": {
+				"title": "Websites",
+				"subtitle": "Modern, responsive websites",
+				"description": "I build professional websites that not only look great, but most importantly convert visitors into customers.",
+				"features": [
+					"Responsive design across all devices",
+					"SEO and performance optimization",
+					"CMS integrations (WordPress, Strapi)",
+					"Contact forms and lead generation",
+					"Animations and interactive elements",
+					"Hosting and technical support",
+					"Content audit and information structure",
+					"Image optimization and Core Web Vitals",
+					"Analytics setup (GA4, GTM)",
+					"Form configuration and anti-spam"
+				],
+				"benefits": [
+					"Higher Google visibility",
+					"Professional brand image",
+					"Lead generation 24/7",
+					"Faster load times and better UX",
+					"Higher conversion from organic traffic",
+					"Easier content updates and growth"
+				]
+			},
+			"ecommerce": {
+				"title": "E-commerce Stores",
+				"subtitle": "E-commerce that sells",
+				"description": "I build online stores optimized for conversion, with an intuitive checkout and payment integrations.",
+				"features": [
+					"Intuitive cart and checkout",
+					"Payment and shipping integrations",
+					"Product administration panel",
+					"Order and inventory management",
+					"Marketing automation and remarketing",
+					"Sales analytics and reports",
+					"Discounts, coupons and promotions",
+					"Abandoned cart recovery",
+					"Warehouse and fulfillment integrations",
+					"Conversion rate optimization (CRO)"
+				],
+				"benefits": [
+					"Sales 24/7",
+					"Process automation",
+					"Business scalability",
+					"Higher cart value via cross/upsell",
+					"Fewer abandoned carts",
+					"Better control over stock and fulfillment"
+				]
+			},
+			"mobile": {
+				"title": "Mobile Apps",
+				"subtitle": "iOS & Android with one codebase",
+				"description": "I build mobile apps for iOS and Android from a single codebase, saving time and budget while keeping native performance.",
+				"features": [
+					"Cross-platform (React Native / Expo)",
+					"Native performance and UX",
+					"Push notifications and offline mode",
+					"API and backend integration",
+					"App Store and Google Play release",
+					"Updates and maintenance",
+					"Analytics and event tracking",
+					"Secure authentication and authorization",
+					"CI/CD and device testing",
+					"App size and performance optimization"
+				],
+				"benefits": [
+					"Reach mobile users",
+					"Engagement via push",
+					"Offline access",
+					"Faster delivery with one codebase",
+					"Stability and easier maintenance",
+					"Better store ratings thanks to UX"
+				]
+			},
+			"systems": {
+				"title": "Custom CRM/ERP Systems",
+				"subtitle": "Tailored business solutions",
+				"description": "I design and implement custom systems for managing business processes - CRM, ERP, admin panels and internal tools.",
+				"features": [
+					"Custom CRM tailored to processes",
+					"Customer and lead management",
+					"Business workflow automation",
+					"Analytical reports and dashboards",
+					"Integrations with external systems",
+					"User roles and permissions",
+					"Process modeling and data mapping",
+					"Data import/export and migrations",
+					"Event logging and audit trails",
+					"Ongoing maintenance and SLA support"
+				],
+				"benefits": [
+					"Process efficiency",
+					"Centralized data",
+					"Time savings",
+					"Better control of KPIs and reporting",
+					"Team workflow automation",
+					"Scales with business growth"
+				]
+			},
+			"ai": {
+				"title": "AI Implementations",
+				"subtitle": "Intelligent solutions",
+				"description": "I implement AI-powered solutions - from chatbots and assistants to data analysis and automation.",
+				"features": [
+					"AI chatbots and assistants",
+					"Data and document analysis",
+					"Automated content generation",
+					"Prediction and machine learning",
+					"Cloud AI integrations",
+					"AI-driven business processes",
+					"Knowledge bases (RAG)",
+					"Auto-classification and tagging",
+					"CRM and support integrations",
+					"Quality and cost monitoring"
+				],
+				"benefits": [
+					"Automated customer support",
+					"Faster data analysis",
+					"Innovation",
+					"Lower operating costs",
+					"Better offer personalization",
+					"Faster business decisions"
+				]
+			},
+			"automation": {
+				"title": "Automations",
+				"subtitle": "Save hundreds of hours",
+				"description": "I automate repetitive business processes - from simple tasks to complex workflows integrating multiple systems.",
+				"features": [
+					"Business process automation",
+					"API integrations between systems",
+					"Automated reports and notifications",
+					"Scheduled tasks and jobs",
+					"Database integrations",
+					"Monitoring and maintenance",
+					"Data validation and cleansing",
+					"Error handling and alerts",
+					"Marketing and sales automations",
+					"Documentation and team training"
+				],
+				"benefits": [
+					"Time savings",
+					"Error reduction",
+					"Operational scalability",
+					"Stable processes without manual work",
+					"Faster information flow",
+					"Higher predictability and control"
+				]
 			}
 		}
 	},

@@ -200,10 +200,15 @@
 		"title": "Jak mogę Ci <highlight>pomóc</highlight>?",
 		"description": "Oferuję kompleksowe usługi programistyczne - od prostych stron internetowych po zaawansowane systemy AI i automatyzacje biznesowe.",
 		"learnMore": "Dowiedz się więcej",
+		"cta": "Zobacz pełną ofertę",
 		"items": {
 			"websites": {
-				"title": "Strony & Sklepy",
-				"description": "Nowoczesne strony internetowe, sklepy e-commerce, landing pages konwertujące na klientów."
+				"title": "Strony Internetowe",
+				"description": "Nowoczesne strony internetowe i landing pages konwertujące na klientów."
+			},
+			"ecommerce": {
+				"title": "Sklepy Internetowe",
+				"description": "Projektowanie i wdrożenie sklepów e-commerce, integracje płatności, optymalizacja konwersji."
 			},
 			"mobile": {
 				"title": "Aplikacje Mobilne",
@@ -220,6 +225,176 @@
 			"automation": {
 				"title": "Automatyzacje",
 				"description": "Automatyzacja workflow, integracje API, boty i skrypty oszczędzające setki godzin pracy."
+			}
+		}
+	},
+	"OfferPage": {
+		"hero": {
+			"badge": "Kompleksowe usługi IT",
+			"title": "Moja <highlight>Oferta</highlight>",
+			"description": "Od prostych stron internetowych po zaawansowane systemy AI - oferuję pełen zakres usług programistycznych dopasowanych do Twoich potrzeb."
+		},
+		"sections": {
+			"featuresTitle": "Co zawiera",
+			"benefitsTitle": "Korzyści",
+			"technologiesTitle": "Technologie"
+		},
+		"cta": {
+			"pricing": "Zapytaj o wycenę",
+			"title": "Nie wiesz, co wybrać?",
+			"description": "Napisz do mnie, a wspólnie dobierzemy rozwiązanie idealne dla Twojego biznesu.",
+			"contact": "Skontaktuj się"
+		},
+		"items": {
+			"websites": {
+				"title": "Strony Internetowe",
+				"subtitle": "Nowoczesne, responsywne strony",
+				"description": "Tworzę profesjonalne strony internetowe, które nie tylko świetnie wyglądają, ale przede wszystkim konwertują odwiedzających w klientów.",
+				"features": [
+					"Responsywny design na wszystkie urządzenia",
+					"Optymalizacja pod SEO i szybkość ładowania",
+					"Integracja z CMS (WordPress, Strapi)",
+					"Formularze kontaktowe i lead generation",
+					"Animacje i interaktywne elementy",
+					"Hosting i wsparcie techniczne",
+					"Audyt treści i struktury informacji",
+					"Optymalizacja obrazów i Core Web Vitals",
+					"Integracja z analityką (GA4, GTM)",
+					"Konfiguracja formularzy i antyspam"
+				],
+				"benefits": [
+					"Wzrost widoczności w Google",
+					"Profesjonalny wizerunek firmy",
+					"Generowanie leadów 24/7",
+					"Szybsze ładowanie i lepsze UX",
+					"Większa konwersja z ruchu organicznego",
+					"Łatwiejsza edycja i rozwój treści"
+				]
+			},
+			"ecommerce": {
+				"title": "Sklepy Internetowe",
+				"subtitle": "E-commerce, który sprzedaje",
+				"description": "Buduję sklepy internetowe zoptymalizowane pod konwersję, z intuicyjnym procesem zakupowym i integracją z systemami płatności.",
+				"features": [
+					"Intuicyjny koszyk i checkout",
+					"Integracje płatności i dostaw",
+					"Panel administracyjny produktów",
+					"Zarządzanie zamówieniami i magazynem",
+					"Marketing automation i remarketing",
+					"Raporty i analityka sprzedaży",
+					"Obsługa kodów rabatowych i promocji",
+					"Porzucone koszyki i odzyskiwanie klientów",
+					"Integracje z systemami magazynowymi",
+					"Optymalizacja konwersji (CRO)"
+				],
+				"benefits": [
+					"Sprzedaż 24/7",
+					"Automatyzacja procesów",
+					"Skalowanie biznesu",
+					"Wyższy koszyk dzięki cross/upsell",
+					"Mniej porzuconych koszyków",
+					"Lepsza kontrola nad stanami i realizacją"
+				]
+			},
+			"mobile": {
+				"title": "Aplikacje Mobilne",
+				"subtitle": "iOS & Android w jednym kodzie",
+				"description": "Tworzę aplikacje mobilne działające na iOS i Android z jednej bazy kodu, oszczędzając czas i budżet przy zachowaniu natywnej wydajności.",
+				"features": [
+					"Cross-platform (React Native / Expo)",
+					"Natywna wydajność i UX",
+					"Push notyfikacje i offline mode",
+					"Integracja z API i backendem",
+					"Publikacja w App Store i Google Play",
+					"Aktualizacje i maintenance",
+					"Analityka i śledzenie zdarzeń",
+					"Bezpieczne logowanie i autoryzacja",
+					"CI/CD i testy na urządzeniach",
+					"Optymalizacja rozmiaru aplikacji"
+				],
+				"benefits": [
+					"Dotarcie do użytkowników mobilnych",
+					"Zaangażowanie przez push",
+					"Praca offline",
+					"Szybsze wdrożenia dzięki jednej bazie kodu",
+					"Stabilność i łatwiejsze utrzymanie",
+					"Lepsze oceny w sklepach dzięki UX"
+				]
+			},
+			"systems": {
+				"title": "Systemy Dedykowane CRM/ERP",
+				"subtitle": "Rozwiązania na miarę biznesu",
+				"description": "Projektuję i wdrażam dedykowane systemy do zarządzania firmą - CRM, ERP, panele administracyjne i narzędzia wewnętrzne.",
+				"features": [
+					"Customowy CRM dopasowany do procesów",
+					"Zarządzanie klientami i leadami",
+					"Automatyzacja workflow biznesowych",
+					"Raporty i dashboardy analityczne",
+					"Integracje z zewnętrznymi systemami",
+					"Role użytkowników i uprawnienia",
+					"Modelowanie procesów i mapowanie danych",
+					"Import/eksport danych i migracje",
+					"Logowanie zdarzeń i audyt",
+					"Utrzymanie, rozwój i wsparcie SLA"
+				],
+				"benefits": [
+					"Usprawnienie procesów",
+					"Centralizacja danych",
+					"Oszczędność czasu",
+					"Lepsza kontrola nad KPI i raportowaniem",
+					"Automatyzacja pracy zespołu",
+					"Skalowalność wraz z rozwojem firmy"
+				]
+			},
+			"ai": {
+				"title": "Wdrożenia AI",
+				"subtitle": "Inteligentne rozwiązania",
+				"description": "Implementuję rozwiązania oparte na sztucznej inteligencji - od chatbotów i asystentów AI po zaawansowaną analizę danych i automatyzację.",
+				"features": [
+					"Chatboty i asystenci AI",
+					"Analiza danych i dokumentów",
+					"Automatyczne generowanie treści",
+					"Predykcja i machine learning",
+					"Integracja z usługami chmurowymi",
+					"AI w procesach biznesowych",
+					"Budowa baz wiedzy (RAG)",
+					"Automatyczne klasyfikacje i tagowanie",
+					"Integracja z CRM i supportem",
+					"Monitoring jakości i kosztów"
+				],
+				"benefits": [
+					"Automatyzacja obsługi klienta",
+					"Szybsza analiza danych",
+					"Innowacyjność",
+					"Redukcja kosztów operacyjnych",
+					"Lepsza personalizacja oferty",
+					"Szybsze decyzje biznesowe"
+				]
+			},
+			"automation": {
+				"title": "Automatyzacje",
+				"subtitle": "Oszczędź setki godzin",
+				"description": "Automatyzuję powtarzalne procesy w firmie - od prostych zadań po kompleksowe workflow integrujące wiele systemów.",
+				"features": [
+					"Automatyzacja procesów biznesowych",
+					"Integracje API między systemami",
+					"Automatyczne raporty i powiadomienia",
+					"Zadania cykliczne i harmonogramy",
+					"Integracje z bazami danych",
+					"Monitorowanie i utrzymanie automatyzacji",
+					"Walidacja i oczyszczanie danych",
+					"Obsługa wyjątków i alerty",
+					"Automatyzacje marketingowe i sprzedażowe",
+					"Dokumentacja i szkolenie zespołu"
+				],
+				"benefits": [
+					"Oszczędność czasu",
+					"Eliminacja błędów",
+					"Skalowanie operacji",
+					"Stabilne procesy bez ręcznych działań",
+					"Szybszy przepływ informacji",
+					"Większa przewidywalność i kontrola"
+				]
 			}
 		}
 	},
