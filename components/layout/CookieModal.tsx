@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 
 const CONSENT_KEY = 'cookie-consent';
 
-const CookieModal = () => {
+const CookieModalContent = () => {
 	const t = useTranslations('CookieBanner');
 	const [isOpen, setIsOpen] = useState(() => window.localStorage.getItem(CONSENT_KEY) !== 'accepted');
 
@@ -45,6 +45,22 @@ const CookieModal = () => {
 			</div>
 		</div>
 	);
+};
+
+const emptySubscribe = () => () => {};
+
+const CookieModal = () => {
+	const isClient = useSyncExternalStore(
+		emptySubscribe,
+		() => true,
+		() => false,
+	);
+
+	if (!isClient) {
+		return null;
+	}
+
+	return <CookieModalContent />;
 };
 
 export default CookieModal;

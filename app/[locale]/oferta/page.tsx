@@ -12,7 +12,7 @@ import { OFFERS } from '@/lib/offers';
 const OfferPage = () => {
 	const t = useTranslations('OfferPage');
 	const pathname = usePathname();
-	const [expandedId, setExpandedId] = useState<string | null>(null);
+	const [expandedIds, setExpandedIds] = useState<string[]>([]);
 	const offerContent = useMemo(
 		() =>
 			Object.fromEntries(
@@ -34,16 +34,14 @@ const OfferPage = () => {
 		const handleHash = () => {
 			const hash = decodeURIComponent(window.location.hash.replace('#', ''));
 			if (hash && OFFERS.some((offer) => offer.id === hash)) {
-				setExpandedId(hash);
+				setExpandedIds((prev) => (prev.includes(hash) ? prev : [...prev, hash]));
 				setTimeout(() => {
 					const element = document.getElementById(hash);
 					if (element) {
 						element.scrollIntoView({ behavior: 'smooth', block: 'center' });
 					}
 				}, 100);
-				return;
 			}
-			setExpandedId(null);
 		};
 
 		handleHash();
@@ -58,13 +56,11 @@ const OfferPage = () => {
 	}, [pathname]);
 
 	const toggleExpand = (id: string) => {
-		setExpandedId((current) => {
-			const next = current === id ? null : id;
-			if (typeof window !== 'undefined') {
-				const nextHash = next ? `#${id}` : '';
-				window.history.replaceState(null, '', `${window.location.pathname}${nextHash}`);
+		setExpandedIds((current) => {
+			if (current.includes(id)) {
+				return current.filter((item) => item !== id);
 			}
-			return next;
+			return [...current, id];
 		});
 	};
 
@@ -120,7 +116,7 @@ const OfferPage = () => {
 										<button
 											onClick={() => toggleExpand(offer.id)}
 											className={`w-full p-6 sm:p-8 flex items-center justify-between text-left transition-colors ${
-												expandedId === offer.id ? `bg-gradient-to-r ${offer.gradient}` : 'hover:bg-secondary/50'
+												expandedIds.includes(offer.id) ? `bg-gradient-to-r ${offer.gradient}` : 'hover:bg-secondary/50'
 											}`}
 										>
 											<div className="flex items-center gap-4 sm:gap-6">
@@ -136,7 +132,7 @@ const OfferPage = () => {
 												</div>
 											</div>
 											<motion.div
-												animate={{ rotate: expandedId === offer.id ? 180 : 0 }}
+												animate={{ rotate: expandedIds.includes(offer.id) ? 180 : 0 }}
 												transition={{ duration: 0.3 }}
 												className="w-10 h-10 bg-secondary/50 rounded-full flex items-center justify-center shrink-0 ml-4"
 											>
@@ -145,7 +141,7 @@ const OfferPage = () => {
 										</button>
 
 										<AnimatePresence>
-											{expandedId === offer.id && (
+											{expandedIds.includes(offer.id) && (
 												<motion.div
 													initial={{ height: 0, opacity: 0 }}
 													animate={{ height: 'auto', opacity: 1 }}
@@ -153,7 +149,7 @@ const OfferPage = () => {
 													transition={{ duration: 0.4, ease: 'easeInOut' }}
 													className="overflow-hidden"
 												>
-													<div className="p-6 sm:p-8 pt-0 border-t border-border/50">
+													<div className="p-8 border-t border-border/50">
 														<motion.p
 															initial={{ opacity: 0, y: 20 }}
 															animate={{ opacity: 1, y: 0 }}
